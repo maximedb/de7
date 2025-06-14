@@ -1,5 +1,5 @@
 export interface Word {
-  text: string;
+  word: string;
   start: number;
   end: number;
   confidence: number;

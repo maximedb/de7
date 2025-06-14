@@ -60,18 +60,11 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
   return (
     <div className="h-screen bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4">
-        <div className="text-2xl font-bold">{formatTime(currentTime)}</div>
-        <div className="flex items-center gap-4">
-          <ChevronDown className="w-6 h-6" />
-        </div>
-      </div>
+
       
       {/* Title */}
       <div className="px-4 py-2 text-center">
-        <h1 className="text-xl font-semibold">{data.title}</h1>
-        <p className="text-gray-300">Daily Podcast</p>
-        <Flag className="w-6 h-6 mx-auto mt-2" />
+        <h1 className="font-semibold truncate">{data.title}</h1>
       </div>
       
       {/* Transcription */}
@@ -79,9 +72,9 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
         ref={scrollContainerRef}
         className="flex-1 overflow-y-auto px-6 py-4 scrollbar-hide"
       >
-        <div className="space-y-6 pb-32">
+        <div className="space-y-1 pb-32">
           {data.utterances.map((utterance, idx) => (
-            <div key={idx} className="space-y-2">
+            <div key={idx} className="">
               {utterance.words.map((word, wordIdx) => {
                 const isCurrentWord = currentTime >= word.start && currentTime < word.end;
                 const isPastWord = currentTime >= word.end;
@@ -97,7 +90,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
                           : 'text-gray-500'
                     }`}
                   >
-                    {word.text}
+                    {word.word}
                   </span>
                 );
               })}
@@ -107,7 +100,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
       </div>
       
       {/* Player Controls */}
-      <div className="bg-black/20 backdrop-blur-sm p-4">
+      <div className="backdrop-blur-sm p-4">
         {/* Progress Bar */}
         <div className="mb-4">
           <div className="relative h-1 bg-gray-600 rounded-full overflow-hidden">
@@ -126,7 +119,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
         <div className="flex items-center justify-center">
           <button
             onClick={togglePlayPause}
-            className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform"
+            className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform"
           >
             {isPlaying ? (
               <Pause className="w-6 h-6 ml-0.5" />
@@ -135,10 +128,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
             )}
           </button>
         </div>
-        
-        <div className="flex justify-center mt-4">
-          <Share className="w-6 h-6" />
-        </div>
+
       </div>
       
       <audio
