@@ -120,8 +120,8 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
                       isCurrentWord 
                         ? 'text-white current-word' 
                         : isPastWord 
-                          ? 'text-gray-400' 
-                          : 'text-gray-500'
+                          ? 'text-gray-200' 
+                          : 'text-gray-400'
                     }`}
                   >
                     {word.word}
