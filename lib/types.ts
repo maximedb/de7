@@ -12,6 +12,7 @@ export interface Utterance {
   confidence: number;
   speaker: number;
   words: Word[];
+  translation?: string;
 }
 
 export interface TranscriptionData {

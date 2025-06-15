@@ -28,6 +28,7 @@ jobs:
       - name: Generate transcription
         env:
           GLADIA_API_KEY: ${{ secrets.GLADIA_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           RSS_URL: ${{ secrets.RSS_URL }}
         run: npm run generate-transcription
 

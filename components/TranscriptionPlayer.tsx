@@ -9,6 +9,7 @@ interface TranscriptionPlayerProps {
 export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const [showingTranslation, setShowingTranslation] = useState<{utteranceIdx: number, wordIdx: number} | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -50,16 +51,22 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
     return data.duration - currentTime;
   };
 
-  const handleWordClick = (word: Word) => {
+  const handleWordClick = (word: Word, utteranceIdx: number, wordIdx: number) => {
     if (clickTimerRef.current) {
       // Double click - seek to word position
       clearTimeout(clickTimerRef.current);
       clickTimerRef.current = null;
       seekToTime(word.start);
     } else {
-      // Single click - pause after delay
+      // Single click - pause audio and show translation after delay
       clickTimerRef.current = setTimeout(() => {
         pauseAudio();
+        const utterance = data.utterances[utteranceIdx];
+        if (utterance.translation) {
+          setShowingTranslation({ utteranceIdx, wordIdx });
+          // Hide translation after 3 seconds
+          setTimeout(() => setShowingTranslation(null), 3000);
+        }
         clickTimerRef.current = null;
       }, 250);
     }
@@ -115,7 +122,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
                 return (
                   <span
                     key={`${idx}-${wordIdx}`}
-                    onClick={() => handleWordClick(word)}
+                    onClick={() => handleWordClick(word, idx, wordIdx)}
                     className={`inline-block mr-2 text-3xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 select-none ${
                       isCurrentWord 
                         ? 'text-white current-word' 
@@ -131,6 +138,16 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
             </div>
           ))}
         </div>
+        
+        {/* Translation Overlay */}
+        {showingTranslation && (
+          <div className="fixed inset-x-4 bottom-32 bg-black bg-opacity-90 backdrop-blur-sm rounded-lg p-4 z-10">
+            <div className="text-sm text-gray-300 mb-1">English Translation:</div>
+            <div className="text-lg text-white">
+              {data.utterances[showingTranslation.utteranceIdx]?.translation}
+            </div>
+          </div>
+        )}
       </div>
       
       {/* Player Controls */}
