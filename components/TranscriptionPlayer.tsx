@@ -116,7 +116,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
                   <span
                     key={`${idx}-${wordIdx}`}
                     onClick={() => handleWordClick(word)}
-                    className={`inline-block mr-2 text-2xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 ${
+                    className={`inline-block mr-2 text-3xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 select-none ${
                       isCurrentWord 
                         ? 'text-white current-word' 
                         : isPastWord 
