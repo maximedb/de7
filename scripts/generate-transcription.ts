@@ -23,6 +23,7 @@ async function main() {
   
   const audioDir = path.join(process.cwd(), 'public', 'audio');
   const dataDir = path.join(process.cwd(), 'public', 'data');
+  const transcriptionsDir = path.join(process.cwd(), 'public', 'transcriptions');
   
   // Download latest podcast
   console.log("Downloading latest podcast...");
@@ -33,13 +34,28 @@ async function main() {
     process.exit(1);
   }
   
-  // Transcribe the audio
-  console.log("Transcribing audio...");
-  const transcriptionResult = await transcribeAudioWithGladia(mp3Path, apiKey);
+  // Check if transcription already exists
+  const dateStr = today.toISOString().split('T')[0];
+  const transcriptionPath = path.join(transcriptionsDir, `${dateStr}.json`);
   
-  if (!transcriptionResult) {
-    console.error("Failed to transcribe audio");
-    process.exit(1);
+  let transcriptionResult;
+  if (fs.existsSync(transcriptionPath)) {
+    console.log("Transcription already exists, loading from file...");
+    transcriptionResult = JSON.parse(fs.readFileSync(transcriptionPath, 'utf-8'));
+  } else {
+    // Transcribe the audio
+    console.log("Transcribing audio...");
+    transcriptionResult = await transcribeAudioWithGladia(mp3Path, apiKey);
+    
+    if (!transcriptionResult) {
+      console.error("Failed to transcribe audio");
+      process.exit(1);
+    }
+    
+    // Save raw transcription result
+    fs.mkdirSync(transcriptionsDir, { recursive: true });
+    fs.writeFileSync(transcriptionPath, JSON.stringify(transcriptionResult, null, 2));
+    console.log("Raw transcription saved to", transcriptionPath);
   }
   
   // Extract data from transcription result
@@ -49,7 +65,6 @@ async function main() {
   const utterances = transcription.utterances || [];
   
   // Read episode metadata
-  const dateStr = today.toISOString().split('T')[0];
   const metadataPath = path.join(audioDir, `${dateStr}-metadata.json`);
   const episodeMetadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'));
   
