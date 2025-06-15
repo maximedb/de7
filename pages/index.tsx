@@ -27,6 +27,8 @@ export default function Home({ data }: HomeProps) {
         <title>{data.title} - Daily Podcast Transcription</title>
         <meta name="description" content="Daily podcast transcription with Spotify-style interface" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#134e4a" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
