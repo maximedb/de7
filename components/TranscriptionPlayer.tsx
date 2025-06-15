@@ -11,6 +11,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
   const [currentTime, setCurrentTime] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
   
   // Get all words with timing
   const allWords = data.utterances.flatMap(utterance => utterance.words);
@@ -48,6 +49,38 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
   const getRemainingTime = () => {
     return data.duration - currentTime;
   };
+
+  const handleWordClick = (word: Word) => {
+    if (clickTimerRef.current) {
+      // Double click - seek to word position
+      clearTimeout(clickTimerRef.current);
+      clickTimerRef.current = null;
+      seekToTime(word.start);
+    } else {
+      // Single click - pause after delay
+      clickTimerRef.current = setTimeout(() => {
+        pauseAudio();
+        clickTimerRef.current = null;
+      }, 250);
+    }
+  };
+
+  const pauseAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    audio.pause();
+    setIsPlaying(false);
+  };
+
+  const seekToTime = (time: number) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    audio.currentTime = time;
+    audio.play();
+    setIsPlaying(true);
+  };
   
   // Auto-scroll to current word
   useEffect(() => {
@@ -82,7 +115,8 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
                 return (
                   <span
                     key={`${idx}-${wordIdx}`}
-                    className={`inline-block mr-2 text-2xl font-medium transition-colors duration-300 ${
+                    onClick={() => handleWordClick(word)}
+                    className={`inline-block mr-2 text-2xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 ${
                       isCurrentWord 
                         ? 'text-white current-word' 
                         : isPastWord 
