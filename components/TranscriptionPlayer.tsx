@@ -58,7 +58,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
   }, [currentTime]);
   
   return (
-    <div className="h-screen bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col">
+    <div className="h-screen-safe bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col">
       {/* Header */}
 
       
@@ -102,7 +102,7 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
       {/* Player Controls */}
       <div className="backdrop-blur-sm p-4">
         {/* Progress Bar */}
-        <div className="mb-4">
+        <div className="mb-2">
           <div className="relative h-1 bg-gray-600 rounded-full overflow-hidden">
             <div 
               className="absolute h-full bg-white transition-all duration-300"

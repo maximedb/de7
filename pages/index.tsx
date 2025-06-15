@@ -26,6 +26,7 @@ export default function Home({ data }: HomeProps) {
       <Head>
         <title>{data.title} - Daily Podcast Transcription</title>
         <meta name="description" content="Daily podcast transcription with Spotify-style interface" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       

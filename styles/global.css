@@ -10,6 +10,16 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  
+  /* iOS safe area utilities */
+  .pb-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .h-screen-safe {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
+  }
 }
 
 body {
