@@ -1,4 +1,4 @@
-import { downloadLatestMp3 } from '../lib/podcast';
+import { downloadLatestMp3, PodcastInfo } from '../lib/podcast';
 import { transcribeAudioWithGladia } from '../lib/gladia';
 import { translateUtterances } from '../lib/openai';
 import * as fs from 'fs';
@@ -34,9 +34,9 @@ async function main() {
   
   // Download latest podcast
   console.log("Downloading latest podcast...");
-  const mp3Path = await downloadLatestMp3(rssUrl, audioDir);
+  const podcastInfo = await downloadLatestMp3(rssUrl, audioDir);
   
-  if (!mp3Path) {
+  if (!podcastInfo) {
     console.error("Failed to download MP3");
     process.exit(1);
   }
@@ -52,7 +52,7 @@ async function main() {
   } else {
     // Transcribe the audio
     console.log("Transcribing audio...");
-    transcriptionResult = await transcribeAudioWithGladia(mp3Path, gladiaApiKey);
+    transcriptionResult = await transcribeAudioWithGladia(podcastInfo.localPath, gladiaApiKey);
     
     if (!transcriptionResult) {
       console.error("Failed to transcribe audio");
@@ -92,17 +92,13 @@ async function main() {
     console.log("Updated transcription with translations");
   }
   
-  // Read episode metadata
-  const metadataPath = path.join(audioDir, `${dateStr}-metadata.json`);
-  const episodeMetadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'));
-  
   // Prepare data for the frontend
   const data: TranscriptionData = {
-    title: episodeMetadata.title,
-    date: dateStr,
+    title: podcastInfo.title,
+    date: podcastInfo.date,
     duration: metadata.audio_duration || 0,
     utterances: utterances,
-    audioUrl: `/audio/${dateStr}.mp3`
+    audioUrl: podcastInfo.originalUrl
   };
   
   // Save processed data

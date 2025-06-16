@@ -3,7 +3,14 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as xml2js from 'xml2js';
 
-export async function downloadLatestMp3(rssUrl: string, outputDirectory: string): Promise<string | null> {
+export interface PodcastInfo {
+  localPath: string;
+  originalUrl: string;
+  title: string;
+  date: string;
+}
+
+export async function downloadLatestMp3(rssUrl: string, outputDirectory: string): Promise<PodcastInfo | null> {
   try {
     const response = await axios.get(rssUrl);
     if (response.status !== 200) {
@@ -63,9 +70,14 @@ export async function downloadLatestMp3(rssUrl: string, outputDirectory: string)
       
       // Save metadata
       const metadataPath = path.join(outputDirectory, `${today}-metadata.json`);
-      fs.writeFileSync(metadataPath, JSON.stringify({ title, date: today }, null, 2));
+      fs.writeFileSync(metadataPath, JSON.stringify({ title, date: today, originalUrl: mp3Url }, null, 2));
       
-      return filepath;
+      return {
+        localPath: filepath,
+        originalUrl: mp3Url,
+        title,
+        date: today
+      };
     } else {
       console.error(`Failed to download MP3. Status code: ${mp3Response.status}`);
       return null;
