@@ -36,4 +36,3 @@ next-env.d.ts
 
 # Audio and data files (generated)
 public/audio/*.mp3
-public/data/
