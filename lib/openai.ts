@@ -51,8 +51,8 @@ export async function translateUtterances(utterances: Utterance[], apiKey: strin
       // Parse the numbered translations back
       const translations = translatedText
         .split('\n')
-        .filter(line => line.trim())
-        .map(line => line.replace(/^\d+\.\s*/, '').trim());
+        .filter((line: string) => line.trim())
+        .map((line: string) => line.replace(/^\d+\.\s*/, '').trim());
       
       // Add translations to utterances
       batch.forEach((utterance, index) => {
