@@ -25,12 +25,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate transcription
+      - name: Generate transcription and build
         env:
           GLADIA_API_KEY: ${{ secrets.GLADIA_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           RSS_URL: ${{ secrets.RSS_URL }}
-        run: npm run generate-transcription
+        run: npm run build:full
 
       - name: Commit and push changes
         run: |

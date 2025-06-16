@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run generate-transcription && next build",
+    "build": "next build",
+    "build:full": "npm run generate-transcription && next build",
     "start": "next start",
     "generate-transcription": "tsx scripts/generate-transcription.ts"
   },
