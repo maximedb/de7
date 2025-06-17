@@ -1,35 +1,200 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, ChevronDown, Flag, Share } from 'lucide-react';
-import { TranscriptionData, Word } from '@/lib/types';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { Play, Pause } from 'lucide-react';
 
-interface TranscriptionPlayerProps {
-  data: TranscriptionData;
+// Types
+interface Word {
+  word: string;
+  start: number;
+  end: number;
 }
 
-export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) {
+interface Utterance {
+  words: Word[];
+  translation?: string;
+}
+
+interface TranscriptionData {
+  title: string;
+  duration: number;
+  audioUrl: string;
+  utterances: Utterance[];
+}
+
+// Memoized Word Component - Only re-renders when its active state changes
+const WordSpan = React.memo(({ 
+  word, 
+  utteranceIdx, 
+  wordIdx, 
+  isActive, 
+  isPast 
+}: {
+  word: Word;
+  utteranceIdx: number;
+  wordIdx: number;
+  isActive: boolean;
+  isPast: boolean;
+}) => (
+  <span
+    data-utterance={utteranceIdx}
+    data-word={wordIdx}
+    data-start={word.start}
+    data-end={word.end}
+    className={`inline-block mr-2 text-3xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 select-none ${
+      isActive 
+        ? 'text-white current-word' 
+        : isPast 
+          ? 'text-gray-200' 
+          : 'text-gray-400'
+    }`}
+  >
+    {word.word}
+  </span>
+));
+
+// Memoized Utterance Component
+const UtteranceBlock = React.memo(({ 
+  utterance, 
+  utteranceIdx, 
+  currentWordGlobal 
+}: {
+  utterance: Utterance;
+  utteranceIdx: number;
+  currentWordGlobal: { utteranceIdx: number; wordIdx: number };
+}) => {
+  return (
+    <div className="mb-1">
+      {utterance.words.map((word, wordIdx) => {
+        const isActive = currentWordGlobal.utteranceIdx === utteranceIdx && 
+                        currentWordGlobal.wordIdx === wordIdx;
+        const isPast = currentWordGlobal.utteranceIdx > utteranceIdx || 
+                       (currentWordGlobal.utteranceIdx === utteranceIdx && 
+                        currentWordGlobal.wordIdx > wordIdx);
+        
+        return (
+          <WordSpan
+            key={`${utteranceIdx}-${wordIdx}`}
+            word={word}
+            utteranceIdx={utteranceIdx}
+            wordIdx={wordIdx}
+            isActive={isActive}
+            isPast={isPast}
+          />
+        );
+      })}
+    </div>
+  );
+});
+
+export default function TranscriptionPlayer({ data }: { data: TranscriptionData }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [showingTranslation, setShowingTranslation] = useState<{utteranceIdx: number, wordIdx: number} | null>(null);
+  
+  // Track current word position efficiently
+  const [currentWordGlobal, setCurrentWordGlobal] = useState({ utteranceIdx: 0, wordIdx: 0 });
+  
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const lastTimeRef = useRef(0);
   
-  // Get all words with timing
-  const allWords = data.utterances.flatMap(utterance => utterance.words);
-  
+  // Optimized current word tracking
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     
     const updateTime = () => {
-      setCurrentTime(audio.currentTime);
+      const time = audio.currentTime;
+      setCurrentTime(time);
+      
+      // Only update if time changed significantly (more than 0.05 seconds)
+      if (Math.abs(time - lastTimeRef.current) < 0.05) return;
+      lastTimeRef.current = time;
+      
+      // Find current word efficiently
+      let found = false;
+      let newUtteranceIdx = currentWordGlobal.utteranceIdx;
+      let newWordIdx = currentWordGlobal.wordIdx;
+      
+      // First, check if we're still in the same word
+      const currentUtterance = data.utterances[newUtteranceIdx];
+      if (currentUtterance) {
+        const currentWord = currentUtterance.words[newWordIdx];
+        if (currentWord && time >= currentWord.start && time < currentWord.end) {
+          return; // Still in the same word, no update needed
+        }
+      }
+      
+      // Check next word (most common case during playback)
+      if (currentUtterance && newWordIdx < currentUtterance.words.length - 1) {
+        const nextWord = currentUtterance.words[newWordIdx + 1];
+        if (time >= nextWord.start && time < nextWord.end) {
+          setCurrentWordGlobal({ utteranceIdx: newUtteranceIdx, wordIdx: newWordIdx + 1 });
+          return;
+        }
+      }
+      
+      // Check next utterance
+      if (newUtteranceIdx < data.utterances.length - 1) {
+        const nextUtterance = data.utterances[newUtteranceIdx + 1];
+        if (nextUtterance.words.length > 0) {
+          const firstWord = nextUtterance.words[0];
+          if (time >= firstWord.start && time < firstWord.end) {
+            setCurrentWordGlobal({ utteranceIdx: newUtteranceIdx + 1, wordIdx: 0 });
+            return;
+          }
+        }
+      }
+      
+      // If not found, do a full search (only happens during seeking)
+      for (let uIdx = 0; uIdx < data.utterances.length && !found; uIdx++) {
+        const utterance = data.utterances[uIdx];
+        for (let wIdx = 0; wIdx < utterance.words.length; wIdx++) {
+          const word = utterance.words[wIdx];
+          if (time >= word.start && time < word.end) {
+            if (uIdx !== newUtteranceIdx || wIdx !== newWordIdx) {
+              setCurrentWordGlobal({ utteranceIdx: uIdx, wordIdx: wIdx });
+            }
+            found = true;
+            break;
+          }
+        }
+      }
     };
     
     audio.addEventListener('timeupdate', updateTime);
     return () => audio.removeEventListener('timeupdate', updateTime);
-  }, []);
+  }, [currentWordGlobal, data.utterances]);
   
-  const togglePlayPause = () => {
+  // Event delegation for word clicks
+  const handleTranscriptClick = useCallback((e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (!target.dataset.utterance) return;
+    
+    const utteranceIdx = parseInt(target.dataset.utterance);
+    const wordIdx = parseInt(target.dataset.word || '0');
+    const startTime = parseFloat(target.dataset.start || '0');
+    
+    if (clickTimerRef.current) {
+      // Double click - seek to word position
+      clearTimeout(clickTimerRef.current);
+      clickTimerRef.current = null;
+      seekToTime(startTime);
+    } else {
+      // Single click - show translation
+      clickTimerRef.current = setTimeout(() => {
+        pauseAudio();
+        const utterance = data.utterances[utteranceIdx];
+        if (utterance?.translation) {
+          setShowingTranslation({ utteranceIdx, wordIdx });
+          setTimeout(() => setShowingTranslation(null), 3000);
+        }
+        clickTimerRef.current = null;
+      }, 250);
+    }
+  }, [data.utterances]);
+  
+  const togglePlayPause = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
     
@@ -39,7 +204,24 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
       audio.play();
     }
     setIsPlaying(!isPlaying);
-  };
+  }, [isPlaying]);
+  
+  const pauseAudio = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    audio.pause();
+    setIsPlaying(false);
+  }, []);
+  
+  const seekToTime = useCallback((time: number) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    audio.currentTime = time;
+    audio.play();
+    setIsPlaying(true);
+  }, []);
   
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -50,92 +232,40 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
   const getRemainingTime = () => {
     return data.duration - currentTime;
   };
-
-  const handleWordClick = (word: Word, utteranceIdx: number, wordIdx: number) => {
-    if (clickTimerRef.current) {
-      // Double click - seek to word position
-      clearTimeout(clickTimerRef.current);
-      clickTimerRef.current = null;
-      seekToTime(word.start);
-    } else {
-      // Single click - pause audio and show translation after delay
-      clickTimerRef.current = setTimeout(() => {
-        pauseAudio();
-        const utterance = data.utterances[utteranceIdx];
-        if (utterance.translation) {
-          setShowingTranslation({ utteranceIdx, wordIdx });
-          // Hide translation after 3 seconds
-          setTimeout(() => setShowingTranslation(null), 3000);
-        }
-        clickTimerRef.current = null;
-      }, 250);
-    }
-  };
-
-  const pauseAudio = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    
-    audio.pause();
-    setIsPlaying(false);
-  };
-
-  const seekToTime = (time: number) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    
-    audio.currentTime = time;
-    audio.play();
-    setIsPlaying(true);
-  };
   
-  // Auto-scroll to current word
+  // Auto-scroll with debounce
   useEffect(() => {
-    const currentWordElement = document.querySelector('.current-word');
-    if (currentWordElement && scrollContainerRef.current) {
-      currentWordElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }, [currentTime]);
+    const timer = setTimeout(() => {
+      const currentWordElement = document.querySelector('.current-word');
+      if (currentWordElement && scrollContainerRef.current) {
+        currentWordElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, [currentWordGlobal]);
   
   return (
-    <div className="h-screen-safe bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col">
-      {/* Header */}
-
-      
+    <div className="h-screen bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col">
       {/* Title */}
       <div className="px-4 py-2 text-center">
         <h1 className="font-semibold truncate">{data.title}</h1>
       </div>
       
-      {/* Transcription */}
+      {/* Transcription with Event Delegation */}
       <div 
         ref={scrollContainerRef}
-        className="flex-1 overflow-y-auto px-6 py-4 scrollbar-hide"
+        className="flex-1 overflow-y-auto px-6 py-4"
+        onClick={handleTranscriptClick}
       >
         <div className="space-y-1 pb-32">
           {data.utterances.map((utterance, idx) => (
-            <div key={idx} className="">
-              {utterance.words.map((word, wordIdx) => {
-                const isCurrentWord = currentTime >= word.start && currentTime < word.end;
-                const isPastWord = currentTime >= word.end;
-                
-                return (
-                  <span
-                    key={`${idx}-${wordIdx}`}
-                    onClick={() => handleWordClick(word, idx, wordIdx)}
-                    className={`inline-block mr-2 text-3xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 select-none ${
-                      isCurrentWord 
-                        ? 'text-white current-word' 
-                        : isPastWord 
-                          ? 'text-gray-200' 
-                          : 'text-gray-400'
-                    }`}
-                  >
-                    {word.word}
-                  </span>
-                );
-              })}
-            </div>
+            <UtteranceBlock
+              key={idx}
+              utterance={utterance}
+              utteranceIdx={idx}
+              currentWordGlobal={currentWordGlobal}
+            />
           ))}
         </div>
         
@@ -179,7 +309,6 @@ export default function TranscriptionPlayer({ data }: TranscriptionPlayerProps) 
             )}
           </button>
         </div>
-
       </div>
       
       <audio
