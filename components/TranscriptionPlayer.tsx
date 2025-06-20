@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Play, Pause } from 'lucide-react';
 
 // Types
@@ -20,7 +20,7 @@ interface TranscriptionData {
   utterances: Utterance[];
 }
 
-// Memoized Word Component - Only re-renders when its active state changes
+// Memoized Word Component
 const WordSpan = React.memo(({ 
   word, 
   utteranceIdx, 
@@ -89,8 +89,6 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [showingTranslation, setShowingTranslation] = useState<{utteranceIdx: number, wordIdx: number} | null>(null);
-  
-  // Track current word position efficiently
   const [currentWordGlobal, setCurrentWordGlobal] = useState({ utteranceIdx: 0, wordIdx: 0 });
   
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -107,25 +105,21 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
       const time = audio.currentTime;
       setCurrentTime(time);
       
-      // Only update if time changed significantly (more than 0.05 seconds)
       if (Math.abs(time - lastTimeRef.current) < 0.05) return;
       lastTimeRef.current = time;
       
-      // Find current word efficiently
       let found = false;
       let newUtteranceIdx = currentWordGlobal.utteranceIdx;
       let newWordIdx = currentWordGlobal.wordIdx;
       
-      // First, check if we're still in the same word
       const currentUtterance = data.utterances[newUtteranceIdx];
       if (currentUtterance) {
         const currentWord = currentUtterance.words[newWordIdx];
         if (currentWord && time >= currentWord.start && time < currentWord.end) {
-          return; // Still in the same word, no update needed
+          return;
         }
       }
       
-      // Check next word (most common case during playback)
       if (currentUtterance && newWordIdx < currentUtterance.words.length - 1) {
         const nextWord = currentUtterance.words[newWordIdx + 1];
         if (time >= nextWord.start && time < nextWord.end) {
@@ -134,7 +128,6 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
         }
       }
       
-      // Check next utterance
       if (newUtteranceIdx < data.utterances.length - 1) {
         const nextUtterance = data.utterances[newUtteranceIdx + 1];
         if (nextUtterance.words.length > 0) {
@@ -146,7 +139,6 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
         }
       }
       
-      // If not found, do a full search (only happens during seeking)
       for (let uIdx = 0; uIdx < data.utterances.length && !found; uIdx++) {
         const utterance = data.utterances[uIdx];
         for (let wIdx = 0; wIdx < utterance.words.length; wIdx++) {
@@ -176,12 +168,10 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     const startTime = parseFloat(target.dataset.start || '0');
     
     if (clickTimerRef.current) {
-      // Double click - seek to word position
       clearTimeout(clickTimerRef.current);
       clickTimerRef.current = null;
       seekToTime(startTime);
     } else {
-      // Single click - show translation
       clickTimerRef.current = setTimeout(() => {
         pauseAudio();
         const utterance = data.utterances[utteranceIdx];
@@ -233,7 +223,7 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     return data.duration - currentTime;
   };
   
-  // Auto-scroll with debounce
+  // Auto-scroll
   useEffect(() => {
     const timer = setTimeout(() => {
       const currentWordElement = document.querySelector('.current-word');
@@ -246,19 +236,19 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   }, [currentWordGlobal]);
   
   return (
-    <div className="h-screen bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col">
+    <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col">
       {/* Title */}
-      <div className="px-4 py-2 text-center">
+      <div className="flex-shrink-0 px-4 py-2 text-center">
         <h1 className="font-semibold truncate">{data.title}</h1>
       </div>
       
-      {/* Transcription with Event Delegation */}
+      {/* Transcription */}
       <div 
         ref={scrollContainerRef}
-        className="flex-1 overflow-y-auto px-6 py-4"
+        className="flex-1 overflow-y-auto px-6 py-4 min-h-0"
         onClick={handleTranscriptClick}
       >
-        <div className="space-y-1 pb-32">
+        <div className="pb-8">
           {data.utterances.map((utterance, idx) => (
             <UtteranceBlock
               key={idx}
@@ -268,46 +258,58 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
             />
           ))}
         </div>
-        
-        {/* Translation Overlay */}
-        {showingTranslation && (
-          <div className="fixed inset-x-4 bottom-32 bg-black bg-opacity-90 backdrop-blur-sm rounded-lg p-4 z-10">
-            <div className="text-sm text-gray-300 mb-1">English Translation:</div>
-            <div className="text-lg text-white">
-              {data.utterances[showingTranslation.utteranceIdx]?.translation}
-            </div>
-          </div>
-        )}
       </div>
       
-      {/* Player Controls */}
-      <div className="backdrop-blur-sm p-4" style={{ paddingBottom: 'max(2rem, env(safe-area-inset-bottom))' }}>
-        {/* Progress Bar */}
-        <div className="mb-2">
-          <div className="relative h-1 bg-gray-600 rounded-full overflow-hidden">
-            <div 
-              className="absolute h-full bg-white transition-all duration-300"
-              style={{ width: `${(currentTime / data.duration) * 100}%` }}
-            />
-          </div>
-          <div className="flex justify-between mt-1 text-sm text-gray-300">
-            <span>{formatTime(currentTime)}</span>
-            <span>-{formatTime(getRemainingTime())}</span>
+      {/* Translation Overlay */}
+      {showingTranslation && (
+        <div 
+          className="absolute left-4 right-4 bg-black bg-opacity-90 backdrop-blur-sm rounded-lg p-4 z-10"
+          style={{ bottom: 'calc(180px + env(safe-area-inset-bottom))' }}
+        >
+          <div className="text-sm text-gray-300 mb-1">English Translation:</div>
+          <div className="text-lg text-white">
+            {data.utterances[showingTranslation.utteranceIdx]?.translation}
           </div>
         </div>
-        
-        {/* Play Button */}
-        <div className="flex items-center justify-center">
-          <button
-            onClick={togglePlayPause}
-            className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform"
-          >
-            {isPlaying ? (
-              <Pause className="w-6 h-6 ml-0.5" />
-            ) : (
-              <Play className="w-6 h-6 ml-1" />
-            )}
-          </button>
+      )}
+      
+      {/* Player Controls - Fixed positioning */}
+      <div 
+        className="flex-shrink-0 bg-teal-800 bg-opacity-50 backdrop-blur-sm"
+        style={{ 
+          paddingBottom: 'env(safe-area-inset-bottom)',
+          paddingLeft: 'env(safe-area-inset-left)',
+          paddingRight: 'env(safe-area-inset-right)'
+        }}
+      >
+        <div className="p-4">
+          {/* Progress Bar */}
+          <div className="mb-3">
+            <div className="relative h-1 bg-gray-600 rounded-full overflow-hidden">
+              <div 
+                className="absolute h-full bg-white transition-all duration-300"
+                style={{ width: `${(currentTime / data.duration) * 100}%` }}
+              />
+            </div>
+            <div className="flex justify-between mt-1 text-sm text-gray-300">
+              <span>{formatTime(currentTime)}</span>
+              <span>-{formatTime(getRemainingTime())}</span>
+            </div>
+          </div>
+          
+          {/* Play Button */}
+          <div className="flex items-center justify-center">
+            <button
+              onClick={togglePlayPause}
+              className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform shadow-lg"
+            >
+              {isPlaying ? (
+                <Pause className="w-6 h-6" />
+              ) : (
+                <Play className="w-6 h-6 ml-0.5" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
       
