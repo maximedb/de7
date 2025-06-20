@@ -39,7 +39,7 @@ const WordSpan = React.memo(({
     data-word={wordIdx}
     data-start={word.start}
     data-end={word.end}
-    className={`inline-block mr-2 text-3xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 select-none ${
+    className={`inline-block mr-1 text-2xl sm:text-3xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 select-none break-words ${
       isActive 
         ? 'text-white current-word' 
         : isPast 
@@ -62,7 +62,7 @@ const UtteranceBlock = React.memo(({
   currentWordGlobal: { utteranceIdx: number; wordIdx: number };
 }) => {
   return (
-    <div className="mb-1">
+    <div className="mb-1 leading-relaxed">
       {utterance.words.map((word, wordIdx) => {
         const isActive = currentWordGlobal.utteranceIdx === utteranceIdx && 
                         currentWordGlobal.wordIdx === wordIdx;
@@ -236,7 +236,7 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   }, [currentWordGlobal]);
   
   return (
-    <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col">
+    <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col overflow-hidden">
       {/* Title */}
       <div className="flex-shrink-0 px-4 py-2 text-center">
         <h1 className="font-semibold truncate">{data.title}</h1>
@@ -245,10 +245,10 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
       {/* Transcription */}
       <div 
         ref={scrollContainerRef}
-        className="flex-1 overflow-y-auto px-6 py-4 min-h-0"
+        className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 py-4 min-h-0"
         onClick={handleTranscriptClick}
       >
-        <div className="pb-8">
+        <div className="pb-8 w-full">
           {data.utterances.map((utterance, idx) => (
             <UtteranceBlock
               key={idx}
@@ -267,7 +267,7 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
           style={{ bottom: 'calc(180px + env(safe-area-inset-bottom))' }}
         >
           <div className="text-sm text-gray-300 mb-1">English Translation:</div>
-          <div className="text-lg text-white">
+          <div className="text-lg text-white break-words">
             {data.utterances[showingTranslation.utteranceIdx]?.translation}
           </div>
         </div>
