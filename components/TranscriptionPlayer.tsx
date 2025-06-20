@@ -281,7 +281,7 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
       </div>
       
       {/* Player Controls */}
-      <div className="backdrop-blur-sm p-4 pb-safe-bottom">
+      <div className="backdrop-blur-sm p-4" style={{ paddingBottom: 'max(2rem, env(safe-area-inset-bottom))' }}>
         {/* Progress Bar */}
         <div className="mb-2">
           <div className="relative h-1 bg-gray-600 rounded-full overflow-hidden">

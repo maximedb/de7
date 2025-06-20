@@ -5,7 +5,12 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        'safe-bottom': 'max(1rem, env(safe-area-inset-bottom))',
+        'safe-top': 'max(1rem, env(safe-area-inset-top))',
+      },
+    },
   },
   plugins: [],
 }
