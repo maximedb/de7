@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Play, Pause } from 'lucide-react';
+import { getUserId } from '../lib/userId';
 
 // Types
 interface Word {
@@ -90,11 +91,18 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   const [currentTime, setCurrentTime] = useState(0);
   const [showingTranslation, setShowingTranslation] = useState<{utteranceIdx: number, wordIdx: number} | null>(null);
   const [currentWordGlobal, setCurrentWordGlobal] = useState({ utteranceIdx: 0, wordIdx: 0 });
+  const [userId, setUserId] = useState<string>('');
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
   const lastTimeRef = useRef(0);
+  
+  // Initialize user ID on component mount
+  useEffect(() => {
+    const id = getUserId();
+    setUserId(id);
+  }, []);
   
   // Optimized current word tracking
   useEffect(() => {
@@ -159,6 +167,31 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   }, [currentWordGlobal, data.utterances]);
   
   // Event delegation for word clicks
+  // Track word clicks asynchronously (fire and forget)
+  const trackWordClick = useCallback((utteranceIdx: number, wordIdx: number, word: string) => {
+    if (!userId) return;
+    
+    const utterance = data.utterances[utteranceIdx];
+    if (!utterance) return;
+    
+    const fullUtterance = utterance.words.map(w => w.word).join(' ');
+    
+    // Fire and forget - don't await or block UI
+    fetch('/api/word-clicks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user_id: userId,
+        utterance: fullUtterance,
+        word: word,
+      }),
+    }).catch(error => {
+      console.error('Failed to track word click:', error);
+    });
+  }, [userId, data.utterances]);
+
   const handleTranscriptClick = useCallback((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
     if (!target.dataset.utterance) return;
@@ -166,6 +199,10 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     const utteranceIdx = parseInt(target.dataset.utterance);
     const wordIdx = parseInt(target.dataset.word || '0');
     const startTime = parseFloat(target.dataset.start || '0');
+    const word = target.textContent || '';
+    
+    // Track word click asynchronously (no delay for user)
+    trackWordClick(utteranceIdx, wordIdx, word);
     
     if (clickTimerRef.current) {
       clearTimeout(clickTimerRef.current);
@@ -182,7 +219,7 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
         clickTimerRef.current = null;
       }, 250);
     }
-  }, [data.utterances]);
+  }, [data.utterances, trackWordClick]);
   
   const togglePlayPause = useCallback(() => {
     const audio = audioRef.current;
