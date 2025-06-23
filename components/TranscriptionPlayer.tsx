@@ -16,6 +16,7 @@ interface Utterance {
 
 interface TranscriptionData {
   title: string;
+  date: string;
   duration: number;
   audioUrl: string;
   utterances: Utterance[];
@@ -184,6 +185,8 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
       },
       body: JSON.stringify({
         user_id: userId,
+        transcript_id: data.date,
+        utterance_id: utteranceIdx,
         utterance: fullUtterance,
         word: word,
       }),

@@ -10,20 +10,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Initialize database table if it doesn't exist
     await initDatabase();
 
-    const { user_id, utterance, word }: { user_id: string; utterance: string; word: string } = req.body;
+    const { user_id, transcript_id, utterance_id, utterance, word }: { 
+      user_id: string; 
+      transcript_id: string;
+      utterance_id: number;
+      utterance: string; 
+      word: string 
+    } = req.body;
 
-    if (!user_id || !utterance || !word) {
-      return res.status(400).json({ error: 'Missing required fields: user_id, utterance, word' });
+    if (!user_id || !transcript_id || utterance_id === undefined || !utterance || !word) {
+      return res.status(400).json({ error: 'Missing required fields: user_id, transcript_id, utterance_id, utterance, word' });
     }
 
     // Insert word click into database
     const result = await insertWordClick({
       user_id,
+      transcript_id,
+      utterance_id,
       utterance,
       word
     });
 
-    res.status(200).json({ success: true, data: result[0] });
+    res.status(200).json({ success: true, data: result });
   } catch (error) {
     console.error('Error storing word click:', error);
     res.status(500).json({ error: 'Internal server error' });
