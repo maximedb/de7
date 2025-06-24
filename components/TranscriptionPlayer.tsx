@@ -1,26 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Play, Pause } from 'lucide-react';
 import { getUserId } from '../lib/userId';
-
-// Types
-interface Word {
-  word: string;
-  start: number;
-  end: number;
-}
-
-interface Utterance {
-  words: Word[];
-  translation?: string;
-}
-
-interface TranscriptionData {
-  title: string;
-  date: string;
-  duration: number;
-  audioUrl: string;
-  utterances: Utterance[];
-}
+import { Word, Utterance, TranscriptionData } from '../lib/types';
 
 // Memoized Word Component
 const WordSpan = React.memo(({ 
