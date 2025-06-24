@@ -28,26 +28,31 @@ const WordSpan = React.memo(({
   utteranceIdx, 
   wordIdx, 
   isActive, 
-  isPast 
+  isPast,
+  isClicked 
 }: {
   word: Word;
   utteranceIdx: number;
   wordIdx: number;
   isActive: boolean;
   isPast: boolean;
+  isClicked: boolean;
 }) => (
   <span
     data-utterance={utteranceIdx}
     data-word={wordIdx}
     data-start={word.start}
     data-end={word.end}
-    className={`inline-block mr-1 text-2xl sm:text-3xl font-medium transition-colors duration-300 cursor-pointer hover:text-gray-200 select-none break-words ${
-      isActive 
-        ? 'text-white current-word' 
-        : isPast 
-          ? 'text-gray-200' 
-          : 'text-gray-400'
+    className={`inline-block mr-1 text-2xl sm:text-3xl font-medium transition-all duration-300 cursor-pointer hover:text-gray-200 select-none break-words ${
+      isClicked
+        ? 'text-yellow-300 bg-yellow-400 bg-opacity-20 rounded'
+        : isActive 
+          ? 'text-white current-word' 
+          : isPast 
+            ? 'text-gray-200' 
+            : 'text-gray-400'
     }`}
+    style={isClicked ? { boxShadow: '0 0 0 2px rgba(251, 191, 36, 0.3)' } : undefined}
   >
     {word.word}
   </span>
@@ -57,20 +62,30 @@ const WordSpan = React.memo(({
 const UtteranceBlock = React.memo(({ 
   utterance, 
   utteranceIdx, 
-  currentWordGlobal 
+  currentWordGlobal,
+  clickedWord,
+  previousUtterance 
 }: {
   utterance: Utterance;
   utteranceIdx: number;
   currentWordGlobal: { utteranceIdx: number; wordIdx: number };
+  clickedWord: { utteranceIdx: number; wordIdx: number } | null;
+  previousUtterance?: Utterance;
 }) => {
+  // Calculate gap between this utterance and the previous one
+  const hasLargeGap = previousUtterance ? 
+    (utterance.start - previousUtterance.end) > 1.5 : false;
+  
   return (
-    <div className="mb-1 leading-relaxed">
+    <div className={`leading-relaxed ${hasLargeGap ? 'mb-6' : 'mb-1'}`}>
       {utterance.words.map((word, wordIdx) => {
         const isActive = currentWordGlobal.utteranceIdx === utteranceIdx && 
                         currentWordGlobal.wordIdx === wordIdx;
         const isPast = currentWordGlobal.utteranceIdx > utteranceIdx || 
                        (currentWordGlobal.utteranceIdx === utteranceIdx && 
                         currentWordGlobal.wordIdx > wordIdx);
+        const isClicked = clickedWord?.utteranceIdx === utteranceIdx && 
+                         clickedWord?.wordIdx === wordIdx;
         
         return (
           <WordSpan
@@ -80,6 +95,7 @@ const UtteranceBlock = React.memo(({
             wordIdx={wordIdx}
             isActive={isActive}
             isPast={isPast}
+            isClicked={isClicked}
           />
         );
       })}
@@ -93,6 +109,7 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   const [showingTranslation, setShowingTranslation] = useState<{utteranceIdx: number, wordIdx: number} | null>(null);
   const [currentWordGlobal, setCurrentWordGlobal] = useState({ utteranceIdx: 0, wordIdx: 0 });
   const [userId, setUserId] = useState<string>('');
+  const [clickedWord, setClickedWord] = useState<{utteranceIdx: number, wordIdx: number} | null>(null);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -204,21 +221,28 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     const startTime = parseFloat(target.dataset.start || '0');
     const word = target.textContent || '';
     
-    // Track word click asynchronously (no delay for user)
-    trackWordClick(utteranceIdx, wordIdx, word);
+    // Show click highlight immediately
+    setClickedWord({ utteranceIdx, wordIdx });
+    setTimeout(() => setClickedWord(null), 400);
     
     if (clickTimerRef.current) {
+      // Double click detected - seek to word position
       clearTimeout(clickTimerRef.current);
       clickTimerRef.current = null;
       seekToTime(startTime);
+      // No tracking for double clicks
     } else {
+      // Single click - pause audio and show translation immediately
+      pauseAudio();
+      const utterance = data.utterances[utteranceIdx];
+      if (utterance?.translation) {
+        setShowingTranslation({ utteranceIdx, wordIdx });
+      }
+      
+      // Set timer to confirm single click and track it
       clickTimerRef.current = setTimeout(() => {
-        pauseAudio();
-        const utterance = data.utterances[utteranceIdx];
-        if (utterance?.translation) {
-          setShowingTranslation({ utteranceIdx, wordIdx });
-          setTimeout(() => setShowingTranslation(null), 3000);
-        }
+        // Track word click only after confirming it's a single click
+        trackWordClick(utteranceIdx, wordIdx, word);
         clickTimerRef.current = null;
       }, 250);
     }
@@ -227,6 +251,9 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   const togglePlayPause = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
+    
+    // Hide translation when play button is clicked
+    setShowingTranslation(null);
     
     if (isPlaying) {
       audio.pause();
@@ -295,6 +322,8 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
               utterance={utterance}
               utteranceIdx={idx}
               currentWordGlobal={currentWordGlobal}
+              clickedWord={clickedWord}
+              previousUtterance={idx > 0 ? data.utterances[idx - 1] : undefined}
             />
           ))}
         </div>
@@ -303,8 +332,16 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
       {/* Translation Overlay */}
       {showingTranslation && (
         <div 
-          className="absolute left-4 right-4 bg-black bg-opacity-90 backdrop-blur-sm rounded-lg p-4 z-10"
+          className="absolute left-4 right-4 bg-black bg-opacity-90 backdrop-blur-sm rounded-lg p-4 z-10 cursor-pointer"
           style={{ bottom: 'calc(180px + env(safe-area-inset-bottom))' }}
+          onClick={() => {
+            setShowingTranslation(null);
+            const audio = audioRef.current;
+            if (audio) {
+              audio.play();
+              setIsPlaying(true);
+            }
+          }}
         >
           <div className="text-sm text-gray-300 mb-1">English Translation:</div>
           <div className="text-lg text-white break-words">
