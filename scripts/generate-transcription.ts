@@ -1,6 +1,7 @@
 import { downloadLatestMp3, PodcastInfo } from '../lib/podcast';
 import { transcribeAudioWithGladia } from '../lib/gladia';
 import { translateUtterances } from '../lib/openai';
+import { groupUtterances } from '../lib/utterance-grouper';
 import * as fs from 'fs';
 import * as path from 'path';
 import { TranscriptionData } from '../lib/types';
@@ -70,6 +71,11 @@ async function main() {
   const metadata = result.metadata || {};
   const transcription = result.transcription || {};
   let utterances = transcription.utterances || [];
+  
+  // Group utterances before translation
+  console.log(`Grouping ${utterances.length} utterances...`);
+  utterances = groupUtterances(utterances);
+  console.log(`After grouping: ${utterances.length} utterances`);
   
   // Check if we need to translate utterances
   const hasTranslations = utterances.some((u: any) => u.translation);

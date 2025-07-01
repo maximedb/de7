@@ -58,7 +58,8 @@ export async function transcribeAudioWithGladia(audioPath: string, apiKey: strin
     const transcriptionPayload = {
       audio_url: audioUrl,
       diarization: true,
-      detect_language: true
+      detect_language: true,
+      sentences: true
     };
     
     const transcriptionResponse = await axios.post(
