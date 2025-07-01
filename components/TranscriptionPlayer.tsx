@@ -55,10 +55,10 @@ const UtteranceBlock = React.memo(({
 }) => {
   // Calculate gap between this utterance and the previous one
   const hasLargeGap = previousUtterance ? 
-    (utterance.start - previousUtterance.end) > 1.5 : false;
+    (utterance.start - previousUtterance.end) > 1.0 : false;
   
   return (
-    <div className={`leading-relaxed ${hasLargeGap ? 'mb-6' : 'mb-1'}`}>
+    <div className={`leading-relaxed ${hasLargeGap ? 'mt-6' : 'mt-1'}`}>
       {utterance.words.map((word, wordIdx) => {
         const isActive = currentWordGlobal.utteranceIdx === utteranceIdx && 
                         currentWordGlobal.wordIdx === wordIdx;
