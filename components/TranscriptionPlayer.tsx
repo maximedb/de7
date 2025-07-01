@@ -91,6 +91,7 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   const [currentWordGlobal, setCurrentWordGlobal] = useState({ utteranceIdx: 0, wordIdx: 0 });
   const [userId, setUserId] = useState<string>('');
   const [clickedWord, setClickedWord] = useState<{utteranceIdx: number, wordIdx: number} | null>(null);
+  const [hasRestoredPosition, setHasRestoredPosition] = useState(false);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -102,6 +103,65 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     const id = getUserId();
     setUserId(id);
   }, []);
+
+  // Save/restore audio position
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio || hasRestoredPosition) return;
+
+    const positionKey = `audio_position_${data.date}`;
+    const lastTranscriptionKey = 'last_transcription_date';
+    
+    // Check if this is a new transcription
+    const lastTranscriptionDate = localStorage.getItem(lastTranscriptionKey);
+    const isNewTranscription = lastTranscriptionDate !== data.date;
+    
+    if (isNewTranscription) {
+      // New transcription - start from beginning and clear old positions
+      localStorage.setItem(lastTranscriptionKey, data.date);
+      // Clear all old position keys
+      Object.keys(localStorage).forEach(key => {
+        if (key.startsWith('audio_position_') && key !== positionKey) {
+          localStorage.removeItem(key);
+        }
+      });
+      setHasRestoredPosition(true);
+    } else {
+      // Same transcription - restore position
+      const savedPosition = localStorage.getItem(positionKey);
+      if (savedPosition) {
+        const position = parseFloat(savedPosition);
+        audio.currentTime = position;
+        setCurrentTime(position);
+      }
+      setHasRestoredPosition(true);
+    }
+  }, [data.date, hasRestoredPosition]);
+
+  // Save position periodically while playing
+  useEffect(() => {
+    if (!hasRestoredPosition) return;
+    
+    const positionKey = `audio_position_${data.date}`;
+    const savePosition = () => {
+      if (audioRef.current) {
+        localStorage.setItem(positionKey, audioRef.current.currentTime.toString());
+      }
+    };
+
+    const interval = setInterval(() => {
+      if (isPlaying) {
+        savePosition();
+      }
+    }, 5000); // Save every 5 seconds
+
+    // Also save on pause
+    if (!isPlaying && audioRef.current) {
+      savePosition();
+    }
+
+    return () => clearInterval(interval);
+  }, [isPlaying, data.date, hasRestoredPosition]);
   
   // Optimized current word tracking
   useEffect(() => {
