@@ -19,14 +19,14 @@ export async function translateUtterances(utterances: Utterance[], apiKey: strin
     ).join('\n');
     
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'gpt-4o-mini',
+          model: 'mistral-small-latest',
           messages: [
             {
               role: 'system',
@@ -42,7 +42,7 @@ export async function translateUtterances(utterances: Utterance[], apiKey: strin
       });
       
       if (!response.ok) {
-        throw new Error(`OpenAI API error: ${response.status}`);
+        throw new Error(`Mistral API error: ${response.status}`);
       }
       
       const data = await response.json();

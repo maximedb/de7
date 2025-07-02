@@ -8,7 +8,7 @@ import { TranscriptionData } from '../lib/types';
 
 async function main() {
   const gladiaApiKey = process.env.GLADIA_API_KEY;
-  const openaiApiKey = process.env.OPENAI_API_KEY;
+  const mistralApiKey = process.env.MISTRAL_API_KEY;
   const rssUrl = process.env.RSS_URL || "https://www.omnycontent.com/d/playlist/5978613f-cd11-4352-8f26-adb900fa9a58/3c1222e5-288f-4047-a2f0-ae1b00a91688/a0389eb5-55da-493d-b7bb-ae1b00d0d95a/podcast.rss";
   
   if (!gladiaApiKey) {
@@ -16,8 +16,8 @@ async function main() {
     process.exit(1);
   }
   
-  if (!openaiApiKey) {
-    console.error("OPENAI_API_KEY not found in environment variables");
+  if (!mistralApiKey) {
+    console.error("MISTRAL_API_KEY not found in environment variables");
     process.exit(1);
   }
   
@@ -81,7 +81,7 @@ async function main() {
   const hasTranslations = utterances.some((u: any) => u.translation);
   if (!hasTranslations && utterances.length > 0) {
     console.log("Translating utterances to English...");
-    utterances = await translateUtterances(utterances, openaiApiKey);
+    utterances = await translateUtterances(utterances, mistralApiKey);
     
     // Update the transcription file with translations
     const updatedResult = {
