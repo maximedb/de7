@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, Pause } from 'lucide-react';
+import { Play, Pause, ChevronDown } from 'lucide-react';
 import { getUserId } from '../lib/userId';
 import { Word, Utterance, TranscriptionData } from '../lib/types';
+
+type Language = 'en' | 'fr';
 
 // Memoized Word Component
 const WordSpan = React.memo(({ 
@@ -92,17 +94,40 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   const [userId, setUserId] = useState<string>('');
   const [clickedWord, setClickedWord] = useState<{utteranceIdx: number, wordIdx: number} | null>(null);
   const [hasRestoredPosition, setHasRestoredPosition] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>('en');
+  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
   const lastTimeRef = useRef(0);
   
-  // Initialize user ID on component mount
+  // Initialize user ID and language preference on component mount
   useEffect(() => {
     const id = getUserId();
     setUserId(id);
+    
+    // Restore saved language preference
+    const savedLanguage = localStorage.getItem('preferred_language') as Language;
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'fr')) {
+      setSelectedLanguage(savedLanguage);
+    }
   }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.language-selector')) {
+        setShowLanguageDropdown(false);
+      }
+    };
+
+    if (showLanguageDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [showLanguageDropdown]);
 
   // Save/restore audio position
   useEffect(() => {
@@ -276,7 +301,10 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
       // Single click - pause audio and show translation immediately
       pauseAudio();
       const utterance = data.utterances[utteranceIdx];
-      if (utterance?.translation) {
+      // Support both new translations object and legacy translation field
+      const hasTranslation = utterance?.translations?.[selectedLanguage] || 
+                            (selectedLanguage === 'en' && utterance?.translation);
+      if (hasTranslation) {
         setShowingTranslation({ utteranceIdx, wordIdx });
       }
       
@@ -321,6 +349,13 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     setIsPlaying(true);
   }, []);
   
+  const changeLanguage = useCallback((language: Language) => {
+    setSelectedLanguage(language);
+    localStorage.setItem('preferred_language', language);
+    setShowLanguageDropdown(false);
+    setShowingTranslation(null);
+  }, []);
+  
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
@@ -345,9 +380,40 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   
   return (
     <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col overflow-hidden">
-      {/* Title */}
-      <div className="flex-shrink-0 px-4 py-2 text-center">
-        <h1 className="font-semibold truncate">{data.title}</h1>
+      {/* Header with Title and Language Selector */}
+      <div className="flex-shrink-0 px-4 py-2 flex items-center justify-between">
+        <div className="flex-1">
+          <h1 className="font-semibold truncate text-center">{data.title}</h1>
+        </div>
+        <div className="relative ml-4 language-selector">
+          <button
+            onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+            className="flex items-center space-x-1 bg-teal-800 hover:bg-teal-700 px-3 py-1 rounded-md transition-colors"
+          >
+            <span className="text-sm font-medium">{selectedLanguage.toUpperCase()}</span>
+            <ChevronDown className="w-4 h-4" />
+          </button>
+          {showLanguageDropdown && (
+            <div className="absolute right-0 top-full mt-1 bg-teal-800 rounded-md shadow-lg z-20 min-w-[80px]">
+              <button
+                onClick={() => changeLanguage('en')}
+                className={`block w-full text-left px-3 py-2 text-sm hover:bg-teal-700 rounded-t-md ${
+                  selectedLanguage === 'en' ? 'bg-teal-700' : ''
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => changeLanguage('fr')}
+                className={`block w-full text-left px-3 py-2 text-sm hover:bg-teal-700 rounded-b-md ${
+                  selectedLanguage === 'fr' ? 'bg-teal-700' : ''
+                }`}
+              >
+                FR
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       
       {/* Transcription */}
@@ -384,9 +450,12 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
             }
           }}
         >
-          <div className="text-sm text-gray-300 mb-1">English Translation:</div>
+          <div className="text-sm text-gray-300 mb-1">
+            {selectedLanguage === 'en' ? 'English Translation:' : 'Traduction française :'}
+          </div>
           <div className="text-lg text-white break-words">
-            {data.utterances[showingTranslation.utteranceIdx]?.translation}
+            {data.utterances[showingTranslation.utteranceIdx]?.translations?.[selectedLanguage] || 
+             (selectedLanguage === 'en' && data.utterances[showingTranslation.utteranceIdx]?.translation)}
           </div>
         </div>
       )}

@@ -12,6 +12,11 @@ export interface Utterance {
   confidence: number;
   speaker: number;
   words: Word[];
+  translations?: {
+    en?: string;
+    fr?: string;
+  };
+  // Legacy field for backward compatibility
   translation?: string;
 }
 

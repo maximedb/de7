@@ -12,13 +12,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture Overview
 
-This is a Next.js podcast transcription app that automatically downloads daily podcasts, transcribes them using Gladia API, displays them in a Spotify-style interface, and tracks user word interactions via Supabase. The app treats words as interactive, timed media elements rather than static text.
+This is a Next.js podcast transcription app that automatically downloads daily podcasts, transcribes them using Gladia API, displays them in a Spotify-style interface with dual-language translation support (English and French), and tracks user word interactions via Supabase. The app treats words as interactive, timed media elements rather than static text.
 
 ### Core Components
-- **TranscriptionPlayer**: Main UI component with dual-click word interaction, real-time audio sync, and translation overlays
+- **TranscriptionPlayer**: Main UI component with dual-click word interaction, real-time audio sync, translation overlays, and language selector (EN/FR)
 - **Transcription Pipeline**: `scripts/generate-transcription.ts` orchestrates download → transcription → translation → data processing
 - **Gladia Integration**: `lib/gladia.ts` handles API upload, transcription requests, and result polling
-- **OpenAI Integration**: `lib/openai.ts` translates Dutch utterances to English
+- **Mistral Integration**: `lib/openai.ts` translates Dutch utterances to both English and French using Mistral Batch API for cost-effective processing
 - **Podcast Download**: `lib/podcast.ts` downloads MP3s from RSS feeds
 - **Database Layer**: `lib/db.ts` manages Supabase word click tracking with delayed analytics
 - **User Identification**: `lib/userId.ts` generates and persists anonymous user IDs
@@ -34,7 +34,7 @@ This is a Next.js podcast transcription app that automatically downloads daily p
 ### Data Flow
 1. RSS feed → download MP3 + metadata → `public/audio/`
 2. MP3 → Gladia API → raw transcription → `public/transcriptions/YYYY-MM-DD.json`
-3. Raw transcription → OpenAI translation → processed data → `public/data/latest.json`
+3. Raw transcription → Mistral Batch API dual translation (EN/FR) → processed data → `public/data/latest.json`
 4. Next.js static generation reads latest.json for homepage
 5. User word clicks → delayed tracking → API endpoint → Supabase database storage
 
@@ -50,6 +50,7 @@ This is a Next.js podcast transcription app that automatically downloads daily p
 - **Event Delegation**: Single click handler using data attributes instead of per-word handlers
 - **Optimized Time Tracking**: Differential checking reduces timeupdate processing
 - **Layout Stability**: Click highlights use box-shadow instead of padding to prevent layout shift
+- **Batch API Processing**: Uses Mistral Batch API for cost-effective translation with automatic job polling and result processing
 
 ### File Structure
 - Raw transcriptions: `public/transcriptions/YYYY-MM-DD.json`
@@ -60,7 +61,7 @@ This is a Next.js podcast transcription app that automatically downloads daily p
 
 ### Environment Variables
 - `GLADIA_API_KEY` - Required for transcription API
-- `OPENAI_API_KEY` - Required for translation service
+- `MISTRAL_API_KEY` - Required for translation service
 - `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL
 - `SUPABASE_SERVICE_ROLE_KEY` - Supabase service role key for server-side operations
 - `RSS_URL` - Optional podcast RSS feed (has default)
@@ -83,7 +84,10 @@ CREATE TABLE word_clicks (
 - Appears instantly on single word click with backdrop blur
 - Positioned above player controls with safe area handling
 - Dismissed by: clicking overlay, clicking play button, or starting playback
-- Only shown if utterance has translation available
+- Only shown if utterance has translation available in selected language
+- Language selector (EN/FR dropdown) in top-right corner allows switching between English and French translations
+- Language preference is persisted in localStorage and restored on subsequent visits
+- Changing language automatically closes any open translation overlay
 
 ### Deployment
-GitHub Actions runs weekdays at 8 AM UTC to auto-generate transcriptions and deploy to GitHub Pages.
+GitHub Actions runs weekdays at 8 AM UTC to auto-generate transcriptions and deploy to GitHub Pages. The workflow uses OS temporary directories for batch file processing, making it compatible with CI environments.
