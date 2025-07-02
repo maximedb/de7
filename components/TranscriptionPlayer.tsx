@@ -450,10 +450,10 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
             }
           }}
         >
-          <div className="text-sm text-gray-300 mb-1">
+          <div className="text-sm text-gray-300 mb-2">
             {selectedLanguage === 'en' ? 'English Translation:' : 'Traduction française :'}
           </div>
-          <div className="text-lg text-white break-words">
+          <div className="text-2xl text-white break-words leading-relaxed">
             {data.utterances[showingTranslation.utteranceIdx]?.translations?.[selectedLanguage] || 
              (selectedLanguage === 'en' && data.utterances[showingTranslation.utteranceIdx]?.translation)}
           </div>
