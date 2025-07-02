@@ -342,7 +342,7 @@
           "channel": 0,
           "confidence": 0.99,
           "translations": {
-            "en": "Every day at 7 a.m., our take on current affairs in 7 points.",
+            "en": "Every day at 7 o'clock, our view on business in 7 points.",
             "fr": "Chaque jour à 7 heures, notre regard sur l'actualité en 7 points."
           }
         },
@@ -727,8 +727,8 @@
             }
           ],
           "translations": {
-            "en": "We will continue in this series by examining the value-added tax and ask ourselves, are the strongest shoulders, the most fortunate, really being targeted by this new tax?",
-            "fr": "Nous allons explorer cela plus en détail dans ce septième volet, en nous interrogeant sur la TVA et en nous demandant si les épaules les plus fortes, les plus fortunés, sont vraiment visés par cette nouvelle taxe."
+            "en": "We will continue in this seven to discuss value-added tax and ask ourselves, are the strongest shoulders, the most fortunate, really targeted by this new tax?",
+            "fr": "Nous allons explorer davantage la valeur ajoutée tax et nous demander si les épaules les plus fortes, les plus fortunés, sont vraiment visés par cette nouvelle taxe ?"
           }
         },
         {
@@ -1015,7 +1015,7 @@
           "channel": 0,
           "confidence": 0.65,
           "translations": {
-            "en": "It is Wednesday, July 2.",
+            "en": "It is Wednesday, July 2nd.",
             "fr": "Il est mercredi 2 juillet."
           }
         },
@@ -1220,7 +1220,7 @@
           "confidence": 0.95,
           "translations": {
             "en": "Grootbank KBC aims to enable crypto trading for users of its investment platform Bolero starting this fall.",
-            "fr": "La banque KBC prévoit de permettre à ses utilisateurs de trader des cryptomonnaies sur sa plateforme d'investissement Bolero à partir de l'automne."
+            "fr": "La grande banque KBC permettra à partir de l'automne le commerce de crypto pour les utilisateurs de sa plateforme d'investissement Bolero."
           }
         },
         {
@@ -1276,7 +1276,7 @@
           "channel": 0,
           "confidence": 0.98,
           "translations": {
-            "en": "The bank confirms this in due time.",
+            "en": "The bank confirms this at the time.",
             "fr": "La banque le confirme en temps utile."
           }
         },
@@ -1405,8 +1405,8 @@
           "channel": 0,
           "confidence": 0.97,
           "translations": {
-            "en": "KBC is currently being analyzed by regulators to be recognized as a provider of services related to cryptoassets.",
-            "fr": "KBC se fait actuellement analyser par les autorités de surveillance afin d'être reconnue comme fournisseur de services liés aux crypto-actifs."
+            "en": "KBC is currently being analyzed by regulators to be recognized as a provider of services related to crypto-assets.",
+            "fr": "KBC se fait actuellement analyser par les autorités de surveillance afin d'être reconnue comme fournisseur de services liés aux cryptoactifs."
           }
         },
         {
@@ -1746,7 +1746,7 @@
           "confidence": 0.97,
           "translations": {
             "en": "Specialist banking sector here on time.",
-            "fr": "Spécialiste du secteur bancaire à temps partiel."
+            "fr": "Spécialiste du secteur bancaire à temps plein."
           }
         },
         {
@@ -1923,7 +1923,7 @@
           "confidence": 0.89,
           "translations": {
             "en": "Other banks that you spoke to have either investigated it or are more hesitant.",
-            "fr": "D'autres banques que vous avez interrogées sont soit plus prudentes."
+            "fr": "D'autres banques que vous avez interrogées ont été soit plus réticentes, soit n'ont pas encore donné de réponse."
           }
         },
         {
@@ -2245,8 +2245,8 @@
           "channel": 0,
           "confidence": 0.94,
           "translations": {
-            "en": "You can already engage in crypto trading with neobanks like Revolut or on certain trading platforms.",
-            "fr": "Je peux bien sûr déjà investir dans la crypto-monnaie via des néobanques comme Revolut ou sur certaines plateformes de trading."
+            "en": "You can of course already engage in crypto with neobanks like Revolut or on certain trading platforms.",
+            "fr": "Je peux bien sûr déjà investir dans les crypto-monnaies via des néobanques comme Revolut ou sur certaines plateformes de trading."
           }
         },
         {
@@ -2294,7 +2294,7 @@
             }
           ],
           "translations": {
-            "en": "Binance or Coinbase, players like that.",
+            "en": "Binance or Coinbase, those kinds of players.",
             "fr": "Binance ou Coinbase, ce genre de joueurs."
           }
         },
@@ -2376,7 +2376,7 @@
           "confidence": 0.85,
           "translations": {
             "en": "Banks were actually somewhat allergic to all things crypto.",
-            "fr": "Les banques étaient en fait un peu allergiques à tout ce qui concernait la crypto."
+            "fr": "Les banques étaient en fait un peu allergiques à tout ce qui concernait les cryptos."
           }
         },
         {
@@ -2414,7 +2414,7 @@
           "channel": 0,
           "confidence": 0.82,
           "translations": {
-            "en": "There were the risks of widowhood.",
+            "en": "There were the risks of being widowed.",
             "fr": "Il y avait les risques de veuvage."
           }
         },
@@ -2529,7 +2529,7 @@
           "confidence": 0.93,
           "translations": {
             "en": "So far, they have been paying for the boat.",
-            "fr": "Jusqu'à présent, ils ont payé la pénalité pour le bateau."
+            "fr": "Jusqu'à présent, ils ont descendu la rivière en bateau."
           }
         },
         {
@@ -2642,7 +2642,7 @@
           "channel": 0,
           "confidence": 0.81,
           "translations": {
-            "en": "Why is KBC turning its back on that now?",
+            "en": "Why is KBC turning its car around now?",
             "fr": "Pourquoi KBC retourne-t-il sa veste maintenant ?"
           }
         },
@@ -2880,7 +2880,7 @@
           "confidence": 0.9,
           "translations": {
             "en": "Mika thinks so.",
-            "fr": "Mika dit ça."
+            "fr": "Mika s'appelle comme ça."
           }
         },
         {
@@ -3465,7 +3465,7 @@
           "confidence": 0.86,
           "translations": {
             "en": "What do these kinds of moves actually do for crypto?",
-            "fr": "Que font ces types de mouvements pour les crypto-monnaies ?"
+            "fr": "Qu'est-ce que ce genre de mouvements fait pour les crypto-monnaies ?"
           }
         },
         {
@@ -3549,7 +3549,7 @@
           "confidence": 0.93,
           "translations": {
             "en": "It makes crypto a bit more mainstream.",
-            "fr": "Ça rend le crypto un peu plus acceptable dans les salons."
+            "fr": "Ça rend le crypto un peu plus fréquentable."
           }
         },
         {
@@ -3720,7 +3720,7 @@
           "channel": 0,
           "confidence": 0.93,
           "translations": {
-            "en": "That sends the crypto prices even higher.",
+            "en": "That is sending the prices of cryptocurrencies even higher.",
             "fr": "En cela envoie les cours des crypto-monnaies encore plus haut."
           }
         },
@@ -3790,7 +3790,7 @@
           "confidence": 0.95,
           "translations": {
             "en": "And then there's still the factor of Donald Trump.",
-            "fr": "En il y a encore le facteur Donald Trump."
+            "fr": "Et il y a encore le facteur Donald Trump."
           }
         },
         {
@@ -3910,8 +3910,8 @@
             }
           ],
           "translations": {
-            "en": "He was strongly against crypto until last year, but he has completely changed his tune now.",
-            "fr": "Il s'est farouchement opposé aux crypto-monnaies jusqu'à l'année dernière, mais il a complètement changé d'avis depuis."
+            "en": "They were strongly against crypto until last year, but they have completely changed their tune now.",
+            "fr": "Il s'est opposé farouchement à la crypto jusqu'à l'année dernière, mais il a complètement changé de cap depuis."
           }
         },
         {
@@ -4147,7 +4147,7 @@
           "channel": 0,
           "confidence": 0.96,
           "translations": {
-            "en": "Something to keep an eye on.",
+            "en": "Clearly something to keep an eye on.",
             "fr": "À surveiller de près."
           }
         },
@@ -4292,7 +4292,7 @@
           "confidence": 0.96,
           "translations": {
             "en": "Belgians are once again parking more money in their savings accounts.",
-            "fr": "Les Belges épargnent à nouveau plus d'argent sur leur livret d'épargne."
+            "fr": "Les Belges déposent à nouveau plus d'argent sur leur livret d'épargne."
           }
         },
         {
@@ -4476,7 +4476,7 @@
           ],
           "translations": {
             "en": "Since the beginning of this year, well-regulated savings accounts have increased by nearly 7%.",
-            "fr": "Depuis le début de l'année, les bons comptes d'épargne bien réglementés ont augmenté de près de 7 %."
+            "fr": "Depuis le début de cette année, les bons comptes d'épargne bien réglementés ont augmenté de près de 7 %."
           }
         },
         {
@@ -4581,7 +4581,7 @@
           "confidence": 0.9,
           "translations": {
             "en": "There is now an estimated total of nearly 300 billion euros in Belgian savings accounts.",
-            "fr": "Il y a actuellement environ 300 milliards d'euros sur les livrets d'épargne belges."
+            "fr": "Il y aurait actuellement environ 300 milliards d'euros sur les livrets d'épargne belges."
           }
         },
         {
@@ -4757,7 +4757,7 @@
           "channel": 0,
           "confidence": 0.97,
           "translations": {
-            "en": "Savings accounts are increasingly being used as a waiting position.",
+            "en": "Savings accounts are increasingly being used as a parking position.",
             "fr": "Les livrets d'épargne sont de plus en plus souvent utilisés comme position de réserve."
           }
         },
@@ -4905,7 +4905,7 @@
           "confidence": 0.91,
           "translations": {
             "en": "We're all looking a bit more closely at the cat in the tree before we put our savings to work elsewhere.",
-            "fr": "Nous allons tous regarder un peu plus loin avant d'investir notre épargne ailleurs."
+            "fr": "Nous allons tous regarder un peu plus le chat sortir de l'arbre avant de mettre notre argent de côté ailleurs."
           }
         },
         {
@@ -5156,7 +5156,7 @@
           "channel": 0,
           "confidence": 0.85,
           "translations": {
-            "en": "The state bond from 2022 is still leaving its mark on our savings behavior.",
+            "en": "The state bond from 2022 still leaves its mark on our savings behavior.",
             "fr": "Même l'obligation d'État de 2022 laisse encore des traces dans notre comportement d'épargne."
           }
         },
@@ -5232,7 +5232,7 @@
           "confidence": 0.95,
           "translations": {
             "en": "The die has really caused a shift according to some bankers.",
-            "fr": "Dieu a vraiment provoqué un changement selon certains banquiers."
+            "fr": "Dieu a vraiment marqué un tournant selon certains banquiers."
           }
         },
         {
@@ -5312,7 +5312,7 @@
           "channel": 0,
           "confidence": 0.98,
           "translations": {
-            "en": "Because of which we have become more conscious in choosing how we save or invest.",
+            "en": "By which we have become more conscious in choosing how we save or invest.",
             "fr": "Parce que nous avons commencé à faire des choix plus conscients quant à la manière dont nous épargnons ou investissons."
           }
         },
@@ -5644,8 +5644,8 @@
             }
           ],
           "translations": {
-            "en": "What we do know for certain is that people like a few rich individuals who make hundreds of millions of euros in profit with corporations will now finally contribute.",
-            "fr": "Ce que nous savons avec certitude, c'est que des personnes comme quelques riches qui réalisent des centaines de millions d'euros de bénéfices avec des sociétés, eh bien, ils vont enfin contribuer."
+            "en": "What we do know for sure is that people like a few rich individuals who make hundreds of millions of euros in profit with corporations will now finally contribute.",
+            "fr": "Ce que nous savons avec certitude, c'est que des personnes comme quelques riches qui réalisent des centaines de millions d'euros de bénéfices avec des entreprises, oui, ils vont enfin contribuer."
           }
         },
         {
@@ -5765,7 +5765,7 @@
           "confidence": 0.86,
           "translations": {
             "en": "We would like to take another look at that value-added tax.",
-            "fr": "Nous voulons encore examiner la valeur ajoutée une fois de plus."
+            "fr": "Nous voulons encore examiner la valeur ajoutée."
           }
         },
         {
@@ -5843,7 +5843,7 @@
             }
           ],
           "translations": {
-            "en": "I just heard Conor Rousseau, chairman of Vooruit, the Flemish socialists.",
+            "en": "I just heard Conor Rousseau, chairman of Vooruit, the Flemish socialist party.",
             "fr": "J'ai entendu Conor Rousseau, président de Vooruit, le socialiste flamand."
           }
         },
@@ -5966,7 +5966,7 @@
           "channel": 0,
           "confidence": 0.97,
           "translations": {
-            "en": "He indicates that it is primarily the super-rich who will initially feel the impact of the new value-added tax.",
+            "en": "He indicates that initially, it will primarily be the ultra-wealthy who will feel the impact of the new value-added tax.",
             "fr": "Il indique que ce sont surtout les super-riches qui ressentiront en premier lieu l'impact de la nouvelle taxe sur la valeur ajoutée."
           }
         },
@@ -6174,7 +6174,7 @@
           "channel": 0,
           "confidence": 0.84,
           "translations": {
-            "en": "Does what Rousseau indicates hold true.",
+            "en": "What Rousseau indicates is correct.",
             "fr": "Est-ce que ce que Rousseau indique est correct."
           }
         },
@@ -6213,7 +6213,7 @@
           "channel": 0,
           "confidence": 0.73,
           "translations": {
-            "en": "The super-rich should pay especially.",
+            "en": "The super-rich pay especially.",
             "fr": "Les super-riches paient surtout."
           }
         },
@@ -6258,7 +6258,7 @@
           "channel": 0,
           "confidence": 0.01,
           "translations": {
-            "en": "The old tax.",
+            "en": "The new tax has been lifted.",
             "fr": "Veuillez indiquer la nouvelle taxe."
           }
         },
@@ -6505,8 +6505,8 @@
             }
           ],
           "translations": {
-            "en": "Well, if you look at who owns the most shares in Belgium, among families, you see that 80% of all shares and approximately the same percentage of funds are in the hands of the 10% richest families.",
-            "fr": "Eh bien, si l'on examine qui détient le plus d'actions en Belgique, parmi les familles, on constate que 80 % de toutes les actions et environ le même pourcentage des fonds sont détenus par les 10 % des familles les plus riches."
+            "en": "Well, if you look at who owns the most shares in Belgium, among families, you see that 80% of all shares and approximately the same percentage of funds are in the hands of the richest 10% of families.",
+            "fr": "Eh bien, si l'on examine quels sont les ménages qui détiennent le plus d'actions en Belgique, on constate que 80 % de toutes les actions et environ le même pourcentage des fonds sont détenus par les 10 % de ménages les plus riches."
           }
         },
         {
@@ -6610,7 +6610,7 @@
           "channel": 0,
           "confidence": 0.94,
           "translations": {
-            "en": "But that only covers the shares that families actually own.",
+            "en": "But this only concerns the shares that families actually own.",
             "fr": "Mais cela ne concerne que les actions effectivement détenues par les ménages."
           }
         },
@@ -6704,7 +6704,7 @@
           "confidence": 0.83,
           "translations": {
             "en": "In private wealth, there are of course many more shares that are invested through companies.",
-            "fr": "En privévermogen, il y a bien sûr beaucoup plus d'actions investies via des entreprises."
+            "fr": "Dans le patrimoine privé, il y a bien sûr beaucoup plus d'actions qui sont investies via des entreprises."
           }
         },
         {
@@ -7208,7 +7208,7 @@
           "confidence": 0.91,
           "translations": {
             "en": "The tax should therefore be paid by individuals who benefit from the added value.",
-            "fr": "Les bénéficiaires de la plus-value devront donc s'acquitter de cette taxe."
+            "fr": "Cela devra donc être payé par les individus qui bénéficient de cette plus-value."
           }
         },
         {
@@ -7653,7 +7653,7 @@
           "channel": 0,
           "confidence": 0.95,
           "translations": {
-            "en": "The shareholders of companies will also look for an exit.",
+            "en": "Shareholders of corporations will also seek an exit.",
             "fr": "Les actionnaires des sociétés chercheront également une sortie."
           }
         },
@@ -7705,7 +7705,7 @@
           "confidence": 0.94,
           "translations": {
             "en": "What loopholes are there for them?",
-            "fr": "Quelles sont les failles pour eux?"
+            "fr": "Quelles sont les échappatoires pour eux?"
           }
         },
         {
@@ -7771,7 +7771,7 @@
             }
           ],
           "translations": {
-            "en": "If you are insured through an employer, then you pay...",
+            "en": "If you are insured through an insurance company, then you pay...",
             "fr": "Si vous êtes assuré via des sociétés, alors vous payez donc..."
           }
         },
@@ -8005,7 +8005,7 @@
           ],
           "translations": {
             "en": "You can reduce the 25% through several measures.",
-            "fr": "Je peux réduire les 25 % grâce à plusieurs mesures."
+            "fr": "Je peux réduire les 25 % grâce à un certain nombre de mesures."
           }
         },
         {
@@ -8179,7 +8179,7 @@
             }
           ],
           "translations": {
-            "en": "Moreover, it's also the case that the money in the company, the goodwill that has been recorded, you cannot necessarily use that for your private assets.",
+            "en": "Moreover, it is also the case that the money in the company, the goodwill that has been recorded, you cannot necessarily use that for your private assets.",
             "fr": "En outre, il est également vrai que l'argent dans cette société, la plus-value qui a été enregistrée, ne peut pas être utilisé pour votre patrimoine privé."
           }
         },
@@ -8297,7 +8297,7 @@
           "confidence": 0.91,
           "translations": {
             "en": "To shift from the partnership to your private assets, a payout is also required.",
-            "fr": "Pour transférer cela de la société à ton patrimoine privé, il faut également un versement."
+            "fr": "Pour transférer cela de la société à votre patrimoine privé, il faut également un versement."
           }
         },
         {
@@ -8566,7 +8566,7 @@
           ],
           "translations": {
             "en": "Okay, so what should we conclude from that?",
-            "fr": "D'accord, donc qu'est-ce que nous devons conclure de cela ?"
+            "fr": "D'accord, donc qu'est-ce qu'on doit conclure de tout ça ?"
           }
         },
         {
@@ -8709,8 +8709,8 @@
           "channel": 0,
           "confidence": 0.93,
           "translations": {
-            "en": "Will Rousseau be proven right and will the top 1% not actually suffer the most from the new wealth tax?",
-            "fr": "Est-ce que Rousseau a raison et est-ce que les 1 % les plus riches ne subiront pas le plus grand désavantage de la nouvelle taxe sur la valeur ajoutée?"
+            "en": "Isn't Rousseau right, and won't the top 1% still suffer the most from the new value-added tax?",
+            "fr": "Est-ce que Rousseau a tort et les 1 % les plus riches ne subiront-ils pas le plus grand désavantage de la nouvelle taxe sur la valeur ajoutée ?"
           }
         },
         {
@@ -8872,7 +8872,7 @@
             }
           ],
           "translations": {
-            "en": "Well, according to the experts I have spoken to, it won't be those 1%ers because they don't invest privately, but mainly through their corporations.",
+            "en": "Well, according to the experts I've spoken to, it won't be those 1%'ers because they don't invest privately, but mainly through their corporations.",
             "fr": "Selon les experts que j'ai interrogés, ce ne seront pas ces 1 % qui investissent en privé, mais surtout via leurs sociétés."
           }
         },
@@ -8924,7 +8924,7 @@
           "confidence": 0.98,
           "translations": {
             "en": "They hardly pay any income tax.",
-            "fr": "Elles paient presque pas d'impôts sur le revenu."
+            "fr": "Elles paient presque pas d'impôt sur le revenu."
           }
         },
         {
@@ -9140,7 +9140,7 @@
           "channel": 0,
           "confidence": 0.81,
           "translations": {
-            "en": "Things are not going well for Krevel.",
+            "en": "Things aren't going well for Krevel.",
             "fr": "Ça ne va pas très bien pour Krevel."
           }
         },
@@ -9233,8 +9233,8 @@
           "channel": 0,
           "confidence": 0.94,
           "translations": {
-            "en": "The electronics chain is seeing its losses increase further and must close several branches.",
-            "fr": "La chaîne d'électronique voit ses pertes s'aggraver et doit fermer plusieurs magasins."
+            "en": "The electronics chain is seeing its losses continue to rise and must close several branches.",
+            "fr": "La chaîne d'électronique voit ses pertes s'accroître et doit fermer plusieurs magasins."
           }
         },
         {
@@ -9407,7 +9407,7 @@
           "channel": 0,
           "confidence": 0.98,
           "translations": {
-            "en": "For three years in a row, Krefel has been incurring losses, and now four more stores are closing.",
+            "en": "For three years in a row, Krefel has been incurring losses, and now four more stores will be closing.",
             "fr": "Depuis trois ans, les pertes s'accumulent chez Krefel et maintenant, quatre magasins de plus vont fermer."
           }
         },
@@ -9486,8 +9486,8 @@
             }
           ],
           "translations": {
-            "en": "On the one hand due to a declining turnover, but also due to the strong competition.",
-            "fr": "D'une part en raison d'une baisse des ventes, mais aussi à cause de la forte concurrence."
+            "en": "On the one hand due to declining sales, but also due to strong competition.",
+            "fr": "D'une part en raison d'une baisse des ventes, mais aussi en raison de la forte concurrence."
           }
         },
         {
@@ -9591,8 +9591,8 @@
           "channel": 0,
           "confidence": 0.92,
           "translations": {
-            "en": "Chains like Mediamart and Van den Borre are putting pressure on and web stores such as Coolblue.",
-            "fr": "Les chaînes comme Mediamart et Van den Borre exercent la pression et les webshops comme Coolblue,"
+            "en": "Chains like Mediamart and Van den Borre are putting pressure on and web stores like Coolblue.",
+            "fr": "Les chaînes comme Mediamart et Van den Borre exercent une pression et les webshops comme Coolblue,"
           }
         },
         {
@@ -9856,7 +9856,7 @@
             }
           ],
           "translations": {
-            "en": "The French owners of Crevel, the entrepreneurial Mulier family, to whom the retail chain was lost.",
+            "en": "The French owners of Crevel, the entrepreneurial Mulier family, to whom the store chain was lost.",
             "fr": "Les propriétaires français de Crevel, la famille d'entrepreneurs Mulier, à qui la chaîne de magasins a été perdue."
           }
         },
@@ -10025,7 +10025,7 @@
             }
           ],
           "translations": {
-            "en": "In 2019, they will continue to support him, but this does not negate the fact that, according to analysts, there is now some uncertainty about the future of the remaining 69.",
+            "en": "In 2019, they will continue to support him, but this does not negate the fact that there is now some uncertainty among analysts about the future of the remaining 69.",
             "fr": "En 2019, ils continuent de le soutenir, mais cela n'enlève pas le fait qu'il y a, selon les analystes, une certaine incertitude quant à l'avenir des 69 restants."
           }
         },
@@ -10179,7 +10179,7 @@
             }
           ],
           "translations": {
-            "en": "However, breaking news, last night the U.S. Senate approved the famous Big Beautiful Bill of American President Donald Trump.",
+            "en": "However, breaking news, last night the American Senate approved the famous Big Beautiful Bill of American President Donald Trump.",
             "fr": "Dan toch, breaking news, hieravond le Sénat américain a approuvé le célèbre Big Beautiful Bill du président américain Donald Trump."
           }
         },
@@ -10284,7 +10284,7 @@
           "channel": 0,
           "confidence": 0.68,
           "translations": {
-            "en": "Horde 1 is thus heading towards a big beautiful America if it depends on Trump.",
+            "en": "Horde 1 is thus heading towards a big beautiful America if it's up to Trump.",
             "fr": "Horde 1 se dirige donc vers une grande et belle Amérique, si Trump en décide ainsi."
           }
         },
@@ -10414,7 +10414,7 @@
           "confidence": 0.92,
           "translations": {
             "en": "His comprehensive budget law includes hundreds of measures, from tax reductions on tips for extra defense spending to favorable tax deductions for car loans.",
-            "fr": "Sa grande et belle loi de finances comprend des centaines de mesures de réduction d'impôts, allant des pourboires sur les dépenses supplémentaires de défense à des déductions favorables pour les prêts automobiles."
+            "fr": "Sa grande et belle loi de finances comprend des centaines de mesures de réduction d'impôts, allant des pourboires sur les dépenses supplémentaires de défense à des déductions fiscales favorables pour les prêts automobiles."
           }
         },
         {
@@ -10623,8 +10623,8 @@
           "channel": 0,
           "confidence": 0.94,
           "translations": {
-            "en": "The megawatt is also the main cause of the rift between Trump and Tesla CEO Elon Musk.",
-            "fr": "La mégafuite est également la principale cause de la rupture entre Trump et le patron de Tesla, Elon Musk."
+            "en": "The megawatt issue is also the main cause of the rift between Trump and Tesla CEO Elon Musk.",
+            "fr": "La mégafête est également la principale cause de la rupture entre Trump et le patron de Tesla, Elon Musk."
           }
         },
         {
@@ -10697,7 +10697,7 @@
           ],
           "translations": {
             "en": "His bromance is clearly over, as is evident once again.",
-            "fr": "Leur amitié masculine est clairement terminée, cela se confirme encore une fois."
+            "fr": "Leur bromance est clairement terminée, cela se confirme encore une fois."
           }
         },
         {
@@ -10907,7 +10907,7 @@
           "confidence": 0.95,
           "translations": {
             "en": "And now Musk even wants to start his own party.",
-            "fr": "En maintenant, Musk veut même créer son propre parti."
+            "fr": "En maintenant, Musk veut même fonder son propre parti."
           }
         },
         {
@@ -11053,8 +11053,8 @@
           "channel": 0,
           "confidence": 0.9,
           "translations": {
-            "en": "Trump then says that the super-saving government service Doge might have to cut subsidies to Musk's companies.",
-            "fr": "On dit, Trump déclare à nouveau que le service gouvernemental super-économique Doge devrait peut-être commencer à réduire les subventions des entreprises de Musk."
+            "en": "Trump then again says that the super-saving government service Doge might have to cut back on the subsidies for Musk's companies.",
+            "fr": "On dit, Trump déclare à nouveau que le service gouvernemental ultra-économique Doge devrait peut-être commencer à réduire les subventions des entreprises de Musk."
           }
         },
         {
@@ -11523,8 +11523,8 @@
             }
           ],
           "translations": {
-            "en": "The bill is going to the House of Representatives for approval today and Trump hopes to sign it this Friday, on the 4th of July, America's national holiday.",
-            "fr": "La loi va encore être soumise aujourd'hui à la Chambre des représentants pour approbation et Trump espère pouvoir la signer vendredi, le 4 juillet, la fête nationale américaine."
+            "en": "The bill is going to the House of Representatives for approval today, and Trump hopes to sign it this Friday on the 4th of July, America's national holiday.",
+            "fr": "La loi sera soumise aujourd'hui à la Chambre des représentants pour approbation et Trump espère pouvoir la signer vendredi, le 4 juillet, jour de la fête nationale américaine."
           }
         },
         {
@@ -12376,7 +12376,7 @@
           "confidence": 0.87,
           "translations": {
             "en": "A journalist from our data cell will tell you more about that.",
-            "fr": "Journaliste de notre cellule de données en parle un peu plus ici,"
+            "fr": "Journaliste de notre cellule de données en parle un peu plus."
           }
         },
         {
@@ -12474,8 +12474,8 @@
           "channel": 0,
           "confidence": 0.91,
           "translations": {
-            "en": "Do you see a contradiction in the numbers?",
-            "fr": "Voyez-vous une contradiction dans les chiffres?"
+            "en": "Do you see the opposite in the numbers?",
+            "fr": "Voyez-vous une contradiction dans les chiffres ?"
           }
         },
         {
@@ -12769,8 +12769,8 @@
           "channel": 0,
           "confidence": 0.89,
           "translations": {
-            "en": "There are already almost as many of them now as there were in all of 2024, and that was the previous record year.",
-            "fr": "Il y en a déjà presque autant qu'en 2024 dans son ensemble, et c'était l'année record précédente."
+            "en": "There are almost as many now as there were in all of 2024, and that was the previous record year.",
+            "fr": "Il y en a maintenant presque autant que sur toute l'année 2024, qui était l'année record précédente."
           }
         },
         {
@@ -12896,7 +12896,7 @@
             }
           ],
           "translations": {
-            "en": "The most important explanation you've given us so far, which lies on our roofs, is the solar panels.",
+            "en": "The main explanation you already gave a bit of, that's on our roofs, those are the solar panels.",
             "fr": "La principale explication que tu as déjà un peu donnée, ce sont les panneaux solaires sur nos toits."
           }
         },
@@ -13071,8 +13071,8 @@
             }
           ],
           "translations": {
-            "en": "The concerns arise, especially shortly after midday, about an overproduction of electricity and the resulting surplus, which leads to much lower prices on the wholesale markets.",
-            "fr": "Les préoccupations en début d'après-midi, surtout juste après, entraînent une surproduction d'électricité et une offre excédentaire, ce qui conduit à des prix beaucoup plus bas sur les marchés de gros."
+            "en": "The concerns in the afternoon and especially shortly after lunchtime are about overproduction of electricity and the resulting surplus, which leads to much lower prices on the wholesale markets.",
+            "fr": "Les préoccupations concernent surtout la surproduction d'électricité l'après-midi et en début de soirée, ce qui entraîne une offre excédentaire et conduit à des prix beaucoup plus bas sur les marchés de gros."
           }
         },
         {
@@ -13217,7 +13217,7 @@
           ],
           "translations": {
             "en": "On the other hand, we see that the average price over the first six months is about half higher than in 2024.",
-            "fr": "D'autre part, nous voyons que le prix moyen sur les six premiers mois est environ la moitié plus élevé qu'en 2024."
+            "fr": "D'autre part, nous voyons que le prix moyen sur les six premiers mois est, oui, environ la moitié plus élevé qu'en 2024."
           }
         },
         {
@@ -13582,7 +13582,7 @@
           ],
           "translations": {
             "en": "Yes, and that seems to be the case as well.",
-            "fr": "Oui, cela semble également être le cas"
+            "fr": "Oui, cela semble également être le cas."
           }
         },
         {
@@ -14019,7 +14019,7 @@
           "confidence": 0.9,
           "translations": {
             "en": "The gap between the lowest daily price and the highest daily price has grown to an average of 127 euros per megawatt-hour this year.",
-            "fr": "L'écart entre le prix le plus bas et le prix le plus élevé de la journée a augmenté cette année en moyenne à 127 euros par mégawattheure."
+            "fr": "L'écart entre le prix le plus bas et le prix le plus élevé de la journée a augmenté cette année pour atteindre en moyenne 127 euros par mégawattheure."
           }
         },
         {
@@ -14082,7 +14082,7 @@
           "confidence": 0.95,
           "translations": {
             "en": "That is noticeably more than in previous years.",
-            "fr": "Cela est remarquablement plus que les années précédentes."
+            "fr": "C'est remarquablement plus que les années précédentes."
           }
         },
         {
@@ -14199,8 +14199,8 @@
             }
           ],
           "translations": {
-            "en": "In the afternoon, so I mean between approximately 11 and 4 PM.",
-            "fr": "D'après ce que je vois, je parle de l'après-midi, entre environ 11 et 16 heures."
+            "en": "I'll be available this afternoon, let's say between approximately 11 and 4 PM.",
+            "fr": "D'après ce que je sais, je parle de l'après-midi, entre environ 11 et 16 heures."
           }
         },
         {
@@ -14326,8 +14326,8 @@
             }
           ],
           "translations": {
-            "en": "There we see that the price really drops significantly, due to the oversupply on one hand and lower consumption on the other.",
-            "fr": "On observe que le prix baisse effectivement de manière significative, en raison d'une offre excédentaire d'une part et d'une consommation plus faible d'autre part."
+            "en": "There we see that the price really drops significantly, due to the oversupply on the one hand and lower consumption on the other.",
+            "fr": "On observe que le prix baisse réellement de manière significative, en raison d'une offre excédentaire d'une part et d'une consommation plus faible d'autre part."
           }
         },
         {
@@ -14396,7 +14396,7 @@
           "confidence": 0.94,
           "translations": {
             "en": "On the other side are both the morning peak and the evening peak.",
-            "fr": "En face de cela se trouvent à la fois l'heure de pointe du matin et l'heure de pointe du soir."
+            "fr": "En face de cela se trouvent à la fois le pic du matin et le pic du soir."
           }
         },
         {
@@ -14470,7 +14470,7 @@
           "channel": 0,
           "confidence": 0.97,
           "translations": {
-            "en": "Moments when especially families tend to consume much more electricity.",
+            "en": "Moments when especially families tend to consume a lot more electricity.",
             "fr": "Les moments où les ménages consomment particulièrement plus d'électricité."
           }
         },
@@ -14736,7 +14736,7 @@
           "confidence": 0.31,
           "translations": {
             "en": "valleys and the lowlands.",
-            "fr": "les pics et les vallées"
+            "fr": "piekuren et les heures creuses."
           }
         },
         {
@@ -14913,7 +14913,7 @@
           "confidence": 0.81,
           "translations": {
             "en": "Want that's not so different from last year.",
-            "fr": "Ça ne se passe pas autrement que l'année dernière."
+            "fr": "Ça ne se passe pas autrement cette année que l'année dernière."
           }
         },
         {
@@ -15131,7 +15131,7 @@
           "channel": 0,
           "confidence": 0.88,
           "translations": {
-            "en": "At lunchtime, we increasingly and actually always more on solar energy.",
+            "en": "At lunchtime, we use a lot of electricity and actually more and more solar energy.",
             "fr": "Nous utilisons de plus en plus l'énergie solaire pour le déjeuner et en général de plus en plus."
           }
         },
@@ -15296,7 +15296,7 @@
           ],
           "translations": {
             "en": "Electricity must either be consumed at that moment or stored.",
-            "fr": "Seul l'électricité doit être soit consommée à ce moment-là, soit stockée."
+            "fr": "Seul le courant électrique peut être consommé au même moment ou stocké."
           }
         },
         {
@@ -15423,7 +15423,7 @@
           ],
           "translations": {
             "en": "Okay, battery storage is indeed increasing in Belgium, but in the bigger picture, it is still quite limited.",
-            "fr": "D'accord, le stockage de batteries augmente bien en Belgique, mais dans le tableau général, il reste encore assez limité."
+            "fr": "D'accord, le stockage sur batterie augmente bien en Belgique, mais dans le tableau général, il reste encore assez limité."
           }
         },
         {
@@ -15555,8 +15555,8 @@
             }
           ],
           "translations": {
-            "en": "Outside the best solar hours, so to speak, gas-fired power plants provide the last bit of power to meet demand.",
-            "fr": "En dehors des meilleurs panneaux solaires, disons que les centrales à gaz fournissent le dernier petit supplément d'électricité pour répondre à la demande."
+            "en": "Outside the best solar farms, let's say, gas power plants provide the last bit of power to meet demand.",
+            "fr": "En dehors des meilleurs panneaux solaires, disons que les centrales à gaz fournissent le dernier petit surplus d'électricité pour répondre à la demande."
           }
         },
         {
@@ -15845,7 +15845,7 @@
             }
           ],
           "translations": {
-            "en": "In this year, that effect is even stronger because the gas price in the first six months was noticeably higher than in the first half of 2024.",
+            "en": "In this year, that effect is even stronger because the gas price in the first six months was significantly higher than in the first half of 2024.",
             "fr": "Cette année, cet effet est encore un peu plus marqué, car le prix du gaz était sensiblement plus élevé au cours des six premiers mois que dans la première moitié de 2024."
           }
         },
@@ -15888,7 +15888,7 @@
           "confidence": 0.1,
           "translations": {
             "en": "Rowan?",
-            "fr": "Rowan?"
+            "fr": "Rowan ?"
           }
         },
         {
@@ -16095,7 +16095,7 @@
             }
           ],
           "translations": {
-            "en": "The problem is that demand and supply are increasingly diverging throughout the day.",
+            "en": "The problem is that, to some extent, supply and demand are increasingly diverging throughout the day.",
             "fr": "Le problème est qu'au fil de la journée, l'offre et la demande s'éloignent de plus en plus l'une de l'autre."
           }
         },
@@ -16164,8 +16164,8 @@
           "channel": 0,
           "confidence": 0.96,
           "translations": {
-            "en": "And that's how we get those strange contradictions.",
-            "fr": "En nous avons donc ces étranges contradictions."
+            "en": "And so we get those strange contradictions.",
+            "fr": "En nous obtenons donc ces étranges contradictions."
           }
         },
         {
@@ -16345,7 +16345,7 @@
           "confidence": 0.55,
           "translations": {
             "en": "And it remains finally Belgian.",
-            "fr": "En pourtant, il reste encore belge."
+            "fr": "En cela reste encore belge."
           }
         },
         {
@@ -16601,8 +16601,8 @@
             }
           ],
           "translations": {
-            "en": "In addition to 300,000 euros, Rogge will now receive a year of mentorship from Sidney Toledano, an advisor to LVMH CEO Bernard Arnault.",
-            "fr": "En plus de 300.000 euros, Rogge bénéficiera pendant un an du mentorat de Sidney Toledano, un conseiller du PDG de LVMH, Bernard Arnault."
+            "en": "In addition to 300,000 euros, Rogge will now receive a year of mentorship from Sidney Toledano, an advisor to LVMH's Bernard Arnault.",
+            "fr": "En plus de 300.000 euros, Rogge bénéficiera pendant un an du mentorat de Sidney Toledano, un conseiller du PDG de LVMH Bernard Arnault."
           }
         },
         {
@@ -16765,7 +16765,7 @@
           ],
           "translations": {
             "en": "Meryl Rogge launched her first own collection right in the middle of the pandemic. Despite the turbulent period, she was able to count on national and international recognition quite quickly.",
-            "fr": "Meryl Rogge a lancé sa première collection personnelle en plein milieu de la pandémie. Malgré cette période turbulente, elle a rapidement obtenu une reconnaissance nationale et internationale."
+            "fr": "Meryl Rogge a lancé sa première collection personnelle en plein milieu de la pandémie. Malgré cette période turbulente, elle a rapidement pu compter sur une reconnaissance nationale et internationale."
           }
         },
         {
@@ -16973,7 +16973,7 @@
             }
           ],
           "translations": {
-            "en": "She is praised for her distinctive style, which combines Hollander prints and fabrics.",
+            "en": "She is praised for her distinctive style, which combines Holland prints and fabrics.",
             "fr": "Elle est célébrée pour son style affirmé, où les imprimés et les tissus Hollande sont combinés."
           }
         },
@@ -17118,8 +17118,8 @@
             }
           ],
           "translations": {
-            "en": "Besides the prize money, Rogge can now also count on the mentorship of Sidney Toledano, a name like a clock.",
-            "fr": "En plus du prix, Rogge peut désormais compter sur le mentorat de Sidney Toledano, un nom qui résonne comme une horloge."
+            "en": "In addition to the prize money, Rogge can now count on the mentorship of Sidney Toledano, a name that rings a bell, for a year.",
+            "fr": "En plus du prix, Rogge peut désormais compter sur le mentorat de Sidney Toledano, un nom qui sonne comme une horloge."
           }
         },
         {
@@ -17280,7 +17280,7 @@
           "channel": 0,
           "confidence": 0.81,
           "translations": {
-            "en": "He is the former CEO of fashion brand Dior and has headed the fashion division of the French giant LVMH since 2018.",
+            "en": "He is the former CEO of fashion brand Dior and has been heading the fashion division of the French giant LVMH since 2018.",
             "fr": "Il est l'ancien PDG de la marque de mode Dior et dirige depuis 2018 le département mode du géant français LVMH."
           }
         },
@@ -17372,7 +17372,7 @@
           ],
           "translations": {
             "en": "There you go, you've had your daily fix of the latest business news again.",
-            "fr": "Voilà, tu as déjà eu ta dose quotidienne des dernières nouvelles économiques."
+            "fr": "Voilà, tu as déjà eu ta dose quotidienne des dernières infos économiques."
           }
         },
         {
@@ -17502,7 +17502,7 @@
           ],
           "translations": {
             "en": "I wish you a very pleasant, somewhat cool day.",
-            "fr": "Je vous souhaite également une très bonne journée, un peu fraîche et agréable."
+            "fr": "Je vous souhaite une très bonne journée et une agréable, légèrement fraîche journée."
           }
         },
         {
@@ -17718,8 +17718,8 @@
             }
           ],
           "translations": {
-            "en": "For more business and strong news stories, check out tijd.be or our app.",
-            "fr": "Pour plus d'informations sur les affaires et les dernières nouvelles, consultez le site web de Tijd.be ou notre application."
+            "en": "For more business and hard-hitting news stories, check out tijd.be or our app.",
+            "fr": "Pour plus d'informations sur les affaires et des articles de presse percutants, consultez le site web de Tijd.be ou notre application."
           }
         },
         {
@@ -17763,7 +17763,7 @@
           "channel": 0,
           "confidence": 0.99,
           "translations": {
-            "en": "Tomorrow we're back again.",
+            "en": "Tomorrow we are there again.",
             "fr": "Demain, nous y serons à nouveau."
           }
         },
@@ -18010,7 +18010,7 @@
           "confidence": 1,
           "translations": {
             "en": "Free public transport takes you anywhere smoothly.",
-            "fr": "Les transports en commun gratuits te permettent de vous déplacer facilement partout."
+            "fr": "Les transports publics gratuits te permettent de vous rendre partout facilement."
           }
         },
         {
@@ -18224,7 +18224,7 @@
           "confidence": 0.97,
           "translations": {
             "en": "There are growth opportunities in an international financial center and a higher net salary, and the calculation is quickly made.",
-            "fr": "Les opportunités de croissance dans un centre financier international et un salaire net plus élevé s'additionnent rapidement."
+            "fr": "Les opportunités de croissance dans un centre financier international et un salaire net plus élevé sont rapidement calculés."
           }
         },
         {
@@ -18279,7 +18279,7 @@
           ],
           "translations": {
             "en": "Luxembourg, the best investment is in yourself.",
-            "fr": "Luxembourg, le meilleur investissement est en vous."
+            "fr": "Luxembourg, le meilleur investissement, c'est en vous-même."
           }
         },
         {
@@ -18460,7 +18460,7 @@
           "confidence": 0.94,
           "translations": {
             "en": "What do your competitors know that you don't yet?",
-            "fr": "Que savent vos concurrents que vous ignorez encore?"
+            "fr": "Que savent vos concurrents que vous ignorez encore ?"
           }
         },
         {
@@ -18539,7 +18539,7 @@
           ],
           "translations": {
             "en": "What trends are emerging in the market, here and abroad?",
-            "fr": "Quelles tendances se cachent sur le marché, ici et à l'étranger?"
+            "fr": "Quelles tendances le marché cache-t-il, ici et à l'étranger ?"
           }
         },
         {
@@ -18767,7 +18767,7 @@
             }
           ],
           "translations": {
-            "en": "The actually ambitious objectives are determined for the companies, for the Belgian industry, with a five-year term.",
+            "en": "The actually ambitious objectives are determined for the companies, for the Belgian industry, with a term of five years.",
             "fr": "Les objectifs en réalité ambitieux sont déterminés pour les entreprises, pour l'industrie belge, avec un délai de cinq ans."
           }
         },
@@ -19004,7 +19004,7 @@
           "channel": 0,
           "confidence": 0.94,
           "translations": {
-            "en": "Discover it in Industry Insights and take flight forward.",
+            "en": "Discover it in Industry Insights and take flight ahead.",
             "fr": "Découvrez-le dans Industry Insights et prenez votre envol."
           }
         }
