@@ -382,10 +382,10 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col overflow-hidden">
       {/* Header with Title and Language Selector */}
       <div className="flex-shrink-0 px-4 py-2 flex items-center justify-between">
-        <div className="flex-1">
+        <div className="flex-1 min-w-0 pr-4">
           <h1 className="font-semibold truncate text-center">{data.title}</h1>
         </div>
-        <div className="relative ml-4 language-selector">
+        <div className="relative flex-shrink-0 language-selector">
           <button
             onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
             className="flex items-center space-x-1 bg-teal-800 hover:bg-teal-700 px-3 py-1 rounded-md transition-colors"
