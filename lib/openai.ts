@@ -57,7 +57,7 @@ async function uploadBatchFile(filePath: string, apiKey: string): Promise<string
     
     console.log('Upload successful, file ID:', response.data.id);
     return response.data.id;
-  } catch (error) {
+  } catch (error: any) {
     if (error.response) {
       console.error('Upload error response:', error.response.data);
       throw new Error(`Failed to upload batch file: ${error.response.status} - ${JSON.stringify(error.response.data)}`);
