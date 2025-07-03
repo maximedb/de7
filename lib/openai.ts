@@ -3,8 +3,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as os from 'os';
 
-interface BatchRequest {
+interface OpenAIBatchRequest {
   custom_id: string;
+  method: string;
+  url: string;
   body: {
     model: string;
     messages: Array<{
@@ -16,9 +18,10 @@ interface BatchRequest {
   };
 }
 
-interface BatchResponse {
+interface OpenAIBatchResponse {
   custom_id: string;
   response: {
+    status_code: number;
     body: {
       choices: Array<{
         message: {
@@ -37,18 +40,18 @@ async function uploadBatchFile(filePath: string, apiKey: string): Promise<string
   
   console.log(`File size: ${fs.statSync(filePath).size} bytes`);
   
-  const axios = require('axios');
   const FormData = require('form-data');
   const form = new FormData();
   
   form.append('purpose', 'batch');
   form.append('file', fs.createReadStream(filePath), {
     filename: path.basename(filePath),
-    contentType: 'application/x-ndjson'
+    contentType: 'application/jsonl'
   });
   
   try {
-    const response = await axios.post('https://api.mistral.ai/v1/files', form, {
+    const axios = require('axios');
+    const response = await axios.post('https://api.openai.com/v1/files', form, {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         ...form.getHeaders(),
@@ -69,16 +72,16 @@ async function uploadBatchFile(filePath: string, apiKey: string): Promise<string
 }
 
 async function createBatchJob(fileId: string, apiKey: string): Promise<string> {
-  const response = await fetch('https://api.mistral.ai/v1/batch/jobs', {
+  const response = await fetch('https://api.openai.com/v1/batches', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      input_files: [fileId],
-      model: 'mistral-small-latest',
+      input_file_id: fileId,
       endpoint: '/v1/chat/completions',
+      completion_window: '24h',
       metadata: {
         description: 'Podcast transcription translation batch'
       }
@@ -86,7 +89,9 @@ async function createBatchJob(fileId: string, apiKey: string): Promise<string> {
   });
   
   if (!response.ok) {
-    throw new Error(`Failed to create batch job: ${response.status}`);
+    const errorText = await response.text();
+    console.error('Batch job creation error:', errorText);
+    throw new Error(`Failed to create batch job: ${response.status} - ${errorText}`);
   }
   
   const data = await response.json();
@@ -97,7 +102,7 @@ async function pollBatchJob(jobId: string, apiKey: string): Promise<any> {
   console.log(`Polling batch job ${jobId}...`);
   
   while (true) {
-    const response = await fetch(`https://api.mistral.ai/v1/batch/jobs/${jobId}`, {
+    const response = await fetch(`https://api.openai.com/v1/batches/${jobId}`, {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
       },
@@ -110,10 +115,10 @@ async function pollBatchJob(jobId: string, apiKey: string): Promise<any> {
     const job = await response.json();
     console.log(`Batch job status: ${job.status}`);
     
-    if (job.status === 'SUCCESS' || job.status === 'completed') {
+    if (job.status === 'completed') {
       return job;
-    } else if (job.status === 'FAILED' || job.status === 'failed' || job.status === 'EXPIRED' || job.status === 'expired') {
-      throw new Error(`Batch job ${job.status}: ${job.error_message || 'Unknown error'}`);
+    } else if (job.status === 'failed' || job.status === 'expired' || job.status === 'cancelled') {
+      throw new Error(`Batch job ${job.status}: ${job.error?.message || 'Unknown error'}`);
     }
     
     // Wait 30 seconds before polling again
@@ -121,8 +126,8 @@ async function pollBatchJob(jobId: string, apiKey: string): Promise<any> {
   }
 }
 
-async function downloadBatchResults(fileId: string, apiKey: string): Promise<BatchResponse[]> {
-  const response = await fetch(`https://api.mistral.ai/v1/files/${fileId}/content`, {
+async function downloadBatchResults(fileId: string, apiKey: string): Promise<OpenAIBatchResponse[]> {
+  const response = await fetch(`https://api.openai.com/v1/files/${fileId}/content`, {
     headers: {
       'Authorization': `Bearer ${apiKey}`,
     },
@@ -139,11 +144,13 @@ async function downloadBatchResults(fileId: string, apiKey: string): Promise<Bat
     .map(line => JSON.parse(line));
 }
 
-function createBatchRequests(utterances: Utterance[], language: 'English' | 'French'): BatchRequest[] {
+function createBatchRequests(utterances: Utterance[], language: 'English' | 'French'): OpenAIBatchRequest[] {
   return utterances.map((utterance, index) => ({
     custom_id: `${language.toLowerCase()}_${index}`,
+    method: 'POST',
+    url: '/v1/chat/completions',
     body: {
-      model: 'mistral-small-latest',
+      model: 'gpt-4o-mini',
       messages: [
         {
           role: 'system',
@@ -161,17 +168,18 @@ function createBatchRequests(utterances: Utterance[], language: 'English' | 'Fre
 }
 
 export async function translateUtterances(utterances: Utterance[], apiKey: string): Promise<Utterance[]> {
-  console.log(`Starting batch translation for ${utterances.length} utterances...`);
+  console.log(`Starting OpenAI batch translation for ${utterances.length} utterances...`);
   
   // Create temporary batch file in OS temp directory
   const tempDir = os.tmpdir();
-  const batchFilePath = path.join(tempDir, `mistral_batch_${Date.now()}_${Math.random().toString(36).substr(2, 9)}.jsonl`);
+  const batchFilePath = path.join(tempDir, `openai_batch_${Date.now()}_${Math.random().toString(36).substr(2, 9)}.jsonl`);
   
   try {
     // Create batch requests for both languages
     const englishRequests = createBatchRequests(utterances, 'English');
     const frenchRequests = createBatchRequests(utterances, 'French');
     const allRequests = [...englishRequests, ...frenchRequests];
+    
     const batchContent = allRequests
       .map(request => JSON.stringify(request))
       .join('\n');
@@ -197,14 +205,18 @@ export async function translateUtterances(utterances: Utterance[], apiKey: strin
     
     // Download results
     console.log('Downloading results...');
-    const results = await downloadBatchResults(completedJob.output_file, apiKey);
+    const results = await downloadBatchResults(completedJob.output_file_id, apiKey);
     console.log(`Downloaded ${results.length} results`);
     
     // Process results
     const translationMap = new Map<string, string>();
     results.forEach(result => {
-      const translation = result.response.body.choices[0]?.message?.content || '';
-      translationMap.set(result.custom_id, translation);
+      if (result.response.status_code === 200) {
+        const translation = result.response.body.choices[0]?.message?.content || '';
+        translationMap.set(result.custom_id, translation);
+      } else {
+        console.warn(`Translation failed for ${result.custom_id}:`, result.response);
+      }
     });
     
     // Apply translations to utterances
@@ -228,12 +240,12 @@ export async function translateUtterances(utterances: Utterance[], apiKey: strin
     } catch (cleanupError) {
       console.warn('Failed to cleanup batch file:', cleanupError);
     }
-    console.log('Translation batch processing completed successfully');
+    console.log('OpenAI batch translation processing completed successfully');
     
     return translatedUtterances;
     
   } catch (error) {
-    console.error('Batch translation error:', error);
+    console.error('OpenAI batch translation error:', error);
     
     // Cleanup on error
     try {

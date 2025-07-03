@@ -18,7 +18,7 @@ This is a Next.js podcast transcription app that automatically downloads daily p
 - **TranscriptionPlayer**: Main UI component with dual-click word interaction, real-time audio sync, translation overlays, and language selector (EN/FR)
 - **Transcription Pipeline**: `scripts/generate-transcription.ts` orchestrates download → transcription → translation → data processing
 - **Gladia Integration**: `lib/gladia.ts` handles API upload, transcription requests, and result polling
-- **Mistral Integration**: `lib/openai.ts` translates Dutch utterances to both English and French using Mistral Batch API for cost-effective processing
+- **OpenAI Integration**: `lib/openai.ts` translates Dutch utterances to both English and French using OpenAI GPT-4o-mini Batch API for cost-effective processing
 - **Podcast Download**: `lib/podcast.ts` downloads MP3s from RSS feeds
 - **Database Layer**: `lib/db.ts` manages Supabase word click tracking with delayed analytics
 - **User Identification**: `lib/userId.ts` generates and persists anonymous user IDs
@@ -34,7 +34,7 @@ This is a Next.js podcast transcription app that automatically downloads daily p
 ### Data Flow
 1. RSS feed → download MP3 + metadata → `public/audio/`
 2. MP3 → Gladia API → raw transcription → `public/transcriptions/YYYY-MM-DD.json`
-3. Raw transcription → Mistral Batch API dual translation (EN/FR) → processed data → `public/data/latest.json`
+3. Raw transcription → OpenAI GPT-4o-mini Batch API dual translation (EN/FR) → processed data → `public/data/latest.json`
 4. Next.js static generation reads latest.json for homepage
 5. User word clicks → delayed tracking → API endpoint → Supabase database storage
 
@@ -50,7 +50,7 @@ This is a Next.js podcast transcription app that automatically downloads daily p
 - **Event Delegation**: Single click handler using data attributes instead of per-word handlers
 - **Optimized Time Tracking**: Differential checking reduces timeupdate processing
 - **Layout Stability**: Click highlights use box-shadow instead of padding to prevent layout shift
-- **Batch API Processing**: Uses Mistral Batch API for cost-effective translation with automatic job polling and result processing
+- **Batch API Processing**: Uses OpenAI GPT-4o-mini Batch API for cost-effective translation with automatic job polling and result processing
 
 ### File Structure
 - Raw transcriptions: `public/transcriptions/YYYY-MM-DD.json`
@@ -61,7 +61,7 @@ This is a Next.js podcast transcription app that automatically downloads daily p
 
 ### Environment Variables
 - `GLADIA_API_KEY` - Required for transcription API
-- `MISTRAL_API_KEY` - Required for translation service
+- `OPENAI_API_KEY` - Required for OpenAI GPT-4o-mini translation service
 - `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL
 - `SUPABASE_SERVICE_ROLE_KEY` - Supabase service role key for server-side operations
 - `RSS_URL` - Optional podcast RSS feed (has default)
