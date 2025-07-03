@@ -1,7 +1,7 @@
 {
   "title": "02/07 | KBC gaat beleggers crypto aanbieden | 'Meerwaardebelasting treft vooral superrijken': klopt dat? | Stroomprijzen vaker dan ooit onder nul",
-  "date": "2025-07-02",
-  "duration": 1057.227755,
+  "date": "2025-07-03",
+  "duration": 1049.6,
   "utterances": [
     {
       "words": [
@@ -196,7 +196,7 @@
       "language": "nl",
       "start": 9.993,
       "end": 12.251,
-      "speaker": 0,
+      "speaker": 1,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -289,11 +289,11 @@
       "language": "nl",
       "start": 12.954,
       "end": 17.243,
-      "speaker": 0,
+      "speaker": 1,
       "channel": 0,
       "confidence": 0.99,
       "translations": {
-        "en": "Every day at 7 o'clock, our view on business in 7 points.",
+        "en": "Every day at 7 a.m., our take on current affairs in 7 points.",
         "fr": "Chaque jour à 7 heures, notre regard sur l'actualité en 7 points."
       }
     },
@@ -334,7 +334,7 @@
       "language": "nl",
       "start": 18.04,
       "end": 22.556,
-      "speaker": 0,
+      "speaker": 1,
       "channel": 0,
       "confidence": 0.78,
       "translations": {
@@ -355,7 +355,7 @@
       "language": "nl",
       "start": 22.602,
       "end": 23.196,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.76,
       "translations": {
@@ -448,7 +448,7 @@
       "language": "nl",
       "start": 23.368,
       "end": 29.274,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
@@ -499,7 +499,7 @@
       "language": "nl",
       "start": 29.68,
       "end": 31.041,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
@@ -512,7 +512,7 @@
       "start": 31.822,
       "end": 41.914,
       "confidence": 0.93,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " We",
@@ -678,8 +678,8 @@
         }
       ],
       "translations": {
-        "en": "We will continue in this seven to discuss value-added tax and ask ourselves, are the strongest shoulders, the most fortunate, really targeted by this new tax?",
-        "fr": "Nous allons explorer davantage la valeur ajoutée tax et nous demander si les épaules les plus fortes, les plus fortunés, sont vraiment visés par cette nouvelle taxe ?"
+        "en": "We will continue in this series by examining the value-added tax and ask ourselves, are the strongest shoulders, the most fortunate, really being targeted by this new tax?",
+        "fr": "Nous allons explorer davantage la valeur ajoutée taxée et nous demander si les épaules les plus fortes, les plus fortunés, sont vraiment visés par cette nouvelle taxe ?"
       }
     },
     {
@@ -803,12 +803,12 @@
       "language": "nl",
       "start": 43.016,
       "end": 50.234,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
         "en": "And never before have electricity prices gone below zero as often as this year, with an average of two hours per day being free.",
-        "fr": "Les prix de l'électricité n'ont jamais été aussi souvent négatifs qu'en cette année, en moyenne deux heures par jour gratuitement."
+        "fr": "Les prix de l'électricité n'ont jamais été aussi souvent négatifs qu'en cette année, en moyenne deux heures par jour gratuites."
       }
     },
     {
@@ -884,7 +884,7 @@
       "language": "nl",
       "start": 50.828,
       "end": 55.109,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -917,7 +917,7 @@
       "language": "nl",
       "start": 55.531,
       "end": 56.062,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 1,
       "translations": {
@@ -962,7 +962,7 @@
       "language": "nl",
       "start": 56.25,
       "end": 58.188,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.65,
       "translations": {
@@ -983,7 +983,7 @@
       "language": "nl",
       "start": 58.516,
       "end": 58.891,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.99,
       "translations": {
@@ -1028,7 +1028,7 @@
       "language": "nl",
       "start": 63.5,
       "end": 64.86,
-      "speaker": 0,
+      "speaker": 1,
       "channel": 0,
       "confidence": 0,
       "translations": {
@@ -1049,7 +1049,7 @@
       "language": "nl",
       "start": 66.621,
       "end": 66.84,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.56,
       "translations": {
@@ -1166,12 +1166,12 @@
       "language": "nl",
       "start": 67.221,
       "end": 74.725,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
         "en": "Grootbank KBC aims to enable crypto trading for users of its investment platform Bolero starting this fall.",
-        "fr": "La grande banque KBC permettra à partir de l'automne le commerce de crypto pour les utilisateurs de sa plateforme d'investissement Bolero."
+        "fr": "La banque KBC prévoit de permettre à ses utilisateurs de trader des cryptomonnaies sur sa plateforme d'investissement Bolero à partir de l'automne."
       }
     },
     {
@@ -1223,12 +1223,12 @@
       "language": "nl",
       "start": 75.326,
       "end": 77.045,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
         "en": "The bank confirms this at the time.",
-        "fr": "La banque le confirme en temps utile."
+        "fr": "La banque confirme cela à temps."
       }
     },
     {
@@ -1352,12 +1352,12 @@
       "language": "nl",
       "start": 77.342,
       "end": 84.483,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
-        "en": "KBC is currently being analyzed by regulators to be recognized as a provider of services related to crypto-assets.",
-        "fr": "KBC se fait actuellement analyser par les autorités de surveillance afin d'être reconnue comme fournisseur de services liés aux cryptoactifs."
+        "en": "KBC is currently being analyzed by regulators to be recognized as a provider of services related to cryptoassets.",
+        "fr": "KBC est actuellement analysée par les autorités de surveillance afin d'être reconnue comme fournisseur de services liés aux cryptoactifs."
       }
     },
     {
@@ -1365,7 +1365,7 @@
       "start": 85.483,
       "end": 92.123,
       "confidence": 0.95,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " En",
@@ -1572,12 +1572,12 @@
       "language": "nl",
       "start": 92.92,
       "end": 96.505,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
         "en": "Why does KBC want to take this step now and what are the consequences?",
-        "fr": "Pourquoi KBC veut-elle franchir cette étape maintenant et quelles en sont les conséquences ?"
+        "fr": "Pourquoi KBC veut-elle faire ce pas maintenant et quelles sont les conséquences?"
       }
     },
     {
@@ -1593,7 +1593,7 @@
       "language": "nl",
       "start": 96.684,
       "end": 97.145,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.88,
       "translations": {
@@ -1620,7 +1620,7 @@
       "language": "nl",
       "start": 97.243,
       "end": 97.704,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.59,
       "translations": {
@@ -1641,7 +1641,7 @@
       "language": "nl",
       "start": 98.067,
       "end": 98.587,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
@@ -1692,12 +1692,12 @@
       "language": "nl",
       "start": 98.645,
       "end": 100.731,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
         "en": "Specialist banking sector here on time.",
-        "fr": "Spécialiste du secteur bancaire à temps plein."
+        "fr": "Spécialiste du secteur bancaire à temps partiel."
       }
     },
     {
@@ -1767,7 +1767,7 @@
       "language": "nl",
       "start": 101.091,
       "end": 104.231,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -1788,7 +1788,7 @@
       "language": "nl",
       "start": 104.27,
       "end": 104.489,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.74,
       "translations": {
@@ -1869,12 +1869,12 @@
       "language": "nl",
       "start": 104.794,
       "end": 109.419,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.89,
       "translations": {
         "en": "Other banks that you spoke to have either investigated it or are more hesitant.",
-        "fr": "D'autres banques que vous avez interrogées ont été soit plus réticentes, soit n'ont pas encore donné de réponse."
+        "fr": "D'autres banques que vous avez interrogées sont soit en train d'examiner la question, soit plutôt réticentes."
       }
     },
     {
@@ -1882,7 +1882,7 @@
       "start": 109.575,
       "end": 112.559,
       "confidence": 0.86,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Dus",
@@ -1943,7 +1943,7 @@
       "start": 112.919,
       "end": 119.247,
       "confidence": 0.89,
-      "speaker": 1,
+      "speaker": 3,
       "words": [
         {
           "word": " Het",
@@ -2086,7 +2086,7 @@
       ],
       "translations": {
         "en": "That's correct, it is the first Belgian and one of the first European major banks that want to start working with crypto.",
-        "fr": "C'est exact, il s'agit de la première banque belge et de l'une des premières banques européennes à vouloir se lancer dans la cryptomonnaie."
+        "fr": "C'est exact, il s'agit de la première grande banque belge et de l'une des premières banques européennes à vouloir se lancer dans la cryptomonnaie."
       }
     },
     {
@@ -2192,12 +2192,12 @@
       "language": "nl",
       "start": 119.4,
       "end": 125.067,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
-        "en": "You can of course already engage in crypto with neobanks like Revolut or on certain trading platforms.",
-        "fr": "Je peux bien sûr déjà investir dans les crypto-monnaies via des néobanques comme Revolut ou sur certaines plateformes de trading."
+        "en": "You can already engage in crypto trading with neobanks like Revolut or on certain trading platforms.",
+        "fr": "Je peux bien sûr déjà investir dans la crypto via des néobanques comme Revolut ou sur certaines plateformes de trading."
       }
     },
     {
@@ -2205,7 +2205,7 @@
       "start": 125.368,
       "end": 127.844,
       "confidence": 0.78,
-      "speaker": 1,
+      "speaker": 3,
       "words": [
         {
           "word": " Binance",
@@ -2245,7 +2245,7 @@
         }
       ],
       "translations": {
-        "en": "Binance or Coinbase, those kinds of players.",
+        "en": "Binance or Coinbase, players like that.",
         "fr": "Binance ou Coinbase, ce genre de joueurs."
       }
     },
@@ -2322,12 +2322,12 @@
       "language": "nl",
       "start": 128.29,
       "end": 131.993,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.85,
       "translations": {
         "en": "Banks were actually somewhat allergic to all things crypto.",
-        "fr": "Les banques étaient en fait un peu allergiques à tout ce qui concernait les cryptos."
+        "fr": "Les banques étaient en fait un peu allergiques à tout ce qui concernait la crypto."
       }
     },
     {
@@ -2361,11 +2361,11 @@
       "language": "nl",
       "start": 132.633,
       "end": 134.274,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.82,
       "translations": {
-        "en": "There were the risks of being widowed.",
+        "en": "There were the risks of widowhood.",
         "fr": "Il y avait les risques de veuvage."
       }
     },
@@ -2406,7 +2406,7 @@
       "language": "nl",
       "start": 134.477,
       "end": 135.735,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
@@ -2475,12 +2475,12 @@
       "language": "nl",
       "start": 135.938,
       "end": 138.094,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
         "en": "So far, they have been paying for the boat.",
-        "fr": "Jusqu'à présent, ils ont descendu la rivière en bateau."
+        "fr": "Jusqu'à présent, ils ont payé la pénalité pour le bateau."
       }
     },
     {
@@ -2532,7 +2532,7 @@
       "language": "nl",
       "start": 138.532,
       "end": 141.094,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -2589,11 +2589,11 @@
       "language": "nl",
       "start": 141.454,
       "end": 143.719,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.81,
       "translations": {
-        "en": "Why is KBC turning its car around now?",
+        "en": "Why is KBC turning its back on that now?",
         "fr": "Pourquoi KBC retourne-t-il sa veste maintenant ?"
       }
     },
@@ -2634,7 +2634,7 @@
       "language": "nl",
       "start": 144.298,
       "end": 145.36,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -2703,12 +2703,12 @@
       "language": "nl",
       "start": 145.532,
       "end": 148.188,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.85,
       "translations": {
         "en": "Banks want certainty when they want to work somewhere.",
-        "fr": "Les banques veulent une garantie lorsqu'elles souhaitent travailler quelque part."
+        "fr": "Les banques veulent une garantie lorsqu'elles veulent travailler quelque part."
       }
     },
     {
@@ -2730,7 +2730,7 @@
       "language": "nl",
       "start": 148.282,
       "end": 148.907,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.81,
       "translations": {
@@ -2793,7 +2793,7 @@
       "language": "nl",
       "start": 149.244,
       "end": 152.004,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -2826,11 +2826,11 @@
       "language": "nl",
       "start": 152.325,
       "end": 153.065,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
-        "en": "Mika thinks so.",
+        "en": "Mika says that.",
         "fr": "Mika s'appelle comme ça."
       }
     },
@@ -2919,7 +2919,7 @@
       "language": "nl",
       "start": 153.463,
       "end": 158.245,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.84,
       "translations": {
@@ -2982,7 +2982,7 @@
       "language": "nl",
       "start": 158.268,
       "end": 160.885,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -3063,7 +3063,7 @@
       "language": "nl",
       "start": 161.588,
       "end": 164.526,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
@@ -3076,7 +3076,7 @@
       "start": 164.768,
       "end": 173.713,
       "confidence": 0.85,
-      "speaker": 1,
+      "speaker": 3,
       "words": [
         {
           "word": " Een",
@@ -3233,7 +3233,7 @@
       "start": 174.307,
       "end": 176.417,
       "confidence": 0.92,
-      "speaker": 1,
+      "speaker": 3,
       "words": [
         {
           "word": " Ja,",
@@ -3294,7 +3294,7 @@
       "start": 176.745,
       "end": 178.885,
       "confidence": 0.53,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Nee,",
@@ -3352,7 +3352,7 @@
         }
       ],
       "translations": {
-        "en": "No, they naturally want to attract young investors.",
+        "en": "Yes, they naturally want to attract young investors.",
         "fr": "Non, ils veulent bien sûr attirer les jeunes investisseurs."
       }
     },
@@ -3411,12 +3411,12 @@
       "language": "nl",
       "start": 179.773,
       "end": 182.596,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.86,
       "translations": {
         "en": "What do these kinds of moves actually do for crypto?",
-        "fr": "Qu'est-ce que ce genre de mouvements fait pour les crypto-monnaies ?"
+        "fr": "Que font ces types de mouvements pour les crypto-monnaies ?"
       }
     },
     {
@@ -3432,7 +3432,7 @@
       "language": "nl",
       "start": 182.775,
       "end": 183.017,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.8,
       "translations": {
@@ -3495,7 +3495,7 @@
       "language": "nl",
       "start": 183.896,
       "end": 186.318,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
@@ -3508,7 +3508,7 @@
       "start": 186.619,
       "end": 190.928,
       "confidence": 0.9,
-      "speaker": 1,
+      "speaker": 3,
       "words": [
         {
           "word": " Het",
@@ -3667,11 +3667,11 @@
       "language": "nl",
       "start": 191.225,
       "end": 194.584,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
-        "en": "That is sending the prices of cryptocurrencies even higher.",
+        "en": "That's sending cryptocurrency prices even higher.",
         "fr": "En cela envoie les cours des crypto-monnaies encore plus haut."
       }
     },
@@ -3736,7 +3736,7 @@
       "language": "nl",
       "start": 194.646,
       "end": 196.443,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -3749,7 +3749,7 @@
       "start": 196.928,
       "end": 201.35,
       "confidence": 0.96,
-      "speaker": 1,
+      "speaker": 3,
       "words": [
         {
           "word": " Die",
@@ -3861,8 +3861,8 @@
         }
       ],
       "translations": {
-        "en": "They were strongly against crypto until last year, but they have completely changed their tune now.",
-        "fr": "Il s'est opposé farouchement à la crypto jusqu'à l'année dernière, mais il a complètement changé de cap depuis."
+        "en": "They strongly opposed crypto until last year, but they have completely changed their tune now.",
+        "fr": "Il s'est farouchement opposé aux crypto-monnaies jusqu'à l'année dernière, mais il a complètement changé d'avis depuis."
       }
     },
     {
@@ -3950,7 +3950,7 @@
       "language": "nl",
       "start": 201.475,
       "end": 205.943,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -4025,7 +4025,7 @@
       "language": "nl",
       "start": 206.508,
       "end": 210.854,
-      "speaker": 1,
+      "speaker": 3,
       "channel": 0,
       "confidence": 0.81,
       "translations": {
@@ -4094,11 +4094,11 @@
       "language": "nl",
       "start": 211.354,
       "end": 213.397,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
-        "en": "Clearly something to keep an eye on.",
+        "en": "Something to keep an eye on.",
         "fr": "À surveiller de près."
       }
     },
@@ -4127,7 +4127,7 @@
       "language": "nl",
       "start": 213.576,
       "end": 215.178,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.64,
       "translations": {
@@ -4154,7 +4154,7 @@
       "language": "nl",
       "start": 215.179,
       "end": 215.615,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.15,
       "translations": {
@@ -4175,11 +4175,11 @@
       "language": "nl",
       "start": 216.881,
       "end": 217.162,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.05,
       "translations": {
-        "en": "Twee.",
+        "en": "Two.",
         "fr": "Twee."
       }
     },
@@ -4238,12 +4238,12 @@
       "language": "nl",
       "start": 217.897,
       "end": 221.264,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
         "en": "Belgians are once again parking more money in their savings accounts.",
-        "fr": "Les Belges déposent à nouveau plus d'argent sur leur livret d'épargne."
+        "fr": "Les Belges épargnent à nouveau plus d'argent sur leur livret d'épargne."
       }
     },
     {
@@ -4331,7 +4331,7 @@
       "language": "nl",
       "start": 221.803,
       "end": 225.209,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
@@ -4344,7 +4344,7 @@
       "start": 225.834,
       "end": 231.975,
       "confidence": 0.78,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Sinds",
@@ -4527,12 +4527,12 @@
       "language": "nl",
       "start": 235.472,
       "end": 240.819,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
         "en": "There is now an estimated total of nearly 300 billion euros in Belgian savings accounts.",
-        "fr": "Il y aurait actuellement environ 300 milliards d'euros sur les livrets d'épargne belges."
+        "fr": "Il y a actuellement environ 300 milliards d'euros sur les livrets d'épargne belges."
       }
     },
     {
@@ -4590,7 +4590,7 @@
       "language": "nl",
       "start": 241.257,
       "end": 243.382,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -4647,11 +4647,11 @@
       "language": "nl",
       "start": 243.718,
       "end": 246.499,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
-        "en": "The volatile March situation is one of a kind.",
+        "en": "The volatile March situation is one of them.",
         "fr": "La situation volatile de mars est une chose."
       }
     },
@@ -4704,11 +4704,11 @@
       "language": "nl",
       "start": 246.639,
       "end": 250.53,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
-        "en": "Savings accounts are increasingly being used as a parking position.",
+        "en": "Savings accounts are increasingly being used as a waiting position.",
         "fr": "Les livrets d'épargne sont de plus en plus souvent utilisés comme position de réserve."
       }
     },
@@ -4851,7 +4851,7 @@
       "language": "nl",
       "start": 251.085,
       "end": 256.639,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.91,
       "translations": {
@@ -4932,7 +4932,7 @@
       "language": "nl",
       "start": 257.436,
       "end": 261.733,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
@@ -4977,7 +4977,7 @@
       "language": "nl",
       "start": 262.202,
       "end": 264.78,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.92,
       "translations": {
@@ -5004,11 +5004,11 @@
       "language": "nl",
       "start": 264.956,
       "end": 266.959,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
-        "en": "short-term deposit accounts.",
+        "en": "Short-term deposit accounts.",
         "fr": "comptes à terme"
       }
     },
@@ -5103,12 +5103,12 @@
       "language": "nl",
       "start": 267.798,
       "end": 272.783,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.85,
       "translations": {
-        "en": "The state bond from 2022 still leaves its mark on our savings behavior.",
-        "fr": "Même l'obligation d'État de 2022 laisse encore des traces dans notre comportement d'épargne."
+        "en": "The 2022 savings bonds still leave their mark on our savings behavior.",
+        "fr": "Même le bon d'État de 2022 laisse encore des traces dans notre comportement d'épargne."
       }
     },
     {
@@ -5178,11 +5178,11 @@
       "language": "nl",
       "start": 272.982,
       "end": 276.927,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
-        "en": "The die has really caused a shift according to some bankers.",
+        "en": "The die has, according to some bankers, really caused a shift.",
         "fr": "Dieu a vraiment marqué un tournant selon certains banquiers."
       }
     },
@@ -5259,12 +5259,12 @@
       "language": "nl",
       "start": 277.287,
       "end": 281.318,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
         "en": "By which we have become more conscious in choosing how we save or invest.",
-        "fr": "Parce que nous avons commencé à faire des choix plus conscients quant à la manière dont nous épargnons ou investissons."
+        "fr": "Parce que nous avons commencé à faire des choix plus conscients sur la manière dont nous épargnons ou investissons."
       }
     },
     {
@@ -5272,7 +5272,7 @@
       "start": 281.959,
       "end": 290.427,
       "confidence": 0.82,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Het",
@@ -5419,11 +5419,11 @@
       }
     },
     {
-      "text": "Wat we wel zeker weten, is dat iemand zoals een paar rijke mensen die met vernootschappen honderden miljoenen euro's winst maken, ja die gaan nu eindelijk wel bijdragen.",
+      "text": "Wat we wel zeker weten is dat iemand zoals een paar rijke mensen die met vernootschappen honderden miljoenen euro's winst maken, ja die gaan nu eindelijk wel bijdragen.",
       "start": 294.74,
       "end": 304.37,
-      "confidence": 0.86,
-      "speaker": 0,
+      "confidence": 0.89,
+      "speaker": 2,
       "words": [
         {
           "word": " Wat",
@@ -5450,7 +5450,7 @@
           "confidence": 1
         },
         {
-          "word": " weten,",
+          "word": " weten",
           "start": 295.561,
           "end": 295.802,
           "confidence": 1
@@ -5595,8 +5595,8 @@
         }
       ],
       "translations": {
-        "en": "What we do know for sure is that people like a few rich individuals who make hundreds of millions of euros in profit with corporations will now finally contribute.",
-        "fr": "Ce que nous savons avec certitude, c'est que des personnes comme quelques riches qui réalisent des centaines de millions d'euros de bénéfices avec des entreprises, oui, ils vont enfin contribuer."
+        "en": "What we do know for certain is that people like a few rich individuals who make hundreds of millions of euros in profit with companies, yes, they will now finally contribute.",
+        "fr": "Ce que nous savons avec certitude, c'est qu'une personne comme quelques riches qui gagnent des centaines de millions d'euros de bénéfices avec des sociétés, oui, ils vont enfin contribuer."
       }
     },
     {
@@ -5636,7 +5636,7 @@
       "language": "nl",
       "start": 305.113,
       "end": 306.534,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.91,
       "translations": {
@@ -5711,12 +5711,12 @@
       "language": "nl",
       "start": 307.015,
       "end": 310.257,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.86,
       "translations": {
         "en": "We would like to take another look at that value-added tax.",
-        "fr": "Nous voulons encore examiner la valeur ajoutée."
+        "fr": "Nous voulons encore examiner la valeur ajoutée une fois de plus."
       }
     },
     {
@@ -5724,7 +5724,7 @@
       "start": 310.659,
       "end": 314.245,
       "confidence": 0.71,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Je",
@@ -5913,11 +5913,11 @@
       "language": "nl",
       "start": 315.003,
       "end": 320.565,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
-        "en": "He indicates that initially, it will primarily be the ultra-wealthy who will feel the impact of the new value-added tax.",
+        "en": "He indicates that it is primarily the super-rich who will initially feel the impact of the new value-added tax.",
         "fr": "Il indique que ce sont surtout les super-riches qui ressentiront en premier lieu l'impact de la nouvelle taxe sur la valeur ajoutée."
       }
     },
@@ -5926,7 +5926,7 @@
       "start": 321.534,
       "end": 327.503,
       "confidence": 0.96,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Maar",
@@ -6049,7 +6049,7 @@
       "language": "nl",
       "start": 327.659,
       "end": 328.472,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
@@ -6076,7 +6076,7 @@
       "language": "nl",
       "start": 328.894,
       "end": 329.659,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.81,
       "translations": {
@@ -6121,11 +6121,11 @@
       "language": "nl",
       "start": 329.94,
       "end": 331.565,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.84,
       "translations": {
-        "en": "What Rousseau indicates is correct.",
+        "en": "Does what Rousseau indicates hold true.",
         "fr": "Est-ce que ce que Rousseau indique est correct."
       }
     },
@@ -6160,11 +6160,11 @@
       "language": "nl",
       "start": 331.612,
       "end": 333.519,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.73,
       "translations": {
-        "en": "The super-rich pay especially.",
+        "en": "The super-rich should pay especially.",
         "fr": "Les super-riches paient surtout."
       }
     },
@@ -6205,7 +6205,7 @@
       "language": "nl",
       "start": 333.885,
       "end": 334.846,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.01,
       "translations": {
@@ -6218,7 +6218,7 @@
       "start": 335.567,
       "end": 347.822,
       "confidence": 0.82,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Wel,",
@@ -6457,7 +6457,7 @@
       ],
       "translations": {
         "en": "Well, if you look at who owns the most shares in Belgium, among families, you see that 80% of all shares and approximately the same percentage of funds are in the hands of the richest 10% of families.",
-        "fr": "Eh bien, si l'on examine quels sont les ménages qui détiennent le plus d'actions en Belgique, on constate que 80 % de toutes les actions et environ le même pourcentage des fonds sont détenus par les 10 % de ménages les plus riches."
+        "fr": "Eh bien, si l'on examine quels sont les détenteurs d'actions les plus importants en Belgique, parmi les familles, on constate que 80 % de toutes les actions et environ le même pourcentage des fonds sont détenus par les 10 % de familles les plus riches."
       }
     },
     {
@@ -6557,11 +6557,11 @@
       "language": "nl",
       "start": 348.095,
       "end": 352.095,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
-        "en": "But this only concerns the shares that families actually own.",
+        "en": "But that only covers the shares that families actually own.",
         "fr": "Mais cela ne concerne que les actions effectivement détenues par les ménages."
       }
     },
@@ -6650,12 +6650,12 @@
       "language": "nl",
       "start": 352.298,
       "end": 358.126,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.83,
       "translations": {
         "en": "In private wealth, there are of course many more shares that are invested through companies.",
-        "fr": "Dans le patrimoine privé, il y a bien sûr beaucoup plus d'actions qui sont investies via des entreprises."
+        "fr": "En privévermogen, il y a bien sûr beaucoup plus d'actions investies via des entreprises."
       }
     },
     {
@@ -6663,7 +6663,7 @@
       "start": 358.423,
       "end": 362.861,
       "confidence": 0.65,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Oké,",
@@ -6754,7 +6754,7 @@
       "start": 363.521,
       "end": 370.273,
       "confidence": 0.97,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Want",
@@ -6919,7 +6919,7 @@
       "language": "nl",
       "start": 370.351,
       "end": 371.996,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -6932,7 +6932,7 @@
       "start": 372.675,
       "end": 375.019,
       "confidence": 0.51,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Nee,",
@@ -7067,7 +7067,7 @@
       "language": "nl",
       "start": 375.183,
       "end": 379.769,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -7154,12 +7154,12 @@
       "language": "nl",
       "start": 379.847,
       "end": 383.269,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.91,
       "translations": {
         "en": "The tax should therefore be paid by individuals who benefit from the added value.",
-        "fr": "Cela devra donc être payé par les individus qui bénéficient de cette plus-value."
+        "fr": "Les bénéficiaires de la plus-value devront donc s'acquitter de cette taxe."
       }
     },
     {
@@ -7199,12 +7199,12 @@
       "language": "nl",
       "start": 384.025,
       "end": 386.868,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
         "en": "Shares are held through companies.",
-        "fr": "Les actions sont détenues par des sociétés."
+        "fr": "Les actions sont détenues via des sociétés."
       }
     },
     {
@@ -7212,7 +7212,7 @@
       "start": 386.968,
       "end": 393.472,
       "confidence": 0.43,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Dat",
@@ -7390,7 +7390,7 @@
         }
       ],
       "translations": {
-        "en": "That you say, I have a company or I have a stake in a company and that company then invests in another company or invests in it.",
+        "en": "You say that you have a company or you have a stake in a company, and that company then invests in another company.",
         "fr": "Que vous disiez que vous avez une entreprise ou que vous avez une participation dans une entreprise et que cette entreprise investit ensuite dans une autre entreprise."
       }
     },
@@ -7399,7 +7399,7 @@
       "start": 393.878,
       "end": 403.487,
       "confidence": 0.82,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Zij",
@@ -7530,7 +7530,7 @@
       ],
       "translations": {
         "en": "They are not subject to value-added tax, but they are subject to a series of other taxes, such as the regular corporate taxes of 25% in principle.",
-        "fr": "Ils ne sont pas soumis à la TVA, mais à une série d'autres impôts, tels que les impôts sur les sociétés réguliers de 25 % en principe."
+        "fr": "Ils ne sont pas soumis à la TVA, mais à une série d'autres taxes, telles que les impôts sur les sociétés réguliers de 25 % en principe."
       }
     },
     {
@@ -7600,7 +7600,7 @@
       "language": "nl",
       "start": 403.488,
       "end": 406.503,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -7651,12 +7651,12 @@
       "language": "nl",
       "start": 406.675,
       "end": 408.691,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
         "en": "What loopholes are there for them?",
-        "fr": "Quelles sont les échappatoires pour eux?"
+        "fr": "Quelles sont les échappatoires pour eux ?"
       }
     },
     {
@@ -7664,7 +7664,7 @@
       "start": 409.487,
       "end": 412.331,
       "confidence": 0.66,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Als",
@@ -7722,7 +7722,7 @@
         }
       ],
       "translations": {
-        "en": "If you are insured through an insurance company, then you pay...",
+        "en": "If you are insured through an employer, then you pay...",
         "fr": "Si vous êtes assuré via des sociétés, alors vous payez donc..."
       }
     },
@@ -7799,7 +7799,7 @@
       "language": "nl",
       "start": 412.645,
       "end": 416.829,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.87,
       "translations": {
@@ -7812,7 +7812,7 @@
       "start": 416.83,
       "end": 419.29,
       "confidence": 0.83,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " En",
@@ -7879,7 +7879,7 @@
       "start": 419.512,
       "end": 423.876,
       "confidence": 0.74,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Je",
@@ -7956,7 +7956,7 @@
       ],
       "translations": {
         "en": "You can reduce the 25% through several measures.",
-        "fr": "Je peux réduire les 25 % grâce à un certain nombre de mesures."
+        "fr": "Je peux réduire les 25 % en prenant un certain nombre de mesures."
       }
     },
     {
@@ -7964,7 +7964,7 @@
       "start": 424.094,
       "end": 431.485,
       "confidence": 0.89,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Bovendien",
@@ -8130,7 +8130,7 @@
         }
       ],
       "translations": {
-        "en": "Moreover, it is also the case that the money in the company, the goodwill that has been recorded, you cannot necessarily use that for your private assets.",
+        "en": "Moreover, it's also the case that the money in the company, the goodwill that has been recorded, you cannot necessarily use that for your private assets.",
         "fr": "En outre, il est également vrai que l'argent dans cette société, la plus-value qui a été enregistrée, ne peut pas être utilisé pour votre patrimoine privé."
       }
     },
@@ -8243,12 +8243,12 @@
       "language": "nl",
       "start": 431.782,
       "end": 437.032,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.91,
       "translations": {
         "en": "To shift from the partnership to your private assets, a payout is also required.",
-        "fr": "Pour transférer cela de la société à votre patrimoine privé, il faut également un versement."
+        "fr": "Pour transférer cela de la société à votre patrimoine privé, un versement est également nécessaire."
       }
     },
     {
@@ -8256,7 +8256,7 @@
       "start": 437.597,
       "end": 441.781,
       "confidence": 0.75,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Meestal",
@@ -8445,7 +8445,7 @@
       "language": "nl",
       "start": 441.801,
       "end": 446.207,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.92,
       "translations": {
@@ -8458,7 +8458,7 @@
       "start": 446.582,
       "end": 449.309,
       "confidence": 0.98,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Oké,",
@@ -8517,7 +8517,7 @@
       ],
       "translations": {
         "en": "Okay, so what should we conclude from that?",
-        "fr": "D'accord, donc qu'est-ce qu'on doit conclure de tout ça ?"
+        "fr": "Qu'est-ce qu'on doit conclure de tout ça, alors ?"
       }
     },
     {
@@ -8533,7 +8533,7 @@
       "language": "nl",
       "start": 449.488,
       "end": 449.871,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
@@ -8656,12 +8656,12 @@
       "language": "nl",
       "start": 450.293,
       "end": 457.191,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
-        "en": "Isn't Rousseau right, and won't the top 1% still suffer the most from the new value-added tax?",
-        "fr": "Est-ce que Rousseau a tort et les 1 % les plus riches ne subiront-ils pas le plus grand désavantage de la nouvelle taxe sur la valeur ajoutée ?"
+        "en": "Isn't Rousseau turning in his grave, and won't the top 1% actually suffer the most from the new wealth tax?",
+        "fr": "Est-ce que Rousseau a raison et les 1 % les plus riches ne subiront-ils pas le plus grand désavantage de la nouvelle taxe sur la valeur ajoutée ?"
       }
     },
     {
@@ -8669,7 +8669,7 @@
       "start": 457.66,
       "end": 466.988,
       "confidence": 0.94,
-      "speaker": 2,
+      "speaker": 4,
       "words": [
         {
           "word": " Wel,",
@@ -8823,7 +8823,7 @@
         }
       ],
       "translations": {
-        "en": "Well, according to the experts I've spoken to, it won't be those 1%'ers because they don't invest privately, but mainly through their corporations.",
+        "en": "Well, according to the experts I've spoken to, it won't be those 1%ers because they don't invest privately, but mainly through their corporations.",
         "fr": "Selon les experts que j'ai interrogés, ce ne seront pas ces 1 % qui investissent en privé, mais surtout via leurs sociétés."
       }
     },
@@ -8870,12 +8870,12 @@
       "language": "nl",
       "start": 467.329,
       "end": 469.371,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
         "en": "They hardly pay any income tax.",
-        "fr": "Elles paient presque pas d'impôt sur le revenu."
+        "fr": "Ils paient presque pas d'impôt sur le revenu."
       }
     },
     {
@@ -8933,7 +8933,7 @@
       "language": "nl",
       "start": 469.591,
       "end": 471.792,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.91,
       "translations": {
@@ -8946,7 +8946,7 @@
       "start": 472.195,
       "end": 473.535,
       "confidence": 0.77,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Oké,",
@@ -9003,7 +9003,7 @@
       "language": "nl",
       "start": 473.695,
       "end": 474.457,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
@@ -9030,7 +9030,7 @@
       "language": "nl",
       "start": 474.777,
       "end": 475.238,
-      "speaker": 2,
+      "speaker": 4,
       "channel": 0,
       "confidence": 0.52,
       "translations": {
@@ -9087,11 +9087,11 @@
       "language": "nl",
       "start": 479.324,
       "end": 485.019,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.81,
       "translations": {
-        "en": "Things aren't going well for Krevel.",
+        "en": "Things are not going well for Krevel.",
         "fr": "Ça ne va pas très bien pour Krevel."
       }
     },
@@ -9180,11 +9180,11 @@
       "language": "nl",
       "start": 485.222,
       "end": 490.472,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
-        "en": "The electronics chain is seeing its losses continue to rise and must close several branches.",
+        "en": "The electronics chain sees its losses continue to rise and must close several branches.",
         "fr": "La chaîne d'électronique voit ses pertes s'accroître et doit fermer plusieurs magasins."
       }
     },
@@ -9237,7 +9237,7 @@
       "language": "nl",
       "start": 491.035,
       "end": 493.628,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -9354,7 +9354,7 @@
       "language": "nl",
       "start": 495.701,
       "end": 500.566,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -9367,7 +9367,7 @@
       "start": 500.988,
       "end": 505.187,
       "confidence": 0.95,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Enerzijds",
@@ -9437,8 +9437,8 @@
         }
       ],
       "translations": {
-        "en": "On the one hand due to declining sales, but also due to strong competition.",
-        "fr": "D'une part en raison d'une baisse des ventes, mais aussi en raison de la forte concurrence."
+        "en": "On the one hand due to a declining turnover, but also due to the strong competition.",
+        "fr": "D'une part en raison d'une baisse des ventes, mais aussi à cause de la forte concurrence."
       }
     },
     {
@@ -9538,12 +9538,12 @@
       "language": "nl",
       "start": 505.788,
       "end": 511.156,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.92,
       "translations": {
-        "en": "Chains like Mediamart and Van den Borre are putting pressure on and web stores like Coolblue.",
-        "fr": "Les chaînes comme Mediamart et Van den Borre exercent une pression et les webshops comme Coolblue,"
+        "en": "Chains like Mediamart and Van den Borre are putting pressure on and web stores such as Coolblue.",
+        "fr": "Les chaînes comme Mediamart et Van den Borre exercent la pression et les webshops comme Coolblue,"
       }
     },
     {
@@ -9613,7 +9613,7 @@
       "language": "nl",
       "start": 511.476,
       "end": 514.413,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
@@ -9706,7 +9706,7 @@
       "language": "nl",
       "start": 514.554,
       "end": 519.382,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -9719,7 +9719,7 @@
       "start": 520.085,
       "end": 525.304,
       "confidence": 0.81,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " de",
@@ -9807,7 +9807,7 @@
         }
       ],
       "translations": {
-        "en": "The French owners of Crevel, the entrepreneurial Mulier family, to whom the store chain was lost.",
+        "en": "The French owners of Crevel, the entrepreneurial Mulier family, who lost the store chain.",
         "fr": "Les propriétaires français de Crevel, la famille d'entrepreneurs Mulier, à qui la chaîne de magasins a été perdue."
       }
     },
@@ -9816,7 +9816,7 @@
       "start": 525.641,
       "end": 544.067,
       "confidence": 0.68,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " in",
@@ -9993,7 +9993,7 @@
       "language": "nl",
       "start": 544.754,
       "end": 549.645,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.57,
       "translations": {
@@ -10006,7 +10006,7 @@
       "start": 551.253,
       "end": 560.103,
       "confidence": 0.87,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Dan",
@@ -10231,7 +10231,7 @@
       "language": "nl",
       "start": 563.548,
       "end": 568.845,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.68,
       "translations": {
@@ -10360,12 +10360,12 @@
       "language": "nl",
       "start": 569.251,
       "end": 580.423,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.92,
       "translations": {
-        "en": "His comprehensive budget law includes hundreds of measures, from tax reductions on tips for extra defense spending to favorable tax deductions for car loans.",
-        "fr": "Sa grande et belle loi de finances comprend des centaines de mesures de réduction d'impôts, allant des pourboires sur les dépenses supplémentaires de défense à des déductions fiscales favorables pour les prêts automobiles."
+        "en": "His grand beautiful budget law includes hundreds of measures to reduce taxes on tips for extra defense spending to favorable tax deductions for car loans.",
+        "fr": "Sa grande et belle loi de finances comprend des centaines de mesures de réduction d'impôts, allant des pourboires sur les dépenses de défense supplémentaires aux déductions fiscales avantageuses sur les prêts automobiles."
       }
     },
     {
@@ -10459,7 +10459,7 @@
       "language": "nl",
       "start": 581.037,
       "end": 587.004,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.99,
       "translations": {
@@ -10570,12 +10570,12 @@
       "language": "nl",
       "start": 587.723,
       "end": 593.032,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
-        "en": "The megawatt issue is also the main cause of the rift between Trump and Tesla CEO Elon Musk.",
-        "fr": "La mégafête est également la principale cause de la rupture entre Trump et le patron de Tesla, Elon Musk."
+        "en": "The megawatt is also the main cause of the rift between Trump and Tesla CEO Elon Musk.",
+        "fr": "La mégalomanie est également la principale cause de la rupture entre Trump et le patron de Tesla, Elon Musk."
       }
     },
     {
@@ -10583,7 +10583,7 @@
       "start": 593.25,
       "end": 596.649,
       "confidence": 0.82,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Hun",
@@ -10648,7 +10648,7 @@
       ],
       "translations": {
         "en": "His bromance is clearly over, as is evident once again.",
-        "fr": "Leur bromance est clairement terminée, cela se confirme encore une fois."
+        "fr": "Leur amitié masculine est clairement terminée, cela se confirme encore une fois."
       }
     },
     {
@@ -10784,7 +10784,7 @@
       "language": "nl",
       "start": 597.008,
       "end": 605.008,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -10853,7 +10853,7 @@
       "language": "nl",
       "start": 605.624,
       "end": 608.788,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -11000,12 +11000,12 @@
       "language": "nl",
       "start": 609.008,
       "end": 617.516,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
         "en": "Trump then again says that the super-saving government service Doge might have to cut back on the subsidies for Musk's companies.",
-        "fr": "On dit, Trump déclare à nouveau que le service gouvernemental ultra-économique Doge devrait peut-être commencer à réduire les subventions des entreprises de Musk."
+        "fr": "Trump déclare à nouveau que le service gouvernemental ultra-économique Doge devrait peut-être commencer à réduire les subventions des entreprises de Musk."
       }
     },
     {
@@ -11013,7 +11013,7 @@
       "start": 617.758,
       "end": 622.04,
       "confidence": 0.87,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Extra",
@@ -11112,7 +11112,7 @@
       "language": "nl",
       "start": 623.462,
       "end": 624.899,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.78,
       "translations": {
@@ -11193,7 +11193,7 @@
       "language": "nl",
       "start": 625.008,
       "end": 629.68,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.73,
       "translations": {
@@ -11256,12 +11256,12 @@
       "language": "nl",
       "start": 629.821,
       "end": 633.196,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
         "en": "The deciding vote was cast by Vice President J.D.",
-        "fr": "La voix décisive a été donnée par le vice-président J.D."
+        "fr": "La voix décisive a été émise par le vice-président J.D."
       }
     },
     {
@@ -11277,7 +11277,7 @@
       "language": "nl",
       "start": 633.337,
       "end": 633.696,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.54,
       "translations": {
@@ -11290,7 +11290,7 @@
       "start": 634.396,
       "end": 643.965,
       "confidence": 0.87,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " De",
@@ -11474,8 +11474,8 @@
         }
       ],
       "translations": {
-        "en": "The bill is going to the House of Representatives for approval today, and Trump hopes to sign it this Friday on the 4th of July, America's national holiday.",
-        "fr": "La loi sera soumise aujourd'hui à la Chambre des représentants pour approbation et Trump espère pouvoir la signer vendredi, le 4 juillet, jour de la fête nationale américaine."
+        "en": "The bill is going to the House of Representatives for approval today and Trump hopes to be able to sign it this Friday, on the 4th of July, America's national holiday.",
+        "fr": "La loi va encore aujourd'hui à la Chambre des représentants pour approbation et Trump espère pouvoir la signer vendredi, le 4 juillet, la fête nationale américaine."
       }
     },
     {
@@ -11575,7 +11575,7 @@
       "language": "nl",
       "start": 646.27,
       "end": 650.747,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.91,
       "translations": {
@@ -11626,7 +11626,7 @@
       "language": "nl",
       "start": 650.95,
       "end": 652.997,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.74,
       "translations": {
@@ -11695,7 +11695,7 @@
       "language": "nl",
       "start": 653.293,
       "end": 656.762,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.76,
       "translations": {
@@ -11782,7 +11782,7 @@
       "language": "nl",
       "start": 657.356,
       "end": 661.247,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.88,
       "translations": {
@@ -11815,12 +11815,12 @@
       "language": "nl",
       "start": 661.552,
       "end": 663.992,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.82,
       "translations": {
         "en": "umbrella of electricity network operators.",
-        "fr": "Réseau des gestionnaires de réseaux de distribution d'électricité."
+        "fr": "Réseau des gestionnaires de réseau de transport d'électricité."
       }
     },
     {
@@ -11866,7 +11866,7 @@
       "language": "nl",
       "start": 664.992,
       "end": 666.871,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
@@ -11965,7 +11965,7 @@
       "language": "nl",
       "start": 666.895,
       "end": 671.317,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -12118,7 +12118,7 @@
       "language": "nl",
       "start": 671.793,
       "end": 680.856,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -12157,7 +12157,7 @@
       "language": "nl",
       "start": 681.434,
       "end": 682.949,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -12178,7 +12178,7 @@
       "language": "nl",
       "start": 683.34,
       "end": 683.84,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.86,
       "translations": {
@@ -12205,7 +12205,7 @@
       "language": "nl",
       "start": 683.949,
       "end": 684.637,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -12226,7 +12226,7 @@
       "language": "nl",
       "start": 684.934,
       "end": 685.449,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.51,
       "translations": {
@@ -12247,7 +12247,7 @@
       "language": "nl",
       "start": 685.481,
       "end": 685.699,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.19,
       "translations": {
@@ -12322,12 +12322,12 @@
       "language": "nl",
       "start": 685.84,
       "end": 688.918,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.87,
       "translations": {
         "en": "A journalist from our data cell will tell you more about that.",
-        "fr": "Journaliste de notre cellule de données en parle un peu plus."
+        "fr": "Journaliste de notre cellule de données en parle un peu plus ici,"
       }
     },
     {
@@ -12343,7 +12343,7 @@
       "language": "nl",
       "start": 689.012,
       "end": 689.231,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 1,
       "translations": {
@@ -12370,7 +12370,7 @@
       "language": "nl",
       "start": 689.34,
       "end": 690.293,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -12421,11 +12421,11 @@
       "language": "nl",
       "start": 690.52,
       "end": 692.782,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.91,
       "translations": {
-        "en": "Do you see the opposite in the numbers?",
+        "en": "Do you see a contradiction in the numbers?",
         "fr": "Voyez-vous une contradiction dans les chiffres ?"
       }
     },
@@ -12434,7 +12434,7 @@
       "start": 693.163,
       "end": 695.026,
       "confidence": 0.83,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Inderdaad,",
@@ -12593,12 +12593,12 @@
       "language": "nl",
       "start": 695.346,
       "end": 701.612,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.84,
       "translations": {
         "en": "On the one hand, you have those 382 hours where electricity prices have dropped to zero or even below zero.",
-        "fr": "D'une part, vous avez ces 382 heures où les prix de l'électricité sont tombés à zéro ou même en dessous de zéro."
+        "fr": "D'une part, vous avez ces 382 heures où les prix de l'électricité sont tombés à zéro, voire en dessous de zéro."
       }
     },
     {
@@ -12716,12 +12716,12 @@
       "language": "nl",
       "start": 702.292,
       "end": 706.971,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.89,
       "translations": {
         "en": "There are almost as many now as there were in all of 2024, and that was the previous record year.",
-        "fr": "Il y en a maintenant presque autant que sur toute l'année 2024, qui était l'année record précédente."
+        "fr": "Il y en a maintenant presque autant que sur toute l'année 2024, qui était jusqu'à présent l'année record."
       }
     },
     {
@@ -12729,7 +12729,7 @@
       "start": 707.674,
       "end": 712.159,
       "confidence": 0.92,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " De",
@@ -12847,8 +12847,8 @@
         }
       ],
       "translations": {
-        "en": "The main explanation you already gave a bit of, that's on our roofs, those are the solar panels.",
-        "fr": "La principale explication que tu as déjà un peu donnée, ce sont les panneaux solaires sur nos toits."
+        "en": "The main explanation you've already given a bit of is on our roofs, those are the solar panels.",
+        "fr": "La principale explication que vous avez déjà un peu donnée se trouve sur nos toits, ce sont les panneaux solaires."
       }
     },
     {
@@ -12856,7 +12856,7 @@
       "start": 712.565,
       "end": 721.688,
       "confidence": 0.88,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Die",
@@ -13022,8 +13022,8 @@
         }
       ],
       "translations": {
-        "en": "The concerns in the afternoon and especially shortly after lunchtime are about overproduction of electricity and the resulting surplus, which leads to much lower prices on the wholesale markets.",
-        "fr": "Les préoccupations concernent surtout la surproduction d'électricité l'après-midi et en début de soirée, ce qui entraîne une offre excédentaire et conduit à des prix beaucoup plus bas sur les marchés de gros."
+        "en": "The concerns in the afternoon and especially shortly after lunch about overproduction of electricity and the resulting oversupply, which leads to much lower prices on the wholesale markets.",
+        "fr": "Les préoccupations concernant la surproduction d'électricité, en particulier l'après-midi et surtout peu après, entraînent une offre excédentaire, ce qui conduit à des prix beaucoup plus bas sur les marchés de gros."
       }
     },
     {
@@ -13031,7 +13031,7 @@
       "start": 722.229,
       "end": 728.171,
       "confidence": 0.75,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Anderzijds",
@@ -13168,7 +13168,7 @@
       ],
       "translations": {
         "en": "On the other hand, we see that the average price over the first six months is about half higher than in 2024.",
-        "fr": "D'autre part, nous voyons que le prix moyen sur les six premiers mois est, oui, environ la moitié plus élevé qu'en 2024."
+        "fr": "D'autre part, nous observons que le prix moyen sur les six premiers mois est environ moitié plus élevé qu'en 2024."
       }
     },
     {
@@ -13250,11 +13250,11 @@
       "language": "nl",
       "start": 728.913,
       "end": 732.139,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
-        "en": "Last year, we were at something over 60 euros per megawatt-hour.",
+        "en": "Last year, we were at a little over 60 euros per megawatt-hour.",
         "fr": "L'année dernière, nous étions à un peu plus de 60 euros par mégawattheure."
       }
     },
@@ -13313,7 +13313,7 @@
       "language": "nl",
       "start": 732.475,
       "end": 735.006,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.85,
       "translations": {
@@ -13326,7 +13326,7 @@
       "start": 735.6,
       "end": 739.631,
       "confidence": 0.8,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Absoluut",
@@ -13473,7 +13473,7 @@
       "language": "nl",
       "start": 740.147,
       "end": 743.522,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -13486,7 +13486,7 @@
       "start": 743.866,
       "end": 745.553,
       "confidence": 0.78,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Ja,",
@@ -13533,7 +13533,7 @@
       ],
       "translations": {
         "en": "Yes, and that seems to be the case as well.",
-        "fr": "Oui, cela semble également être le cas."
+        "fr": "Oui, cela semble aussi être le cas"
       }
     },
     {
@@ -13549,12 +13549,12 @@
       "language": "nl",
       "start": 745.86,
       "end": 746.781,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
         "en": "Opposites",
-        "fr": "Contraires,"
+        "fr": "Contradicciones"
       }
     },
     {
@@ -13570,7 +13570,7 @@
       "language": "nl",
       "start": 746.882,
       "end": 747.141,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 1,
       "translations": {
@@ -13583,7 +13583,7 @@
       "start": 747.321,
       "end": 752.768,
       "confidence": 0.92,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Enerzijds",
@@ -13647,7 +13647,7 @@
         }
       ],
       "translations": {
-        "en": "On the one hand, more often below zero than ever before, on the other hand, higher than average.",
+        "en": "On the one hand, more often below zero than ever, on the other hand, higher than average.",
         "fr": "D'une part, plus souvent sous zéro que jamais, d'autre part, plus élevé que la moyenne."
       }
     },
@@ -13670,7 +13670,7 @@
       "language": "nl",
       "start": 753.069,
       "end": 753.667,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.98,
       "translations": {
@@ -13703,7 +13703,7 @@
       "language": "nl",
       "start": 753.85,
       "end": 754.389,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.99,
       "translations": {
@@ -13716,7 +13716,7 @@
       "start": 755.186,
       "end": 760.999,
       "confidence": 0.96,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Ja,",
@@ -13834,7 +13834,7 @@
         }
       ],
       "translations": {
-        "en": "Yes, we see a large gap growing between the prices during off-peak hours on the one hand and at peak times on the other.",
+        "en": "Yes, we see a growing gap between prices during off-peak hours on the one hand and at peak times on the other.",
         "fr": "Oui, nous constatons un écart croissant entre les prix en heures creuses d'une part et les prix aux heures de pointe d'autre part."
       }
     },
@@ -13965,7 +13965,7 @@
       "language": "nl",
       "start": 761.577,
       "end": 769.608,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
@@ -14028,7 +14028,7 @@
       "language": "nl",
       "start": 770.186,
       "end": 773.139,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.95,
       "translations": {
@@ -14049,7 +14049,7 @@
       "language": "nl",
       "start": 773.592,
       "end": 773.702,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.01,
       "translations": {
@@ -14062,7 +14062,7 @@
       "start": 774.828,
       "end": 778.692,
       "confidence": 0.53,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " De",
@@ -14150,8 +14150,8 @@
         }
       ],
       "translations": {
-        "en": "I'll be available this afternoon, let's say between approximately 11 and 4 PM.",
-        "fr": "D'après ce que je sais, je parle de l'après-midi, entre environ 11 et 16 heures."
+        "en": "In the afternoon, so I mean between approximately 11 and 4 PM.",
+        "fr": "D'après ce que je vois, je parle de l'après-midi, entre environ 11 et 16 heures."
       }
     },
     {
@@ -14159,7 +14159,7 @@
       "start": 779.114,
       "end": 784.599,
       "confidence": 0.94,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Daar",
@@ -14278,7 +14278,7 @@
       ],
       "translations": {
         "en": "There we see that the price really drops significantly, due to the oversupply on the one hand and lower consumption on the other.",
-        "fr": "On observe que le prix baisse réellement de manière significative, en raison d'une offre excédentaire d'une part et d'une consommation plus faible d'autre part."
+        "fr": "On voit ici que le prix baisse réellement de manière significative, en raison de l'offre excédentaire d'une part et d'une consommation plus faible d'autre part."
       }
     },
     {
@@ -14342,12 +14342,12 @@
       "language": "nl",
       "start": 785.216,
       "end": 788.044,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
         "en": "On the other side are both the morning peak and the evening peak.",
-        "fr": "En face de cela se trouvent à la fois le pic du matin et le pic du soir."
+        "fr": "En face de cela se trouvent à la fois l'heure de pointe du matin et l'heure de pointe du soir."
       }
     },
     {
@@ -14417,11 +14417,11 @@
       "language": "nl",
       "start": 788.505,
       "end": 791.864,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
-        "en": "Moments when especially families tend to consume a lot more electricity.",
+        "en": "Moments when especially families tend to consume much more electricity.",
         "fr": "Les moments où les ménages consomment particulièrement plus d'électricité."
       }
     },
@@ -14552,7 +14552,7 @@
       "language": "nl",
       "start": 792.333,
       "end": 798.067,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.93,
       "translations": {
@@ -14565,7 +14565,7 @@
       "start": 798.552,
       "end": 803.677,
       "confidence": 0.41,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Oké,",
@@ -14682,12 +14682,12 @@
       "language": "nl",
       "start": 803.868,
       "end": 806.149,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.31,
       "translations": {
         "en": "valleys and the lowlands.",
-        "fr": "piekuren et les heures creuses."
+        "fr": "Les heures de marée haute et les heures de marée basse."
       }
     },
     {
@@ -14769,7 +14769,7 @@
       "language": "nl",
       "start": 807.289,
       "end": 809.87,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
@@ -14790,7 +14790,7 @@
       "language": "nl",
       "start": 810.049,
       "end": 810.229,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.79,
       "translations": {
@@ -14859,12 +14859,12 @@
       "language": "nl",
       "start": 810.248,
       "end": 812.37,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.81,
       "translations": {
         "en": "Want that's not so different from last year.",
-        "fr": "Ça ne se passe pas autrement cette année que l'année dernière."
+        "fr": "Ça ne se passe pas autrement que l'année dernière."
       }
     },
     {
@@ -14904,7 +14904,7 @@
       "language": "nl",
       "start": 812.534,
       "end": 813.487,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.89,
       "translations": {
@@ -15003,7 +15003,7 @@
       "language": "nl",
       "start": 814.049,
       "end": 819.448,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
@@ -15078,11 +15078,11 @@
       "language": "nl",
       "start": 819.893,
       "end": 823.487,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.88,
       "translations": {
-        "en": "At lunchtime, we use a lot of electricity and actually more and more solar energy.",
+        "en": "At lunchtime, we increasingly and actually always more on solar energy.",
         "fr": "Nous utilisons de plus en plus l'énergie solaire pour le déjeuner et en général de plus en plus."
       }
     },
@@ -15091,7 +15091,7 @@
       "start": 823.956,
       "end": 825.831,
       "confidence": 0.96,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Dat",
@@ -15158,7 +15158,7 @@
       "start": 825.971,
       "end": 831.612,
       "confidence": 0.92,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Alleen",
@@ -15246,8 +15246,8 @@
         }
       ],
       "translations": {
-        "en": "Electricity must either be consumed at that moment or stored.",
-        "fr": "Seul le courant électrique peut être consommé au même moment ou stocké."
+        "en": "The electricity must either be consumed at that moment or stored.",
+        "fr": "Seul le courant électrique peut être consommé à ce moment-là ou stocké."
       }
     },
     {
@@ -15255,7 +15255,7 @@
       "start": 832.12,
       "end": 837.645,
       "confidence": 0.9,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Oké,",
@@ -15382,7 +15382,7 @@
       "start": 838.668,
       "end": 845.176,
       "confidence": 0.88,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Buiten",
@@ -15506,7 +15506,7 @@
         }
       ],
       "translations": {
-        "en": "Outside the best solar farms, let's say, gas power plants provide the last bit of power to meet demand.",
+        "en": "Outside the best solar farms, let's say, gas-fired power plants provide the last bit of electricity to meet demand.",
         "fr": "En dehors des meilleurs panneaux solaires, disons que les centrales à gaz fournissent le dernier petit surplus d'électricité pour répondre à la demande."
       }
     },
@@ -15515,7 +15515,7 @@
       "start": 846.512,
       "end": 850.442,
       "confidence": 0.77,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Het",
@@ -15615,7 +15615,7 @@
         }
       ],
       "translations": {
-        "en": "The thing is, in order to produce, they are quite a bit more expensive than other types.",
+        "en": "The thing is, to produce, they are quite a bit more expensive than other types.",
         "fr": "Le truc, c'est que, pour produire, ils sont quand même assez plus chers que d'autres types."
       }
     },
@@ -15624,7 +15624,7 @@
       "start": 851.161,
       "end": 859.082,
       "confidence": 0.9,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " En",
@@ -15796,8 +15796,8 @@
         }
       ],
       "translations": {
-        "en": "In this year, that effect is even stronger because the gas price in the first six months was significantly higher than in the first half of 2024.",
-        "fr": "Cette année, cet effet est encore un peu plus marqué, car le prix du gaz était sensiblement plus élevé au cours des six premiers mois que dans la première moitié de 2024."
+        "en": "In this year, that effect is even more pronounced because the gas price in the first six months was significantly higher than in the first half of 2024.",
+        "fr": "Cette année, cet effet est encore un peu plus marqué, car le prix du gaz était nettement plus élevé au cours des six premiers mois que dans la première moitié de 2024."
       }
     },
     {
@@ -15813,7 +15813,7 @@
       "language": "nl",
       "start": 859.973,
       "end": 860.426,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.06,
       "translations": {
@@ -15834,7 +15834,7 @@
       "language": "nl",
       "start": 860.786,
       "end": 861.004,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.1,
       "translations": {
@@ -15927,7 +15927,7 @@
       "language": "nl",
       "start": 861.152,
       "end": 864.376,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.65,
       "translations": {
@@ -15940,7 +15940,7 @@
       "start": 864.975,
       "end": 871.885,
       "confidence": 0.95,
-      "speaker": 3,
+      "speaker": 5,
       "words": [
         {
           "word": " Het",
@@ -16046,7 +16046,7 @@
         }
       ],
       "translations": {
-        "en": "The problem is that, to some extent, supply and demand are increasingly diverging throughout the day.",
+        "en": "The problem is that demand and supply are increasingly diverging throughout the day.",
         "fr": "Le problème est qu'au fil de la journée, l'offre et la demande s'éloignent de plus en plus l'une de l'autre."
       }
     },
@@ -16111,12 +16111,12 @@
       "language": "nl",
       "start": 872.487,
       "end": 875.87,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.96,
       "translations": {
         "en": "And so we get those strange contradictions.",
-        "fr": "En nous obtenons donc ces étranges contradictions."
+        "fr": "En nous avons donc ces étranges contradictions."
       }
     },
     {
@@ -16132,7 +16132,7 @@
       "language": "nl",
       "start": 876.19,
       "end": 876.628,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.79,
       "translations": {
@@ -16159,7 +16159,7 @@
       "language": "nl",
       "start": 876.87,
       "end": 877.549,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.9,
       "translations": {
@@ -16198,7 +16198,7 @@
       "language": "nl",
       "start": 878.19,
       "end": 878.987,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.52,
       "translations": {
@@ -16219,7 +16219,7 @@
       "language": "nl",
       "start": 879.003,
       "end": 879.206,
-      "speaker": 3,
+      "speaker": 5,
       "channel": 0,
       "confidence": 0.3,
       "translations": {
@@ -16240,7 +16240,7 @@
       "language": "nl",
       "start": 881.456,
       "end": 886.924,
-      "speaker": 0,
+      "speaker": 6,
       "channel": 0,
       "confidence": 0.03,
       "translations": {
@@ -16291,11 +16291,11 @@
       "language": "nl",
       "start": 886.925,
       "end": 888.706,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.55,
       "translations": {
-        "en": "And it remains finally Belgian.",
+        "en": "And it's still finite Belgian.",
         "fr": "En cela reste encore belge."
       }
     },
@@ -16312,7 +16312,7 @@
       "language": "nl",
       "start": 889.008,
       "end": 889.869,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.67,
       "translations": {
@@ -16325,7 +16325,7 @@
       "start": 889.93,
       "end": 898.327,
       "confidence": 0.88,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " De",
@@ -16426,7 +16426,7 @@
       ],
       "translations": {
         "en": "The East Flemish fashion designer Meryl Rogge has won the Andam Grand Prize, a renowned international fashion award.",
-        "fr": "La styliste flamande Meryl Rogge a remporté le Grand Prix Andam, une prestigieuse récompense internationale de la mode."
+        "fr": "La créatrice de mode flamande Meryl Rogge a remporté le Grand Prix Andam, un prestigieux prix international de la mode."
       }
     },
     {
@@ -16434,7 +16434,7 @@
       "start": 899.085,
       "end": 907.796,
       "confidence": 0.85,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Naast",
@@ -16552,7 +16552,7 @@
         }
       ],
       "translations": {
-        "en": "In addition to 300,000 euros, Rogge will now receive a year of mentorship from Sidney Toledano, an advisor to LVMH's Bernard Arnault.",
+        "en": "In addition to 300,000 euros, Rogge will now receive a year of guidance from Sidney Toledano, an advisor to LVMH CEO Bernard Arnault.",
         "fr": "En plus de 300.000 euros, Rogge bénéficiera pendant un an du mentorat de Sidney Toledano, un conseiller du PDG de LVMH Bernard Arnault."
       }
     },
@@ -16561,7 +16561,7 @@
       "start": 910.803,
       "end": 920.113,
       "confidence": 0.92,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Meryl",
@@ -16573,7 +16573,7 @@
           "word": " Rogge",
           "start": 911.204,
           "end": 911.464,
-          "confidence": 0.88
+          "confidence": 0.89
         },
         {
           "word": " lanceerde",
@@ -16621,7 +16621,7 @@
           "word": " eigen",
           "start": 913.745,
           "end": 913.966,
-          "confidence": 0.94
+          "confidence": 0.96
         },
         {
           "word": " collectie,",
@@ -16711,12 +16711,12 @@
           "word": " erkenning.",
           "start": 919.691,
           "end": 920.113,
-          "confidence": 0.93
+          "confidence": 0.92
         }
       ],
       "translations": {
         "en": "Meryl Rogge launched her first own collection right in the middle of the pandemic. Despite the turbulent period, she was able to count on national and international recognition quite quickly.",
-        "fr": "Meryl Rogge a lancé sa première collection personnelle en plein milieu de la pandémie. Malgré cette période turbulente, elle a rapidement pu compter sur une reconnaissance nationale et internationale."
+        "fr": "Meryl Rogge a lancé sa première collection personnelle en plein milieu de la pandémie. Malgré cette période tumultueuse, elle a rapidement pu compter sur une reconnaissance nationale et internationale."
       }
     },
     {
@@ -16743,7 +16743,7 @@
           "word": " Blanchett",
           "start": 921.37,
           "end": 921.831,
-          "confidence": 0.7
+          "confidence": 0.71
         },
         {
           "word": " tot",
@@ -16774,7 +16774,7 @@
       "language": "nl",
       "start": 920.433,
       "end": 923.652,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
       "confidence": 0.81,
       "translations": {
@@ -16787,7 +16787,7 @@
       "start": 923.995,
       "end": 926.456,
       "confidence": 0.74,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Dua",
@@ -16799,7 +16799,7 @@
           "word": " Lipa,",
           "start": 924.277,
           "end": 924.495,
-          "confidence": 0.94
+          "confidence": 0.93
         },
         {
           "word": " allemaal",
@@ -16817,13 +16817,13 @@
           "word": " van",
           "start": 925.738,
           "end": 925.878,
-          "confidence": 0.99
+          "confidence": 1
         },
         {
           "word": " Rogge.",
           "start": 926.199,
           "end": 926.456,
-          "confidence": 0.94
+          "confidence": 0.95
         }
       ],
       "translations": {
@@ -16835,8 +16835,8 @@
       "text": "Ze wordt geroemd om haar uitgesproken stijl, waarin Hollande prints en stoffen worden gecombineerd.",
       "start": 926.995,
       "end": 931.745,
-      "confidence": 0.88,
-      "speaker": 0,
+      "confidence": 0.89,
+      "speaker": 2,
       "words": [
         {
           "word": " Ze",
@@ -16854,7 +16854,7 @@
           "word": " geroemd",
           "start": 927.324,
           "end": 927.574,
-          "confidence": 0.99
+          "confidence": 1
         },
         {
           "word": " om",
@@ -16872,25 +16872,25 @@
           "word": " uitgesproken",
           "start": 928.074,
           "end": 928.667,
-          "confidence": 0.97
+          "confidence": 0.96
         },
         {
           "word": " stijl,",
           "start": 928.683,
           "end": 928.98,
-          "confidence": 0.88
+          "confidence": 0.89
         },
         {
           "word": " waarin",
           "start": 929.058,
           "end": 929.339,
-          "confidence": 0.94
+          "confidence": 0.96
         },
         {
           "word": " Hollande",
           "start": 929.605,
           "end": 929.917,
-          "confidence": 0.54
+          "confidence": 0.57
         },
         {
           "word": " prints",
@@ -16908,7 +16908,7 @@
           "word": " stoffen",
           "start": 930.402,
           "end": 930.683,
-          "confidence": 0.94
+          "confidence": 0.95
         },
         {
           "word": " worden",
@@ -16933,7 +16933,7 @@
       "start": 932.261,
       "end": 939.636,
       "confidence": 0.93,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Naast",
@@ -16969,7 +16969,7 @@
           "word": " nu",
           "start": 933.964,
           "end": 934.089,
-          "confidence": 0.96
+          "confidence": 0.94
         },
         {
           "word": " dus",
@@ -17017,7 +17017,7 @@
           "word": " mentorschap",
           "start": 935.683,
           "end": 936.308,
-          "confidence": 0.98
+          "confidence": 0.99
         },
         {
           "word": " van",
@@ -17053,13 +17053,13 @@
           "word": " als",
           "start": 938.87,
           "end": 939.027,
-          "confidence": 0.94
+          "confidence": 0.93
         },
         {
           "word": " een",
           "start": 939.105,
           "end": 939.23,
-          "confidence": 0.84
+          "confidence": 0.83
         },
         {
           "word": " klok.",
@@ -17069,8 +17069,8 @@
         }
       ],
       "translations": {
-        "en": "In addition to the prize money, Rogge can now count on the mentorship of Sidney Toledano, a name that rings a bell, for a year.",
-        "fr": "En plus du prix, Rogge peut désormais compter sur le mentorat de Sidney Toledano, un nom qui sonne comme une horloge."
+        "en": "Besides the prize money, Rogge can now also count on the mentorship of Sidney Toledano, a name like a clock.",
+        "fr": "Outre le prix, Rogge peut désormais compter sur le mentorat de Sidney Toledano, un nom comme une horloge, pendant un an."
       }
     },
     {
@@ -17079,28 +17079,28 @@
           "word": " in",
           "start": 939.887,
           "end": 940.007,
-          "confidence": 0.72
+          "confidence": 0.71
         },
         {
           "word": " de",
           "start": 940.027,
           "end": 940.147,
-          "confidence": 0.6
+          "confidence": 0.58
         },
         {
           "word": " modewereld.",
           "start": 940.267,
           "end": 940.848,
-          "confidence": 0.61
+          "confidence": 0.6
         }
       ],
       "text": "in de modewereld.",
       "language": "nl",
       "start": 939.887,
       "end": 940.848,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
-      "confidence": 0.64,
+      "confidence": 0.63,
       "translations": {
         "en": "in the fashion world.",
         "fr": "dans le monde de la mode."
@@ -17118,13 +17118,13 @@
           "word": " is",
           "start": 941.029,
           "end": 941.128,
-          "confidence": 0.95
+          "confidence": 0.94
         },
         {
           "word": " de",
           "start": 941.129,
           "end": 941.229,
-          "confidence": 0.97
+          "confidence": 0.96
         },
         {
           "word": " vroegere",
@@ -17136,7 +17136,7 @@
           "word": " CEO",
           "start": 941.748,
           "end": 942.069,
-          "confidence": 0.4
+          "confidence": 0.39
         },
         {
           "word": " van",
@@ -17160,25 +17160,25 @@
           "word": " en",
           "start": 943.651,
           "end": 943.772,
-          "confidence": 0.88
+          "confidence": 1
         },
         {
           "word": " leidt",
           "start": 943.811,
           "end": 944.03,
-          "confidence": 0.52
+          "confidence": 0.5
         },
         {
           "word": " sinds",
           "start": 944.073,
           "end": 944.272,
-          "confidence": 0.87
+          "confidence": 0.88
         },
         {
           "word": " 2018",
-          "start": 944.273,
+          "start": 944.35,
           "end": 945.373,
-          "confidence": 0.02
+          "confidence": 0.03
         },
         {
           "word": " de",
@@ -17190,7 +17190,7 @@
           "word": " modeafdeling",
           "start": 945.592,
           "end": 946.252,
-          "confidence": 0.96
+          "confidence": 0.97
         },
         {
           "word": " van",
@@ -17213,23 +17213,23 @@
         {
           "word": " gigant",
           "start": 946.912,
-          "end": 947.295,
+          "end": 947.315,
           "confidence": 0.95
         },
         {
           "word": " LVMH.",
           "start": 947.534,
           "end": 948.057,
-          "confidence": 0.42
+          "confidence": 0.64
         }
       ],
       "text": "Hij is de vroegere CEO van modemerk Dior en leidt sinds 2018 de modeafdeling van de Franse gigant LVMH.",
       "language": "nl",
       "start": 940.909,
       "end": 948.057,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
-      "confidence": 0.81,
+      "confidence": 0.83,
       "translations": {
         "en": "He is the former CEO of fashion brand Dior and has been heading the fashion division of the French giant LVMH since 2018.",
         "fr": "Il est l'ancien PDG de la marque de mode Dior et dirige depuis 2018 le département mode du géant français LVMH."
@@ -17240,7 +17240,7 @@
       "start": 948.932,
       "end": 952.659,
       "confidence": 0.7,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Voilà,",
@@ -17252,7 +17252,7 @@
           "word": " daarmee",
           "start": 949.416,
           "end": 949.674,
-          "confidence": 0.96
+          "confidence": 0.97
         },
         {
           "word": " heb",
@@ -17276,7 +17276,7 @@
           "word": " dagelijkse",
           "start": 950.08,
           "end": 950.541,
-          "confidence": 0.97
+          "confidence": 0.98
         },
         {
           "word": " fix",
@@ -17294,7 +17294,7 @@
           "word": " het",
           "start": 951.041,
           "end": 951.159,
-          "confidence": 0.89
+          "confidence": 0.9
         },
         {
           "word": " laatste",
@@ -17306,7 +17306,7 @@
           "word": " businessnieuws",
           "start": 951.596,
           "end": 952.096,
-          "confidence": 0.66
+          "confidence": 0.67
         },
         {
           "word": " alweer",
@@ -17323,7 +17323,7 @@
       ],
       "translations": {
         "en": "There you go, you've had your daily fix of the latest business news again.",
-        "fr": "Voilà, tu as déjà eu ta dose quotidienne des dernières infos économiques."
+        "fr": "Voilà, tu as déjà eu ta dose quotidienne des dernières nouvelles économiques."
       }
     },
     {
@@ -17332,13 +17332,13 @@
           "word": " Wij",
           "start": 952.901,
           "end": 953.041,
-          "confidence": 0.82
+          "confidence": 0.83
         },
         {
           "word": " zijn",
           "start": 953.104,
           "end": 953.237,
-          "confidence": 0.91
+          "confidence": 0.9
         },
         {
           "word": " er",
@@ -17350,7 +17350,7 @@
           "word": " morgen",
           "start": 953.44,
           "end": 953.745,
-          "confidence": 0.95
+          "confidence": 1
         },
         {
           "word": " weer.",
@@ -17363,9 +17363,9 @@
       "language": "nl",
       "start": 952.901,
       "end": 953.979,
-      "speaker": 0,
+      "speaker": 2,
       "channel": 0,
-      "confidence": 0.93,
+      "confidence": 0.94,
       "translations": {
         "en": "We'll be back tomorrow.",
         "fr": "Nous serons de retour demain."
@@ -17376,7 +17376,7 @@
       "start": 954.323,
       "end": 957.604,
       "confidence": 0.84,
-      "speaker": 0,
+      "speaker": 2,
       "words": [
         {
           "word": " Heel",
@@ -17388,7 +17388,7 @@
           "word": " graag",
           "start": 954.518,
           "end": 954.745,
-          "confidence": 0.98
+          "confidence": 0.97
         },
         {
           "word": " tot",
@@ -17418,7 +17418,7 @@
           "word": " een",
           "start": 955.464,
           "end": 955.58,
-          "confidence": 0.88
+          "confidence": 0.87
         },
         {
           "word": " fijne,",
@@ -17453,7 +17453,7 @@
       ],
       "translations": {
         "en": "I wish you a very pleasant, somewhat cool day.",
-        "fr": "Je vous souhaite une très bonne journée et une agréable, légèrement fraîche journée."
+        "fr": "Je vous souhaite une excellente journée, agréable et un peu fraîche."
       }
     },
     {
@@ -17462,61 +17462,61 @@
           "word": " Dit",
           "start": 960.729,
           "end": 960.948,
-          "confidence": 0.66
+          "confidence": 0.73
         },
         {
           "word": " was",
           "start": 961.276,
           "end": 961.448,
-          "confidence": 0.72
+          "confidence": 0.76
         },
         {
           "word": " De",
           "start": 961.463,
           "end": 961.588,
-          "confidence": 0.64
+          "confidence": 0.68
         },
         {
           "word": " Zeven",
           "start": 961.651,
           "end": 962.041,
-          "confidence": 0.23
+          "confidence": 0.31
         },
         {
           "word": " met",
           "start": 962.666,
           "end": 962.807,
-          "confidence": 0.44
+          "confidence": 0.54
         },
         {
-          "word": " Roan",
+          "word": " Rohan",
           "start": 962.916,
           "end": 963.245,
-          "confidence": 0.63
+          "confidence": 0.57
         },
         {
           "word": " van",
           "start": 963.307,
           "end": 963.463,
-          "confidence": 0.71
+          "confidence": 0.78
         },
         {
           "word": " Eek.",
           "start": 963.557,
           "end": 963.745,
-          "confidence": 0.32
+          "confidence": 0.33
         }
       ],
-      "text": "Dit was De Zeven met Roan van Eek.",
+      "text": "Dit was De Zeven met Rohan van Eek.",
       "language": "nl",
       "start": 960.729,
       "end": 963.745,
-      "speaker": 0,
+      "speaker": 1,
       "channel": 0,
-      "confidence": 0.54,
+      "confidence": 0.59,
       "translations": {
-        "en": "This was The Seven with Roan van Eek.",
-        "fr": "C'était Les Sept avec Roan van Eek."
+        "en": "This was The Seven with Rohan van Eek.",
+        "fr": "C'était Les Sept avec Rohan van Eek."
       }
     },
     {
@@ -17531,7 +17531,7 @@
           "word": " door",
           "start": 965.635,
           "end": 965.854,
-          "confidence": 0.93
+          "confidence": 0.94
         },
         {
           "word": " Anne-Sophie",
@@ -17543,52 +17543,52 @@
           "word": " Moerman",
           "start": 966.588,
           "end": 967.057,
-          "confidence": 0.66
+          "confidence": 0.65
         },
         {
           "word": " vanop",
           "start": 967.448,
           "end": 967.698,
-          "confidence": 0.93
+          "confidence": 0.94
         },
         {
           "word": " de",
           "start": 967.699,
           "end": 967.807,
-          "confidence": 0.37
+          "confidence": 0.39
         },
         {
           "word": " redactie",
           "start": 967.838,
           "end": 968.354,
-          "confidence": 0.96
+          "confidence": 0.97
         },
         {
           "word": " van",
           "start": 968.416,
           "end": 968.541,
-          "confidence": 0.95
+          "confidence": 0.96
         },
         {
           "word": " De",
           "start": 968.557,
           "end": 968.682,
-          "confidence": 0.9
+          "confidence": 0.92
         },
         {
           "word": " Tijd.",
           "start": 968.729,
           "end": 969.041,
-          "confidence": 0.96
+          "confidence": 0.97
         }
       ],
       "text": "Productie door Anne-Sophie Moerman vanop de redactie van De Tijd.",
       "language": "nl",
       "start": 964.885,
       "end": 969.041,
-      "speaker": 0,
+      "speaker": 1,
       "channel": 0,
-      "confidence": 0.81,
+      "confidence": 0.82,
       "translations": {
         "en": "Production by Anne-Sophie Moerman from the editorial team of De Tijd.",
         "fr": "Production par Anne-Sophie Moerman depuis la rédaction de De Tijd."
@@ -17596,125 +17596,125 @@
     },
     {
       "text": "Voor meer business en straffe nieuwsverhalen, check tijd.be of onze app.",
-      "start": 970.192,
-      "end": 974.699,
-      "confidence": 0.78,
-      "speaker": 0,
+      "start": 970.244,
+      "end": 974.71,
+      "confidence": 0.77,
+      "speaker": 1,
       "words": [
         {
           "word": " Voor",
-          "start": 970.192,
-          "end": 970.392,
-          "confidence": 0.76
+          "start": 970.244,
+          "end": 970.384,
+          "confidence": 0.71
         },
         {
           "word": " meer",
-          "start": 970.452,
-          "end": 970.693,
-          "confidence": 1
+          "start": 970.464,
+          "end": 970.684,
+          "confidence": 0.97
         },
         {
           "word": " business",
-          "start": 970.773,
-          "end": 971.194,
-          "confidence": 0.53
+          "start": 970.765,
+          "end": 971.184,
+          "confidence": 0.54
         },
         {
           "word": " en",
-          "start": 971.234,
-          "end": 971.354,
+          "start": 971.225,
+          "end": 971.345,
           "confidence": 1
         },
         {
           "word": " straffe",
-          "start": 971.394,
-          "end": 971.734,
-          "confidence": 1
+          "start": 971.385,
+          "end": 971.745,
+          "confidence": 0.91
         },
         {
           "word": " nieuwsverhalen,",
-          "start": 971.814,
-          "end": 972.576,
-          "confidence": 0.86
+          "start": 971.825,
+          "end": 972.585,
+          "confidence": 0.98
         },
         {
           "word": " check",
-          "start": 972.777,
-          "end": 972.957,
-          "confidence": 0.69
+          "start": 972.767,
+          "end": 972.966,
+          "confidence": 0.59
         },
         {
           "word": " tijd.be",
-          "start": 973.056,
-          "end": 973.839,
-          "confidence": 0.89
+          "start": 973.046,
+          "end": 973.847,
+          "confidence": 0.94
         },
         {
           "word": " of",
-          "start": 974.097,
-          "end": 974.218,
-          "confidence": 0.97
+          "start": 974.108,
+          "end": 974.226,
+          "confidence": 0.73
         },
         {
           "word": " onze",
-          "start": 974.3,
-          "end": 974.48,
-          "confidence": 0.97
+          "start": 974.308,
+          "end": 974.468,
+          "confidence": 0.98
         },
         {
           "word": " app.",
-          "start": 974.578,
-          "end": 974.699,
-          "confidence": 0.38
+          "start": 974.569,
+          "end": 974.71,
+          "confidence": 0.59
         }
       ],
       "translations": {
         "en": "For more business and hard-hitting news stories, check out tijd.be or our app.",
-        "fr": "Pour plus d'informations sur les affaires et des articles de presse percutants, consultez le site web de Tijd.be ou notre application."
+        "fr": "Pour plus d'informations sur les affaires et les dernières nouvelles, consultez le site web de Tijd.be ou notre application."
       }
     },
     {
       "words": [
         {
           "word": " Morgen",
-          "start": 975.781,
-          "end": 976.082,
-          "confidence": 1
+          "start": 975.788,
+          "end": 976.069,
+          "confidence": 0.97
         },
         {
           "word": " zijn",
-          "start": 976.121,
-          "end": 976.281,
-          "confidence": 0.95
+          "start": 976.108,
+          "end": 976.288,
+          "confidence": 0.99
         },
         {
           "word": " we",
-          "start": 976.304,
-          "end": 976.382,
+          "start": 976.289,
+          "end": 976.39,
           "confidence": 0.99
         },
         {
           "word": " er",
-          "start": 976.383,
-          "end": 976.504,
+          "start": 976.391,
+          "end": 976.511,
           "confidence": 1
         },
         {
           "word": " weer.",
-          "start": 976.543,
-          "end": 976.824,
-          "confidence": 1
+          "start": 976.53,
+          "end": 988.022,
+          "confidence": 0.98
         }
       ],
       "text": "Morgen zijn we er weer.",
       "language": "nl",
-      "start": 975.781,
-      "end": 976.824,
+      "start": 975.788,
+      "end": 988.022,
       "speaker": 0,
       "channel": 0,
       "confidence": 0.99,
       "translations": {
-        "en": "Tomorrow we are there again.",
+        "en": "Tomorrow we're back again.",
         "fr": "Demain, nous y serons à nouveau."
       }
     },
@@ -17722,24 +17722,24 @@
       "words": [
         {
           "word": " Tot",
-          "start": 977.285,
-          "end": 977.425,
-          "confidence": 0.34
+          "start": 988.179,
+          "end": 990.304,
+          "confidence": 1
         },
         {
           "word": " dan!",
-          "start": 977.464,
-          "end": 977.664,
-          "confidence": 0.98
+          "start": 990.585,
+          "end": 992.71,
+          "confidence": 0.94
         }
       ],
       "text": "Tot dan!",
       "language": "nl",
-      "start": 977.285,
-      "end": 977.664,
+      "start": 988.179,
+      "end": 992.71,
       "speaker": 0,
       "channel": 0,
-      "confidence": 0.66,
+      "confidence": 0.97,
       "translations": {
         "en": "Goodbye!",
         "fr": "Bonjour !"
@@ -17748,294 +17748,159 @@
     {
       "words": [
         {
-          "word": " In",
-          "start": 985.715,
-          "end": 985.835,
-          "confidence": 1
-        },
-        {
-          "word": " Luxemburg",
-          "start": 985.895,
-          "end": 986.396,
-          "confidence": 0.99
-        },
-        {
-          "word": " hoef",
-          "start": 986.456,
-          "end": 986.596,
-          "confidence": 0.96
-        },
-        {
-          "word": " je",
-          "start": 986.616,
-          "end": 986.736,
-          "confidence": 1
-        },
-        {
-          "word": " niet",
-          "start": 986.777,
-          "end": 986.937,
-          "confidence": 0.91
-        },
-        {
-          "word": " te",
-          "start": 986.938,
-          "end": 987.017,
-          "confidence": 1
-        },
-        {
-          "word": " kiezen",
-          "start": 987.036,
-          "end": 987.337,
-          "confidence": 0.88
-        },
-        {
-          "word": " tussen",
-          "start": 987.376,
-          "end": 987.616,
-          "confidence": 0.99
-        },
-        {
-          "word": " een",
-          "start": 987.617,
-          "end": 987.738,
-          "confidence": 0.99
-        },
-        {
-          "word": " internationale",
-          "start": 987.818,
-          "end": 988.497,
-          "confidence": 1
-        },
-        {
-          "word": " carrière",
-          "start": 988.517,
-          "end": 988.919,
-          "confidence": 0.84
-        },
-        {
-          "word": " in",
-          "start": 988.958,
-          "end": 989.079,
-          "confidence": 1
-        },
-        {
-          "word": " finance",
-          "start": 989.118,
-          "end": 989.681,
-          "confidence": 0.99
-        },
-        {
-          "word": " en",
-          "start": 989.9,
-          "end": 990.021,
-          "confidence": 1
-        },
-        {
-          "word": " uitstekende",
-          "start": 990.04,
-          "end": 990.618,
-          "confidence": 0.98
-        },
-        {
-          "word": " levenskwaliteit.",
-          "start": 990.681,
-          "end": 991.521,
-          "confidence": 0.88
-        }
-      ],
-      "text": "In Luxemburg hoef je niet te kiezen tussen een internationale carrière in finance en uitstekende levenskwaliteit.",
-      "language": "nl",
-      "start": 985.715,
-      "end": 991.521,
-      "speaker": 0,
-      "channel": 0,
-      "confidence": 0.96,
-      "translations": {
-        "en": "In Luxembourg, you don't have to choose between an international career in finance and excellent quality of life.",
-        "fr": "Au Luxembourg, vous n'avez pas à choisir entre une carrière internationale dans la finance et une excellente qualité de vie."
-      }
-    },
-    {
-      "words": [
-        {
-          "word": " Je",
-          "start": 991.861,
-          "end": 991.982,
-          "confidence": 1
-        },
-        {
-          "word": " krijgt",
-          "start": 992.001,
-          "end": 992.283,
-          "confidence": 0.93
-        },
-        {
-          "word": " ze",
-          "start": 992.284,
-          "end": 992.4,
-          "confidence": 0.5
-        },
-        {
-          "word": " gewoon",
-          "start": 992.443,
-          "end": 992.72,
-          "confidence": 1
-        },
-        {
           "word": " allebei.",
-          "start": 992.943,
-          "end": 993.384,
-          "confidence": 0.73
+          "start": 992.927,
+          "end": 993.368,
+          "confidence": 0.72
         }
       ],
-      "text": "Je krijgt ze gewoon allebei.",
+      "text": "allebei.",
       "language": "nl",
-      "start": 991.861,
-      "end": 993.384,
+      "start": 992.927,
+      "end": 993.368,
       "speaker": 0,
       "channel": 0,
-      "confidence": 0.83,
+      "confidence": 0.72,
       "translations": {
-        "en": "You're getting both of them anyway.",
-        "fr": "Vous les aurez tous les deux."
+        "en": "both",
+        "fr": "Tous les deux."
       }
     },
     {
       "words": [
         {
           "word": " Gratis",
-          "start": 993.923,
-          "end": 994.306,
+          "start": 993.928,
+          "end": 994.288,
           "confidence": 0.99
         },
         {
           "word": " openbaar",
-          "start": 994.345,
-          "end": 994.704,
-          "confidence": 0.99
+          "start": 994.349,
+          "end": 994.708,
+          "confidence": 1
         },
         {
           "word": " vervoer",
-          "start": 994.767,
-          "end": 995.165,
-          "confidence": 1
+          "start": 994.749,
+          "end": 995.15,
+          "confidence": 0.97
         },
         {
           "word": " brengt",
-          "start": 995.525,
-          "end": 995.767,
-          "confidence": 1
+          "start": 995.509,
+          "end": 995.749,
+          "confidence": 0.94
         },
         {
           "word": " je",
-          "start": 995.768,
-          "end": 995.884,
+          "start": 995.75,
+          "end": 995.87,
           "confidence": 1
         },
         {
           "word": " overal",
-          "start": 995.947,
-          "end": 996.283,
+          "start": 995.929,
+          "end": 996.29,
           "confidence": 1
         },
         {
           "word": " vlot",
-          "start": 996.345,
-          "end": 996.587,
+          "start": 996.351,
+          "end": 996.57,
           "confidence": 1
         },
         {
           "word": " naartoe.",
-          "start": 996.626,
-          "end": 996.97,
-          "confidence": 0.98
+          "start": 996.63,
+          "end": 996.972,
+          "confidence": 0.99
         }
       ],
       "text": "Gratis openbaar vervoer brengt je overal vlot naartoe.",
       "language": "nl",
-      "start": 993.923,
-      "end": 996.97,
+      "start": 993.928,
+      "end": 996.972,
       "speaker": 0,
       "channel": 0,
-      "confidence": 1,
+      "confidence": 0.99,
       "translations": {
         "en": "Free public transport takes you anywhere smoothly.",
-        "fr": "Les transports publics gratuits te permettent de vous rendre partout facilement."
+        "fr": "Gratuit, les transports publics t'emmènent partout sans problème."
       }
     },
     {
       "text": "En de natuur, die ligt vlakbij de stad en je kantoor.",
-      "start": 997.486,
-      "end": 1000.892,
-      "confidence": 0.98,
+      "start": 997.472,
+      "end": 1000.894,
+      "confidence": 0.96,
       "speaker": 0,
       "words": [
         {
           "word": " En",
-          "start": 997.486,
-          "end": 997.611,
+          "start": 997.472,
+          "end": 997.593,
           "confidence": 1
         },
         {
           "word": " de",
-          "start": 997.612,
-          "end": 997.665,
+          "start": 997.594,
+          "end": 997.671,
           "confidence": 1
         },
         {
           "word": " natuur,",
-          "start": 997.689,
-          "end": 998.087,
-          "confidence": 0.98
-        },
-        {
-          "word": " die",
-          "start": 998.509,
-          "end": 998.65,
-          "confidence": 0.9
-        },
-        {
-          "word": " ligt",
-          "start": 998.751,
-          "end": 998.97,
+          "start": 997.691,
+          "end": 998.093,
           "confidence": 1
         },
         {
+          "word": " die",
+          "start": 998.492,
+          "end": 998.652,
+          "confidence": 1
+        },
+        {
+          "word": " ligt",
+          "start": 998.734,
+          "end": 998.972,
+          "confidence": 0.99
+        },
+        {
           "word": " vlakbij",
-          "start": 999.025,
-          "end": 999.431,
+          "start": 999.011,
+          "end": 999.433,
           "confidence": 1
         },
         {
           "word": " de",
-          "start": 999.447,
-          "end": 999.572,
+          "start": 999.434,
+          "end": 999.554,
           "confidence": 1
         },
         {
           "word": " stad",
-          "start": 999.587,
-          "end": 999.829,
+          "start": 999.593,
+          "end": 999.816,
           "confidence": 1
         },
         {
           "word": " en",
-          "start": 1000.173,
-          "end": 1000.29,
-          "confidence": 1
+          "start": 1000.156,
+          "end": 1000.273,
+          "confidence": 0.83
         },
         {
           "word": " je",
-          "start": 1000.306,
-          "end": 1000.431,
-          "confidence": 1
+          "start": 1000.292,
+          "end": 1000.413,
+          "confidence": 0.99
         },
         {
           "word": " kantoor.",
-          "start": 1000.447,
-          "end": 1000.892,
-          "confidence": 0.94
+          "start": 1000.433,
+          "end": 1000.894,
+          "confidence": 0.87
         }
       ],
       "translations": {
@@ -18047,185 +17912,185 @@
       "words": [
         {
           "word": " Tel",
-          "start": 1001.368,
-          "end": 1001.533,
+          "start": 1001.355,
+          "end": 1001.519,
           "confidence": 1
         },
         {
           "word": " daar",
-          "start": 1001.572,
-          "end": 1001.736,
-          "confidence": 0.96
+          "start": 1001.558,
+          "end": 1001.738,
+          "confidence": 1
         },
         {
           "word": " doorgroeikansen",
-          "start": 1001.798,
-          "end": 1002.564,
-          "confidence": 0.87
+          "start": 1001.792,
+          "end": 1002.574,
+          "confidence": 0.88
         },
         {
           "word": " in",
-          "start": 1002.565,
-          "end": 1002.673,
-          "confidence": 0.96
+          "start": 1002.575,
+          "end": 1002.675,
+          "confidence": 0.94
         },
         {
           "word": " een",
-          "start": 1002.674,
-          "end": 1002.767,
-          "confidence": 0.99
+          "start": 1002.676,
+          "end": 1002.777,
+          "confidence": 0.93
         },
         {
           "word": " internationaal",
-          "start": 1002.814,
-          "end": 1003.439,
-          "confidence": 0.97
-        },
-        {
-          "word": " financieel",
-          "start": 1003.47,
-          "end": 1003.954,
+          "start": 1002.8,
+          "end": 1003.441,
           "confidence": 0.99
         },
         {
+          "word": " financieel",
+          "start": 1003.48,
+          "end": 1003.956,
+          "confidence": 0.98
+        },
+        {
           "word": " centrum",
-          "start": 1004.017,
-          "end": 1004.392,
-          "confidence": 1
+          "start": 1003.995,
+          "end": 1004.378,
+          "confidence": 0.99
         },
         {
           "word": " en",
-          "start": 1004.689,
-          "end": 1004.814,
+          "start": 1004.699,
+          "end": 1004.816,
           "confidence": 1
         },
         {
           "word": " een",
-          "start": 1004.815,
-          "end": 1004.939,
+          "start": 1004.817,
+          "end": 1004.917,
           "confidence": 0.99
         },
         {
           "word": " hoger",
-          "start": 1004.97,
-          "end": 1005.314,
-          "confidence": 0.95
-        },
-        {
-          "word": " netto-loon",
-          "start": 1005.408,
-          "end": 1005.876,
-          "confidence": 0.78
-        },
-        {
-          "word": " bij",
-          "start": 1005.908,
-          "end": 1006.033,
+          "start": 1004.98,
+          "end": 1005.316,
           "confidence": 1
         },
         {
+          "word": " netto-loon",
+          "start": 1005.417,
+          "end": 1005.878,
+          "confidence": 0.83
+        },
+        {
+          "word": " bij",
+          "start": 1005.902,
+          "end": 1006.019,
+          "confidence": 0.99
+        },
+        {
           "word": " op",
-          "start": 1006.095,
-          "end": 1006.22,
+          "start": 1006.081,
+          "end": 1006.199,
           "confidence": 1
         },
         {
           "word": " en",
-          "start": 1006.579,
-          "end": 1006.689,
+          "start": 1006.558,
+          "end": 1006.683,
           "confidence": 1
         },
         {
           "word": " de",
-          "start": 1006.69,
-          "end": 1006.798,
-          "confidence": 1
+          "start": 1006.684,
+          "end": 1006.784,
+          "confidence": 0.99
         },
         {
           "word": " rekensom",
-          "start": 1006.814,
-          "end": 1007.314,
-          "confidence": 1
+          "start": 1006.8,
+          "end": 1007.3,
+          "confidence": 0.99
         },
         {
           "word": " is",
-          "start": 1007.439,
-          "end": 1007.564,
+          "start": 1007.441,
+          "end": 1007.558,
           "confidence": 1
         },
         {
           "word": " snel",
-          "start": 1007.642,
-          "end": 1007.861,
+          "start": 1007.62,
+          "end": 1007.839,
           "confidence": 1
         },
         {
           "word": " gemaakt.",
-          "start": 1007.923,
-          "end": 1008.314,
-          "confidence": 1
+          "start": 1007.902,
+          "end": 1008.3,
+          "confidence": 0.97
         }
       ],
       "text": "Tel daar doorgroeikansen in een internationaal financieel centrum en een hoger netto-loon bij op en de rekensom is snel gemaakt.",
       "language": "nl",
-      "start": 1001.368,
-      "end": 1008.314,
+      "start": 1001.355,
+      "end": 1008.3,
       "speaker": 0,
       "channel": 0,
       "confidence": 0.97,
       "translations": {
         "en": "There are growth opportunities in an international financial center and a higher net salary, and the calculation is quickly made.",
-        "fr": "Les opportunités de croissance dans un centre financier international et un salaire net plus élevé sont rapidement calculés."
+        "fr": "Les opportunités de croissance dans un centre financier international et un salaire net plus élevé sont évidents et le calcul est vite fait."
       }
     },
     {
       "text": "Luxemburg, de beste investering is in jezelf.",
-      "start": 1009.001,
-      "end": 1012.064,
-      "confidence": 0.98,
+      "start": 1008.988,
+      "end": 1012.066,
+      "confidence": 0.99,
       "speaker": 0,
       "words": [
         {
           "word": " Luxemburg,",
-          "start": 1009.001,
-          "end": 1009.579,
-          "confidence": 0.98
+          "start": 1008.988,
+          "end": 1009.566,
+          "confidence": 0.99
         },
         {
           "word": " de",
-          "start": 1009.939,
-          "end": 1010.064,
+          "start": 1009.941,
+          "end": 1010.066,
           "confidence": 1
         },
         {
           "word": " beste",
-          "start": 1010.095,
-          "end": 1010.376,
+          "start": 1010.097,
+          "end": 1010.363,
           "confidence": 1
         },
         {
           "word": " investering",
-          "start": 1010.423,
-          "end": 1011.033,
-          "confidence": 0.97
+          "start": 1010.409,
+          "end": 1011.019,
+          "confidence": 1
         },
         {
           "word": " is",
-          "start": 1011.345,
-          "end": 1011.454,
+          "start": 1011.331,
+          "end": 1011.441,
           "confidence": 1
         },
         {
           "word": " in",
-          "start": 1011.501,
-          "end": 1011.626,
+          "start": 1011.503,
+          "end": 1011.628,
           "confidence": 1
         },
         {
           "word": " jezelf.",
-          "start": 1011.642,
-          "end": 1012.064,
-          "confidence": 0.99
+          "start": 1011.644,
+          "end": 1012.066,
+          "confidence": 1
         }
       ],
       "translations": {
@@ -18234,729 +18099,596 @@
       }
     },
     {
+      "text": "Ons Tina, die beleggingsgodin die we allemaal zo graag hebben, there is no alternative.",
+      "start": 1020.659,
+      "end": 1024.699,
+      "confidence": 0.8,
+      "speaker": 7,
       "words": [
         {
-          "word": " Ontdek",
-          "start": 1012.507,
-          "end": 1012.767,
-          "confidence": 0.98
-        },
-        {
-          "word": " de",
-          "start": 1012.768,
-          "end": 1012.868,
-          "confidence": 0.97
-        },
-        {
-          "word": " mogelijkheden",
-          "start": 1012.888,
-          "end": 1013.548,
-          "confidence": 0.94
-        },
-        {
-          "word": " op",
-          "start": 1013.868,
-          "end": 1013.989,
-          "confidence": 0.99
-        },
-        {
-          "word": " movetolux.com",
-          "start": 1014.249,
-          "end": 1015.451,
-          "confidence": 0.62
-        }
-      ],
-      "text": "Ontdek de mogelijkheden op movetolux.com",
-      "language": "nl",
-      "start": 1012.507,
-      "end": 1015.451,
-      "speaker": 0,
-      "channel": 0,
-      "confidence": 0.9,
-      "translations": {
-        "en": "Discover the possibilities on movetolux.com",
-        "fr": "Découvrez les possibilités sur movetolux.com"
-      }
-    },
-    {
-      "text": "Exclusieve inzichten, verborgen strategieën, de toekomst van jouw sector.",
-      "start": 1016.031,
-      "end": 1020.234,
-      "confidence": 0.89,
-      "speaker": 0,
-      "words": [
-        {
-          "word": " Exclusieve",
-          "start": 1016.031,
-          "end": 1016.613,
-          "confidence": 0.99
-        },
-        {
-          "word": " inzichten,",
-          "start": 1016.73,
-          "end": 1017.21,
-          "confidence": 0.97
-        },
-        {
-          "word": " verborgen",
-          "start": 1017.394,
-          "end": 1017.933,
-          "confidence": 0.95
-        },
-        {
-          "word": " strategieën,",
-          "start": 1017.972,
-          "end": 1018.593,
-          "confidence": 0.83
-        },
-        {
-          "word": " de",
-          "start": 1018.714,
-          "end": 1018.831,
-          "confidence": 0.99
-        },
-        {
-          "word": " toekomst",
-          "start": 1018.952,
-          "end": 1019.374,
-          "confidence": 0.99
-        },
-        {
-          "word": " van",
-          "start": 1019.413,
-          "end": 1019.534,
-          "confidence": 1
-        },
-        {
-          "word": " jouw",
-          "start": 1019.554,
-          "end": 1019.714,
-          "confidence": 0.78
-        },
-        {
-          "word": " sector.",
-          "start": 1019.835,
-          "end": 1020.234,
-          "confidence": 0.97
-        }
-      ],
-      "translations": {
-        "en": "Exclusive insights, hidden strategies, the future of your industry.",
-        "fr": "Exclusivité, stratégies cachées, l'avenir de votre secteur."
-      }
-    },
-    {
-      "words": [
-        {
-          "word": " Wat",
-          "start": 1020.417,
-          "end": 1020.574,
-          "confidence": 1
-        },
-        {
-          "word": " weten",
-          "start": 1020.652,
-          "end": 1020.917,
-          "confidence": 0.86
-        },
-        {
-          "word": " jouw",
-          "start": 1020.956,
-          "end": 1021.136,
-          "confidence": 0.81
-        },
-        {
-          "word": " concurrenten",
-          "start": 1021.199,
-          "end": 1021.816,
-          "confidence": 0.99
-        },
-        {
-          "word": " dat",
-          "start": 1022.074,
-          "end": 1022.199,
-          "confidence": 1
-        },
-        {
-          "word": " jij",
-          "start": 1022.238,
-          "end": 1022.355,
-          "confidence": 1
-        },
-        {
-          "word": " nog",
-          "start": 1022.378,
-          "end": 1022.495,
-          "confidence": 1
-        },
-        {
-          "word": " niet",
-          "start": 1022.597,
-          "end": 1022.753,
-          "confidence": 0.98
-        },
-        {
-          "word": " weet?",
-          "start": 1022.816,
-          "end": 1023.058,
-          "confidence": 0.83
-        }
-      ],
-      "text": "Wat weten jouw concurrenten dat jij nog niet weet?",
-      "language": "nl",
-      "start": 1020.417,
-      "end": 1023.058,
-      "speaker": 0,
-      "channel": 0,
-      "confidence": 0.94,
-      "translations": {
-        "en": "What do your competitors know that you don't yet?",
-        "fr": "Que savent vos concurrents que vous ignorez encore ?"
-      }
-    },
-    {
-      "text": "Welke trends sluipen de markt binnen, hier en in het buitenland?",
-      "start": 1023.316,
-      "end": 1027.261,
-      "confidence": 0.95,
-      "speaker": 0,
-      "words": [
-        {
-          "word": " Welke",
-          "start": 1023.316,
-          "end": 1023.558,
-          "confidence": 1
-        },
-        {
-          "word": " trends",
-          "start": 1023.675,
-          "end": 1024.034,
-          "confidence": 0.84
-        },
-        {
-          "word": " sluipen",
-          "start": 1024.238,
-          "end": 1024.675,
-          "confidence": 1
-        },
-        {
-          "word": " de",
-          "start": 1024.676,
-          "end": 1024.8,
-          "confidence": 0.93
-        },
-        {
-          "word": " markt",
-          "start": 1024.902,
-          "end": 1025.159,
-          "confidence": 0.93
-        },
-        {
-          "word": " binnen,",
-          "start": 1025.222,
-          "end": 1025.456,
-          "confidence": 0.99
-        },
-        {
-          "word": " hier",
-          "start": 1025.8,
-          "end": 1026.081,
-          "confidence": 0.98
-        },
-        {
-          "word": " en",
-          "start": 1026.378,
-          "end": 1026.503,
-          "confidence": 1
-        },
-        {
-          "word": " in",
-          "start": 1026.504,
-          "end": 1026.597,
-          "confidence": 1
-        },
-        {
-          "word": " het",
-          "start": 1026.598,
-          "end": 1026.699,
-          "confidence": 1
-        },
-        {
-          "word": " buitenland?",
-          "start": 1026.738,
-          "end": 1027.261,
-          "confidence": 1
-        }
-      ],
-      "translations": {
-        "en": "What trends are emerging in the market, here and abroad?",
-        "fr": "Quelles tendances le marché cache-t-il, ici et à l'étranger ?"
-      }
-    },
-    {
-      "words": [
-        {
-          "word": " Europa",
-          "start": 1027.644,
-          "end": 1028.003,
-          "confidence": 0.91
-        },
-        {
-          "word": " heeft",
-          "start": 1028.12,
-          "end": 1028.324,
-          "confidence": 0.93
-        },
-        {
-          "word": " recent",
-          "start": 1028.456,
-          "end": 1028.863,
-          "confidence": 0.98
-        },
-        {
-          "word": " een",
-          "start": 1029.144,
-          "end": 1029.284,
-          "confidence": 0.99
-        },
-        {
-          "word": " nieuwe",
-          "start": 1029.441,
-          "end": 1029.659,
-          "confidence": 0.8
-        },
-        {
-          "word": " verordening",
-          "start": 1029.706,
-          "end": 1030.331,
-          "confidence": 0.99
-        },
-        {
-          "word": " goedgekeurd.",
-          "start": 1030.878,
-          "end": 1031.472,
-          "confidence": 0.92
-        }
-      ],
-      "text": "Europa heeft recent een nieuwe verordening goedgekeurd.",
-      "language": "nl",
-      "start": 1027.644,
-      "end": 1031.472,
-      "speaker": 0,
-      "channel": 0,
-      "confidence": 0.93,
-      "translations": {
-        "en": "Europe has recently approved a new regulation.",
-        "fr": "L'Europe a récemment approuvé un nouveau règlement."
-      }
-    },
-    {
-      "words": [
-        {
-          "word": " De",
-          "start": 1031.784,
-          "end": 1031.909,
-          "confidence": 0.61
-        },
-        {
-          "word": " Packaging",
-          "start": 1031.941,
-          "end": 1032.347,
-          "confidence": 0.89
-        },
-        {
-          "word": " and",
-          "start": 1032.394,
-          "end": 1032.503,
-          "confidence": 0.42
-        },
-        {
-          "word": " Packaging",
-          "start": 1032.566,
-          "end": 1032.988,
+          "word": " Ons",
+          "start": 1020.659,
+          "end": 1020.819,
           "confidence": 0.9
         },
         {
-          "word": " Waste",
-          "start": 1033.081,
-          "end": 1033.425,
-          "confidence": 0.73
+          "word": " Tina,",
+          "start": 1020.919,
+          "end": 1021.199,
+          "confidence": 0.96
         },
         {
-          "word": " Regulation.",
-          "start": 1033.675,
-          "end": 1034.316,
-          "confidence": 0.99
-        }
-      ],
-      "text": "De Packaging and Packaging Waste Regulation.",
-      "language": "nl",
-      "start": 1031.784,
-      "end": 1034.316,
-      "speaker": 0,
-      "channel": 0,
-      "confidence": 0.76,
-      "translations": {
-        "en": "The Packaging and Packaging Waste Regulation.",
-        "fr": "Règlement sur les emballages et les déchets d'emballages."
-      }
-    },
-    {
-      "text": "Die eigenlijk ambitieuze doelstellingen bepaalt voor de bedrijven, voor de Belgische industrie, met een termijn van vijf jaar.",
-      "start": 1034.925,
-      "end": 1041.019,
-      "confidence": 0.41,
-      "speaker": 0,
-      "words": [
-        {
-          "word": " Die",
-          "start": 1034.925,
-          "end": 1035.066,
+          "word": " die",
+          "start": 1021.399,
+          "end": 1021.519,
           "confidence": 0.98
         },
         {
-          "word": " eigenlijk",
-          "start": 1035.331,
-          "end": 1035.566,
-          "confidence": 0.64
-        },
-        {
-          "word": " ambitieuze",
-          "start": 1035.753,
-          "end": 1036.331,
-          "confidence": 0.89
-        },
-        {
-          "word": " doelstellingen",
-          "start": 1036.425,
-          "end": 1036.956,
-          "confidence": 0.84
-        },
-        {
-          "word": " bepaalt",
-          "start": 1037.128,
-          "end": 1037.519,
-          "confidence": 0.93
-        },
-        {
-          "word": " voor",
-          "start": 1037.566,
-          "end": 1037.706,
-          "confidence": 0.94
-        },
-        {
-          "word": " de",
-          "start": 1037.707,
-          "end": 1037.784,
-          "confidence": 0.98
-        },
-        {
-          "word": " bedrijven,",
-          "start": 1037.785,
-          "end": 1038.238,
-          "confidence": 0.94
-        },
-        {
-          "word": " voor",
-          "start": 1038.269,
-          "end": 1038.409,
-          "confidence": 0.41
-        },
-        {
-          "word": " de",
-          "start": 1038.488,
-          "end": 1038.613,
-          "confidence": 0.32
-        },
-        {
-          "word": " Belgische",
-          "start": 1038.706,
-          "end": 1039.034,
-          "confidence": 0.55
-        },
-        {
-          "word": " industrie,",
-          "start": 1039.035,
-          "end": 1039.456,
-          "confidence": 0.34
-        },
-        {
-          "word": " met",
-          "start": 1039.894,
-          "end": 1040.019,
-          "confidence": 0.91
-        },
-        {
-          "word": " een",
-          "start": 1040.02,
-          "end": 1040.113,
-          "confidence": 0.88
-        },
-        {
-          "word": " termijn",
-          "start": 1040.128,
-          "end": 1040.441,
+          "word": " beleggingsgodin",
+          "start": 1021.56,
+          "end": 1022.399,
           "confidence": 0.92
         },
         {
-          "word": " van",
-          "start": 1040.456,
-          "end": 1040.581,
-          "confidence": 0.94
-        },
-        {
-          "word": " vijf",
-          "start": 1040.597,
-          "end": 1040.816,
-          "confidence": 0.48
-        },
-        {
-          "word": " jaar.",
-          "start": 1040.847,
-          "end": 1041.019,
-          "confidence": 0.98
-        }
-      ],
-      "translations": {
-        "en": "The actually ambitious objectives are determined for the companies, for the Belgian industry, with a term of five years.",
-        "fr": "Les objectifs en réalité ambitieux sont déterminés pour les entreprises, pour l'industrie belge, avec un délai de cinq ans."
-      }
-    },
-    {
-      "words": [
-        {
-          "word": " Dus...",
-          "start": 1041.097,
-          "end": 1041.222,
-          "confidence": 0.97
-        }
-      ],
-      "text": "Dus...",
-      "language": "nl",
-      "start": 1041.097,
-      "end": 1041.222,
-      "speaker": 0,
-      "channel": 0,
-      "confidence": 0.97,
-      "translations": {
-        "en": "So...",
-        "fr": "Dus..."
-      }
-    },
-    {
-      "words": [
-        {
-          "word": " Vandaag",
-          "start": 1041.663,
-          "end": 1042.064,
-          "confidence": 0.99
-        },
-        {
-          "word": " zijn",
-          "start": 1042.164,
-          "end": 1042.324,
-          "confidence": 0.94
+          "word": " die",
+          "start": 1022.42,
+          "end": 1022.539,
+          "confidence": 1
         },
         {
           "word": " we",
-          "start": 1042.325,
-          "end": 1042.444,
-          "confidence": 0.99
-        },
-        {
-          "word": " bezig",
-          "start": 1042.484,
-          "end": 1042.866,
-          "confidence": 1
-        },
-        {
-          "word": " met",
-          "start": 1043.026,
-          "end": 1043.146,
-          "confidence": 1
-        },
-        {
-          "word": " de",
-          "start": 1043.147,
-          "end": 1043.266,
-          "confidence": 1
-        },
-        {
-          "word": " voorbereiding",
-          "start": 1043.306,
-          "end": 1043.967,
-          "confidence": 0.88
-        },
-        {
-          "word": " van",
-          "start": 1043.987,
-          "end": 1044.108,
-          "confidence": 0.97
-        },
-        {
-          "word": " de",
-          "start": 1044.109,
-          "end": 1044.208,
-          "confidence": 1
-        },
-        {
-          "word": " komende",
-          "start": 1044.227,
-          "end": 1044.547,
-          "confidence": 0.99
-        },
-        {
-          "word": " vijf",
-          "start": 1044.608,
-          "end": 1044.87,
-          "confidence": 0.81
-        },
-        {
-          "word": " jaar",
-          "start": 1044.928,
-          "end": 1045.229,
-          "confidence": 0.99
-        },
-        {
-          "word": " wat",
-          "start": 1045.629,
-          "end": 1045.77,
-          "confidence": 1
-        },
-        {
-          "word": " de",
-          "start": 1045.911,
-          "end": 1046.032,
+          "start": 1022.54,
+          "end": 1022.639,
           "confidence": 0.98
         },
         {
-          "word": " verpakkingswereld",
-          "start": 1046.493,
-          "end": 1047.454,
-          "confidence": 0.92
+          "word": " allemaal",
+          "start": 1022.66,
+          "end": 1022.9,
+          "confidence": 0.76
         },
         {
-          "word": " betreft",
-          "start": 1047.512,
-          "end": 1047.852,
+          "word": " zo",
+          "start": 1022.901,
+          "end": 1023.019,
           "confidence": 1
         },
         {
-          "word": " in",
-          "start": 1047.876,
-          "end": 1047.993,
+          "word": " graag",
+          "start": 1023.06,
+          "end": 1023.299,
+          "confidence": 0.97
+        },
+        {
+          "word": " hebben,",
+          "start": 1023.359,
+          "end": 1023.58,
           "confidence": 1
         },
         {
-          "word": " België",
-          "start": 1048.036,
-          "end": 1048.293,
-          "confidence": 0.8
+          "word": " there",
+          "start": 1023.68,
+          "end": 1023.82,
+          "confidence": 0.37
         },
         {
-          "word": " en",
-          "start": 1048.434,
-          "end": 1048.555,
+          "word": " is",
+          "start": 1023.821,
+          "end": 1023.92,
+          "confidence": 0.94
+        },
+        {
+          "word": " no",
+          "start": 1023.921,
+          "end": 1024.019,
+          "confidence": 0.96
+        },
+        {
+          "word": " alternative.",
+          "start": 1024.119,
+          "end": 1024.699,
+          "confidence": 0.95
+        }
+      ],
+      "translations": {
+        "en": "Our Tina, the investment goddess we all love so much, there is no alternative.",
+        "fr": "Il n'y a pas d'alternative."
+      }
+    },
+    {
+      "words": [
+        {
+          "word": " Als",
+          "start": 1024.762,
+          "end": 1024.879,
+          "confidence": 0.96
+        },
+        {
+          "word": " aandelenbelegger",
+          "start": 1025,
+          "end": 1025.66,
+          "confidence": 0.96
+        },
+        {
+          "word": " is",
+          "start": 1025.68,
+          "end": 1025.801,
           "confidence": 1
         },
         {
-          "word": " in",
-          "start": 1048.556,
-          "end": 1048.676,
-          "confidence": 0.66
+          "word": " dat",
+          "start": 1025.802,
+          "end": 1025.922,
+          "confidence": 1
         },
         {
-          "word": " Europa.",
-          "start": 1048.677,
-          "end": 1048.997,
+          "word": " onze",
+          "start": 1026,
+          "end": 1026.199,
+          "confidence": 1
+        },
+        {
+          "word": " meest",
+          "start": 1026.32,
+          "end": 1026.582,
+          "confidence": 0.99
+        },
+        {
+          "word": " sexy",
+          "start": 1026.961,
+          "end": 1027.262,
+          "confidence": 0.72
+        },
+        {
+          "word": " pin-up",
+          "start": 1027.402,
+          "end": 1027.621,
+          "confidence": 0.79
+        },
+        {
+          "word": " girl.",
+          "start": 1027.699,
+          "end": 1027.922,
           "confidence": 0.92
         }
       ],
-      "text": "Vandaag zijn we bezig met de voorbereiding van de komende vijf jaar wat de verpakkingswereld betreft in België en in Europa.",
+      "text": "Als aandelenbelegger is dat onze meest sexy pin-up girl.",
       "language": "nl",
-      "start": 1041.663,
-      "end": 1048.997,
-      "speaker": 0,
+      "start": 1024.762,
+      "end": 1027.922,
+      "speaker": 7,
       "channel": 0,
-      "confidence": 0.94,
+      "confidence": 0.93,
       "translations": {
-        "en": "Today, we are working on preparing for the next five years regarding the packaging world in Belgium and in Europe.",
-        "fr": "Aujourd'hui, nous nous affairons à préparer les cinq prochaines années concernant le monde de l'emballage en Belgique et en Europe."
+        "en": "As a stock investor, she is our most sexy pin-up girl.",
+        "fr": "En tant qu'investisseur en actions, elle est notre pin-up girl la plus sexy."
+      }
+    },
+    {
+      "words": [
+        {
+          "word": " Die",
+          "start": 1027.941,
+          "end": 1028.062,
+          "confidence": 0.99
+        },
+        {
+          "word": " wordt",
+          "start": 1028.063,
+          "end": 1028.219,
+          "confidence": 0.77
+        },
+        {
+          "word": " een",
+          "start": 1028.22,
+          "end": 1028.32,
+          "confidence": 0.99
+        },
+        {
+          "word": " beetje",
+          "start": 1028.321,
+          "end": 1028.601,
+          "confidence": 0.96
+        },
+        {
+          "word": " van",
+          "start": 1028.781,
+          "end": 1028.922,
+          "confidence": 0.99
+        },
+        {
+          "word": " de",
+          "start": 1028.984,
+          "end": 1029.101,
+          "confidence": 0.98
+        },
+        {
+          "word": " dansvloer",
+          "start": 1029.117,
+          "end": 1029.5,
+          "confidence": 0.94
+        },
+        {
+          "word": " verjaagd",
+          "start": 1029.539,
+          "end": 1030,
+          "confidence": 0.94
+        },
+        {
+          "word": " door",
+          "start": 1030.101,
+          "end": 1030.219,
+          "confidence": 0.82
+        },
+        {
+          "word": " Tara.",
+          "start": 1030.305,
+          "end": 1030.578,
+          "confidence": 0.71
+        }
+      ],
+      "text": "Die wordt een beetje van de dansvloer verjaagd door Tara.",
+      "language": "nl",
+      "start": 1027.941,
+      "end": 1030.578,
+      "speaker": 7,
+      "channel": 0,
+      "confidence": 0.91,
+      "translations": {
+        "en": "The dance floor is a bit abandoned by Tara.",
+        "fr": "Elle est un peu écartée de la piste de danse par Tara."
+      }
+    },
+    {
+      "words": [
+        {
+          "word": " There",
+          "start": 1030.984,
+          "end": 1031.141,
+          "confidence": 0.4
+        },
+        {
+          "word": " are",
+          "start": 1031.203,
+          "end": 1031.32,
+          "confidence": 0.39
+        },
+        {
+          "word": " reasonable",
+          "start": 1031.359,
+          "end": 1031.898,
+          "confidence": 0.88
+        },
+        {
+          "word": " alternatives.",
+          "start": 1032,
+          "end": 1032.664,
+          "confidence": 0.93
+        }
+      ],
+      "text": "There are reasonable alternatives.",
+      "language": "nl",
+      "start": 1030.984,
+      "end": 1032.664,
+      "speaker": 7,
+      "channel": 0,
+      "confidence": 0.65,
+      "translations": {
+        "en": "There are reasonable alternatives.",
+        "fr": "Il existe des alternatives raisonnables."
+      }
+    },
+    {
+      "words": [
+        {
+          "word": " Dus",
+          "start": 1033.164,
+          "end": 1033.305,
+          "confidence": 0.22
+        },
+        {
+          "word": " ja,",
+          "start": 1033.883,
+          "end": 1034,
+          "confidence": 0.81
+        }
+      ],
+      "text": "Dus ja,",
+      "language": "nl",
+      "start": 1033.164,
+      "end": 1034,
+      "speaker": 7,
+      "channel": 0,
+      "confidence": 0.52,
+      "translations": {
+        "en": "Yes, I will.",
+        "fr": "D'accord, oui."
+      }
+    },
+    {
+      "words": [
+        {
+          "word": " Tara",
+          "start": 1034.219,
+          "end": 1034.484,
+          "confidence": 0.98
+        },
+        {
+          "word": " gaat",
+          "start": 1034.641,
+          "end": 1034.82,
+          "confidence": 0.91
+        },
+        {
+          "word": " nu",
+          "start": 1034.821,
+          "end": 1034.945,
+          "confidence": 0.99
+        },
+        {
+          "word": " toch",
+          "start": 1035,
+          "end": 1035.141,
+          "confidence": 0.98
+        },
+        {
+          "word": " een",
+          "start": 1035.142,
+          "end": 1035.266,
+          "confidence": 0.99
+        },
+        {
+          "word": " beetje",
+          "start": 1035.267,
+          "end": 1035.5,
+          "confidence": 0.99
+        },
+        {
+          "word": " mee",
+          "start": 1035.68,
+          "end": 1035.859,
+          "confidence": 0.99
+        },
+        {
+          "word": " op",
+          "start": 1035.984,
+          "end": 1036.101,
+          "confidence": 1
+        },
+        {
+          "word": " de",
+          "start": 1036.102,
+          "end": 1036.203,
+          "confidence": 0.99
+        },
+        {
+          "word": " dansvloer",
+          "start": 1036.242,
+          "end": 1036.742,
+          "confidence": 1
+        },
+        {
+          "word": " staan",
+          "start": 1036.945,
+          "end": 1037.195,
+          "confidence": 0.93
+        },
+        {
+          "word": " en",
+          "start": 1037.586,
+          "end": 1037.695,
+          "confidence": 1
+        },
+        {
+          "word": " Tina",
+          "start": 1037.758,
+          "end": 1037.976,
+          "confidence": 0.95
+        },
+        {
+          "word": " wat",
+          "start": 1038.07,
+          "end": 1038.18,
+          "confidence": 1
+        },
+        {
+          "word": " wegduwen.",
+          "start": 1038.258,
+          "end": 1038.758,
+          "confidence": 0.94
+        }
+      ],
+      "text": "Tara gaat nu toch een beetje mee op de dansvloer staan en Tina wat wegduwen.",
+      "language": "nl",
+      "start": 1034.219,
+      "end": 1038.758,
+      "speaker": 7,
+      "channel": 0,
+      "confidence": 0.98,
+      "translations": {
+        "en": "Tara is now going to stand a bit on the dance floor and push Tina away.",
+        "fr": "Tara va finalement un peu aller sur la piste de danse et pousser Tina un peu."
+      }
+    },
+    {
+      "words": [
+        {
+          "word": " Luister",
+          "start": 1039.476,
+          "end": 1039.867,
+          "confidence": 0.97
+        },
+        {
+          "word": " nu",
+          "start": 1039.93,
+          "end": 1040.039,
+          "confidence": 1
+        },
+        {
+          "word": " naar",
+          "start": 1040.148,
+          "end": 1040.289,
+          "confidence": 0.99
+        },
+        {
+          "word": " de",
+          "start": 1040.29,
+          "end": 1040.398,
+          "confidence": 0.98
+        },
+        {
+          "word": " beurs",
+          "start": 1040.445,
+          "end": 1040.711,
+          "confidence": 0.93
+        },
+        {
+          "word": " van",
+          "start": 1040.726,
+          "end": 1040.836,
+          "confidence": 0.92
+        },
+        {
+          "word": " yours",
+          "start": 1040.867,
+          "end": 1041.086,
+          "confidence": 0.57
+        },
+        {
+          "word": " live.",
+          "start": 1041.164,
+          "end": 1041.476,
+          "confidence": 0.5
+        }
+      ],
+      "text": "Luister nu naar de beurs van yours live.",
+      "language": "nl",
+      "start": 1039.476,
+      "end": 1041.476,
+      "speaker": 1,
+      "channel": 0,
+      "confidence": 0.86,
+      "translations": {
+        "en": "Listen now to your stock market live.",
+        "fr": "Écoutez maintenant la bourse de vos rêves en direct."
+      }
+    },
+    {
+      "text": "Met de love van Rebel, het beleggingsplatform van Belfius.",
+      "start": 1041.976,
+      "end": 1044.867,
+      "confidence": 0.79,
+      "speaker": 1,
+      "words": [
+        {
+          "word": " Met",
+          "start": 1041.976,
+          "end": 1042.101,
+          "confidence": 1
+        },
+        {
+          "word": " de",
+          "start": 1042.102,
+          "end": 1042.226,
+          "confidence": 0.97
+        },
+        {
+          "word": " love",
+          "start": 1042.258,
+          "end": 1042.445,
+          "confidence": 0.25
+        },
+        {
+          "word": " van",
+          "start": 1042.461,
+          "end": 1042.601,
+          "confidence": 0.99
+        },
+        {
+          "word": " Rebel,",
+          "start": 1042.664,
+          "end": 1042.93,
+          "confidence": 0.72
+        },
+        {
+          "word": " het",
+          "start": 1043.101,
+          "end": 1043.226,
+          "confidence": 0.99
+        },
+        {
+          "word": " beleggingsplatform",
+          "start": 1043.289,
+          "end": 1044.148,
+          "confidence": 0.74
+        },
+        {
+          "word": " van",
+          "start": 1044.164,
+          "end": 1044.289,
+          "confidence": 0.97
+        },
+        {
+          "word": " Belfius.",
+          "start": 1044.32,
+          "end": 1044.867,
+          "confidence": 0.99
+        }
+      ],
+      "translations": {
+        "en": "With the power of Rebel, Belfius's investment platform.",
+        "fr": "Avec l'amour de Rebel, la plateforme d'investissement de Belfius."
       }
     },
     {
       "words": [
         {
           "word": " Ontdek",
-          "start": 1049.118,
-          "end": 1049.356,
-          "confidence": 0.94
+          "start": 1045.508,
+          "end": 1045.758,
+          "confidence": 0.93
         },
         {
-          "word": " het",
-          "start": 1049.376,
-          "end": 1049.497,
-          "confidence": 0.96
+          "word": " hem",
+          "start": 1045.805,
+          "end": 1045.93,
+          "confidence": 0.95
+        },
+        {
+          "word": " nu",
+          "start": 1045.992,
+          "end": 1046.101,
+          "confidence": 1
         },
         {
           "word": " in",
-          "start": 1049.555,
-          "end": 1049.68,
-          "confidence": 0.99
+          "start": 1046.289,
+          "end": 1046.398,
+          "confidence": 0.95
         },
         {
-          "word": " Industry",
-          "start": 1049.797,
-          "end": 1050.157,
-          "confidence": 1
-        },
-        {
-          "word": " Insights",
-          "start": 1050.235,
-          "end": 1050.743,
-          "confidence": 0.52
-        },
-        {
-          "word": " en",
-          "start": 1051.04,
-          "end": 1051.157,
-          "confidence": 1
-        },
-        {
-          "word": " neem",
-          "start": 1051.219,
-          "end": 1051.399,
-          "confidence": 1
-        },
-        {
-          "word": " de",
-          "start": 1051.422,
-          "end": 1051.54,
+          "word": " je",
+          "start": 1046.399,
+          "end": 1046.508,
           "confidence": 0.98
         },
         {
-          "word": " vlucht",
-          "start": 1051.579,
-          "end": 1051.86,
-          "confidence": 1
-        },
-        {
-          "word": " vooruit.",
-          "start": 1051.883,
-          "end": 1052.258,
-          "confidence": 0.99
+          "word": " Belfius-app.",
+          "start": 1046.523,
+          "end": 1047.258,
+          "confidence": 0.85
         }
       ],
-      "text": "Ontdek het in Industry Insights en neem de vlucht vooruit.",
+      "text": "Ontdek hem nu in je Belfius-app.",
       "language": "nl",
-      "start": 1049.118,
-      "end": 1052.258,
-      "speaker": 0,
+      "start": 1045.508,
+      "end": 1047.258,
+      "speaker": 1,
       "channel": 0,
       "confidence": 0.94,
       "translations": {
-        "en": "Discover it in Industry Insights and take flight ahead.",
-        "fr": "Découvrez-le dans Industry Insights et prenez votre envol."
+        "en": "Discover him now in your Belfius app.",
+        "fr": "Découvrez-le maintenant dans votre application Belfius."
       }
     }
   ],
