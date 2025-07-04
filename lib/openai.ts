@@ -1,261 +1,132 @@
 import { Utterance } from './types';
-import * as fs from 'fs';
-import * as path from 'path';
-import * as os from 'os';
 
-interface OpenAIBatchRequest {
-  custom_id: string;
-  method: string;
-  url: string;
-  body: {
-    model: string;
-    messages: Array<{
-      role: string;
-      content: string;
-    }>;
-    temperature: number;
-    max_tokens: number;
-  };
-}
-
-interface OpenAIBatchResponse {
-  custom_id: string;
-  response: {
-    status_code: number;
-    body: {
-      choices: Array<{
-        message: {
-          content: string;
-        };
-      }>;
-    };
-  };
-}
-
-async function uploadBatchFile(filePath: string, apiKey: string): Promise<string> {
-  // Verify file exists and read content
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`Batch file does not exist: ${filePath}`);
-  }
+async function translateToLanguage(utterances: Utterance[], targetLanguage: 'English' | 'French', apiKey: string): Promise<string[]> {
+  console.log(`Translating ${utterances.length} utterances to ${targetLanguage}...`);
   
-  console.log(`File size: ${fs.statSync(filePath).size} bytes`);
+  // Process in concurrent batches for speed
+  const BATCH_SIZE = 20; // Larger batch for fewer API calls
+  const CONCURRENT_BATCHES = 5; // Process multiple batches concurrently
   
-  const FormData = require('form-data');
-  const form = new FormData();
+  const results: string[] = new Array(utterances.length);
   
-  form.append('purpose', 'batch');
-  form.append('file', fs.createReadStream(filePath), {
-    filename: path.basename(filePath),
-    contentType: 'application/jsonl'
-  });
-  
-  try {
-    const axios = require('axios');
-    const response = await axios.post('https://api.openai.com/v1/files', form, {
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        ...form.getHeaders(),
-      },
-    });
+  for (let i = 0; i < utterances.length; i += BATCH_SIZE * CONCURRENT_BATCHES) {
+    const batchPromises: Promise<void>[] = [];
     
-    console.log('Upload successful, file ID:', response.data.id);
-    return response.data.id;
-  } catch (error: any) {
-    if (error.response) {
-      console.error('Upload error response:', error.response.data);
-      throw new Error(`Failed to upload batch file: ${error.response.status} - ${JSON.stringify(error.response.data)}`);
-    } else {
-      console.error('Upload error:', error.message);
-      throw error;
+    for (let j = 0; j < CONCURRENT_BATCHES; j++) {
+      const startIdx = i + (j * BATCH_SIZE);
+      const endIdx = Math.min(startIdx + BATCH_SIZE, utterances.length);
+      
+      if (startIdx >= utterances.length) break;
+      
+      const batch = utterances.slice(startIdx, endIdx);
+      const batchPromise = translateBatch(batch, targetLanguage, apiKey, startIdx)
+        .then(translations => {
+          // Store results in correct positions
+          translations.forEach((translation, idx) => {
+            results[startIdx + idx] = translation;
+          });
+        });
+      
+      batchPromises.push(batchPromise);
+    }
+    
+    // Wait for all concurrent batches to complete
+    await Promise.all(batchPromises);
+    
+    // Small delay to avoid rate limits
+    if (i + BATCH_SIZE * CONCURRENT_BATCHES < utterances.length) {
+      await new Promise(resolve => setTimeout(resolve, 100));
     }
   }
+  
+  return results;
 }
 
-async function createBatchJob(fileId: string, apiKey: string): Promise<string> {
-  const response = await fetch('https://api.openai.com/v1/batches', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      input_file_id: fileId,
-      endpoint: '/v1/chat/completions',
-      completion_window: '24h',
-      metadata: {
-        description: 'Podcast transcription translation batch'
-      }
-    }),
-  });
+async function translateBatch(utterances: Utterance[], targetLanguage: 'English' | 'French', apiKey: string, batchStartIdx: number): Promise<string[]> {
+  const textToTranslate = utterances
+    .map((utterance, index) => `${index + 1}. ${utterance.text}`)
+    .join('\n');
   
-  if (!response.ok) {
-    const errorText = await response.text();
-    console.error('Batch job creation error:', errorText);
-    throw new Error(`Failed to create batch job: ${response.status} - ${errorText}`);
-  }
-  
-  const data = await response.json();
-  return data.id;
-}
-
-async function pollBatchJob(jobId: string, apiKey: string): Promise<any> {
-  console.log(`Polling batch job ${jobId}...`);
-  
-  while (true) {
-    const response = await fetch(`https://api.openai.com/v1/batches/${jobId}`, {
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [
+          {
+            role: 'system',
+            content: `You are a professional translator. Translate the following numbered text segments to ${targetLanguage}. Maintain the same numbering format. If the text is already in ${targetLanguage}, return it as-is. Preserve the natural flow and meaning.`
+          },
+          {
+            role: 'user',
+            content: textToTranslate
+          }
+        ],
+        temperature: 0.3,
+        max_tokens: utterances.length * 50, // Dynamic based on batch size
+      }),
     });
     
     if (!response.ok) {
-      throw new Error(`Failed to poll batch job: ${response.status}`);
+      const errorText = await response.text();
+      console.error(`Translation error for batch ${batchStartIdx}:`, errorText);
+      throw new Error(`OpenAI API error: ${response.status}`);
     }
     
-    const job = await response.json();
-    console.log(`Batch job status: ${job.status}`);
+    const data = await response.json();
+    const translatedText = data.choices[0]?.message?.content || '';
     
-    if (job.status === 'completed') {
-      return job;
-    } else if (job.status === 'failed' || job.status === 'expired' || job.status === 'cancelled') {
-      throw new Error(`Batch job ${job.status}: ${job.error?.message || 'Unknown error'}`);
-    }
+    // Parse the numbered translations back
+    const translations = translatedText
+      .split('\n')
+      .filter((line: string) => line.trim())
+      .map((line: string) => line.replace(/^\d+\.\s*/, '').trim());
     
-    // Wait 30 seconds before polling again
-    await new Promise(resolve => setTimeout(resolve, 30000));
+    // Ensure we have the right number of translations
+    const result = utterances.map((utterance, index) => 
+      translations[index] || utterance.text
+    );
+    
+    return result;
+    
+  } catch (error) {
+    console.error(`Translation error for batch ${batchStartIdx}:`, error);
+    // Fallback: return original text
+    return utterances.map(utterance => utterance.text);
   }
-}
-
-async function downloadBatchResults(fileId: string, apiKey: string): Promise<OpenAIBatchResponse[]> {
-  const response = await fetch(`https://api.openai.com/v1/files/${fileId}/content`, {
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-    },
-  });
-  
-  if (!response.ok) {
-    throw new Error(`Failed to download batch results: ${response.status}`);
-  }
-  
-  const content = await response.text();
-  return content
-    .split('\n')
-    .filter(line => line.trim())
-    .map(line => JSON.parse(line));
-}
-
-function createBatchRequests(utterances: Utterance[], language: 'English' | 'French'): OpenAIBatchRequest[] {
-  return utterances.map((utterance, index) => ({
-    custom_id: `${language.toLowerCase()}_${index}`,
-    method: 'POST',
-    url: '/v1/chat/completions',
-    body: {
-      model: 'gpt-4o-mini',
-      messages: [
-        {
-          role: 'system',
-          content: `You are a professional translator. Translate the following text to ${language}. If the text is already in ${language}, return it as-is. Preserve the natural flow and meaning. Return only the translation without any additional text or formatting.`
-        },
-        {
-          role: 'user',
-          content: utterance.text
-        }
-      ],
-      temperature: 0.3,
-      max_tokens: 500
-    }
-  }));
 }
 
 export async function translateUtterances(utterances: Utterance[], apiKey: string): Promise<Utterance[]> {
-  console.log(`Starting OpenAI batch translation for ${utterances.length} utterances...`);
-  
-  // Create temporary batch file in OS temp directory
-  const tempDir = os.tmpdir();
-  const batchFilePath = path.join(tempDir, `openai_batch_${Date.now()}_${Math.random().toString(36).substr(2, 9)}.jsonl`);
+  console.log(`Starting fast concurrent translation for ${utterances.length} utterances...`);
+  const startTime = Date.now();
   
   try {
-    // Create batch requests for both languages
-    const englishRequests = createBatchRequests(utterances, 'English');
-    const frenchRequests = createBatchRequests(utterances, 'French');
-    const allRequests = [...englishRequests, ...frenchRequests];
-    
-    const batchContent = allRequests
-      .map(request => JSON.stringify(request))
-      .join('\n');
-    
-    fs.writeFileSync(batchFilePath, batchContent);
-    console.log(`Created batch file with ${allRequests.length} requests`);
-    console.log(`Batch file path: ${batchFilePath}`);
-    console.log(`First few lines of batch file:`, batchContent.split('\n').slice(0, 2).join('\n'));
-    
-    // Upload batch file
-    console.log('Uploading batch file...');
-    const fileId = await uploadBatchFile(batchFilePath, apiKey);
-    console.log(`Uploaded batch file: ${fileId}`);
-    
-    // Create batch job
-    console.log('Creating batch job...');
-    const jobId = await createBatchJob(fileId, apiKey);
-    console.log(`Created batch job: ${jobId}`);
-    
-    // Poll for completion
-    const completedJob = await pollBatchJob(jobId, apiKey);
-    console.log('Batch job completed!');
-    
-    // Download results
-    console.log('Downloading results...');
-    const results = await downloadBatchResults(completedJob.output_file_id, apiKey);
-    console.log(`Downloaded ${results.length} results`);
-    
-    // Process results
-    const translationMap = new Map<string, string>();
-    results.forEach(result => {
-      if (result.response.status_code === 200) {
-        const translation = result.response.body.choices[0]?.message?.content || '';
-        translationMap.set(result.custom_id, translation);
-      } else {
-        console.warn(`Translation failed for ${result.custom_id}:`, result.response);
-      }
-    });
+    // Get both English and French translations concurrently
+    const [englishTranslations, frenchTranslations] = await Promise.all([
+      translateToLanguage(utterances, 'English', apiKey),
+      translateToLanguage(utterances, 'French', apiKey)
+    ]);
     
     // Apply translations to utterances
-    const translatedUtterances = utterances.map((utterance, index) => {
-      const englishKey = `english_${index}`;
-      const frenchKey = `french_${index}`;
-      
-      return {
-        ...utterance,
-        translations: {
-          en: translationMap.get(englishKey) || utterance.text,
-          fr: translationMap.get(frenchKey) || utterance.text
-        }
-      };
-    });
+    const translatedUtterances = utterances.map((utterance, index) => ({
+      ...utterance,
+      translations: {
+        en: englishTranslations[index] || utterance.text,
+        fr: frenchTranslations[index] || utterance.text
+      }
+    }));
     
-    // Cleanup
-    try {
-      fs.unlinkSync(batchFilePath);
-      console.log('Cleaned up temporary batch file');
-    } catch (cleanupError) {
-      console.warn('Failed to cleanup batch file:', cleanupError);
-    }
-    console.log('OpenAI batch translation processing completed successfully');
+    const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+    console.log(`Translation completed in ${duration}s`);
     
     return translatedUtterances;
     
   } catch (error) {
-    console.error('OpenAI batch translation error:', error);
-    
-    // Cleanup on error
-    try {
-      if (fs.existsSync(batchFilePath)) {
-        fs.unlinkSync(batchFilePath);
-        console.log('Cleaned up temporary batch file after error');
-      }
-    } catch (cleanupError) {
-      console.warn('Failed to cleanup batch file after error:', cleanupError);
-    }
+    console.error('Translation error:', error);
     
     // Fallback: return utterances without translations
     return utterances.map(utterance => ({

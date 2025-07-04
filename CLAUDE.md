@@ -80,14 +80,14 @@ CREATE TABLE word_clicks (
 );
 ```
 
-### Translation Overlay Behavior
-- Appears instantly on single word click with backdrop blur
-- Positioned above player controls with safe area handling
-- Dismissed by: clicking overlay, clicking play button, or starting playback
+### Translation Display Behavior
+- Appears instantly below clicked utterance with smooth animation
+- Elegant card design with drop shadow and backdrop blur effects
+- Creates an "opening screen" visual effect underneath the utterance
 - Only shown if utterance has translation available in selected language
 - Language selector (EN/FR dropdown) in top-right corner allows switching between English and French translations
 - Language preference is persisted in localStorage and restored on subsequent visits
-- Changing language automatically closes any open translation overlay
+- Changing language automatically closes any open translation displays
 
 ### Deployment
 GitHub Actions runs weekdays at 8 AM UTC to auto-generate transcriptions and deploy to GitHub Pages. The workflow uses OS temporary directories for batch file processing, making it compatible with CI environments.
