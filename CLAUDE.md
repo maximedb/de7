@@ -62,23 +62,48 @@ This is a Next.js podcast transcription app that automatically downloads daily p
 ### Environment Variables
 - `GLADIA_API_KEY` - Required for transcription API
 - `OPENAI_API_KEY` - Required for OpenAI GPT-4o-mini translation service
-- `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL
+- `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL (public)
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Supabase anonymous key for client-side operations
 - `SUPABASE_SERVICE_ROLE_KEY` - Supabase service role key for server-side operations
 - `RSS_URL` - Optional podcast RSS feed (has default)
 
 ### Database Setup
-Create `word_clicks` table in Supabase with schema:
+Create tables in Supabase with schema and Row Level Security:
+
 ```sql
+-- Create word_clicks table (users table is built-in with Supabase auth)
 CREATE TABLE word_clicks (
   id SERIAL PRIMARY KEY,
-  user_id TEXT NOT NULL,
+  user_id UUID NOT NULL REFERENCES auth.users(id),
   transcript_id TEXT NOT NULL,
   utterance_id INTEGER NOT NULL,
   utterance TEXT NOT NULL,
   word TEXT NOT NULL,
   timestamp TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+-- Enable Row Level Security
+ALTER TABLE word_clicks ENABLE ROW LEVEL SECURITY;
+
+-- RLS Policies for word_clicks table
+-- Users can only insert their own word clicks
+CREATE POLICY "Users can insert own word clicks" ON word_clicks
+  FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+-- Users can only select their own word clicks
+CREATE POLICY "Users can select own word clicks" ON word_clicks
+  FOR SELECT USING (auth.uid() = user_id);
+
+-- Users can only update their own word clicks (if needed)
+CREATE POLICY "Users can update own word clicks" ON word_clicks
+  FOR UPDATE USING (auth.uid() = user_id);
+
+-- Users can only delete their own word clicks (if needed)
+CREATE POLICY "Users can delete own word clicks" ON word_clicks
+  FOR DELETE USING (auth.uid() = user_id);
 ```
+
+**Security**: RLS is enabled and uses Supabase's built-in authentication. The app automatically creates anonymous users with random credentials for seamless user experience while maintaining data security.
 
 ### Translation Display Behavior
 - Appears instantly below clicked utterance with smooth animation

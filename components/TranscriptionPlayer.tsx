@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Play, Pause, ChevronDown } from 'lucide-react';
 import { getUserId } from '../lib/userId';
+import { insertWordClick } from '../lib/supabase';
 import { Word, Utterance, TranscriptionData } from '../lib/types';
 
 type Language = 'en' | 'fr';
@@ -137,8 +138,16 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   
   // Initialize user ID and language preference on component mount
   useEffect(() => {
-    const id = getUserId();
-    setUserId(id);
+    const initializeUser = async () => {
+      try {
+        const id = await getUserId();
+        setUserId(id);
+      } catch (error) {
+        console.error('Failed to initialize user:', error);
+      }
+    };
+    
+    initializeUser();
     
     // Restore saved language preference
     const savedLanguage = localStorage.getItem('preferred_language') as Language;
@@ -285,31 +294,27 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   
   // Event delegation for word clicks
   // Track word clicks asynchronously (fire and forget)
-  const trackWordClick = useCallback((utteranceIdx: number, wordIdx: number, word: string) => {
-    if (!userId) return;
-    
+  const trackWordClick = useCallback(async (utteranceIdx: number, wordIdx: number, word: string) => {
     const utterance = data.utterances[utteranceIdx];
     if (!utterance) return;
     
     const fullUtterance = utterance.words.map(w => w.word).join(' ');
     
     // Fire and forget - don't await or block UI
-    fetch('/api/word-clicks', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        user_id: userId,
-        transcript_id: data.date,
-        utterance_id: utteranceIdx,
-        utterance: fullUtterance,
-        word: word,
-      }),
-    }).catch(error => {
-      console.error('Failed to track word click:', error);
-    });
-  }, [userId, data.utterances]);
+    (async () => {
+      try {
+        // Insert word click directly to Supabase (user auth is handled automatically)
+        await insertWordClick({
+          transcript_id: data.date,
+          utterance_id: utteranceIdx,
+          utterance: fullUtterance,
+          word: word,
+        });
+      } catch (error) {
+        console.error('Failed to track word click:', error);
+      }
+    })();
+  }, [data.utterances]);
 
   const handleTranscriptClick = useCallback((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
