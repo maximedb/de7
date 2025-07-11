@@ -30,7 +30,7 @@ jobs:
           GLADIA_API_KEY: ${{ secrets.GLADIA_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           RSS_URL: ${{ secrets.RSS_URL }}
-        run: npm run build:full
+        run: npm run generate-transcription
 
       - name: Commit and push changes
         run: |
