@@ -1,62 +1,42 @@
-import { GetStaticProps } from 'next';
-import Head from 'next/head';
-import TranscriptionPlayer from '@/components/TranscriptionPlayer';
-import { TranscriptionData } from '@/lib/types';
+import { GetServerSideProps } from 'next';
 import * as fs from 'fs';
 import * as path from 'path';
 
-interface HomeProps {
-  data: TranscriptionData | null;
+export default function Home() {
+  return null; // This page will never render due to redirect
 }
 
-export default function Home({ data }: HomeProps) {
-  if (!data) {
-    return (
-      <div className="h-screen bg-gradient-to-b from-teal-900 to-teal-700 text-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">No Transcription Available</h1>
-          <p className="text-gray-300">Please check back later</p>
-        </div>
-      </div>
-    );
-  }
-  
-  return (
-    <>
-      <Head>
-        <title>{data.title} - Daily Podcast Transcription</title>
-        <meta name="description" content="Daily podcast transcription with Spotify-style interface" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#134e4a" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
-      <TranscriptionPlayer data={data} />
-    </>
-  );
-}
-
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const dataPath = path.join(process.cwd(), 'public', 'data', 'latest.json');
+    // Find the latest available date
+    const transcriptionsDir = path.join(process.cwd(), 'public', 'transcriptions');
     
-    if (fs.existsSync(dataPath)) {
-      const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-      return {
-        props: {
-          data
-        },
-        revalidate: 3600 // Revalidate every hour
-      };
+    if (fs.existsSync(transcriptionsDir)) {
+      const files = fs.readdirSync(transcriptionsDir);
+      const dates = files
+        .filter(file => file.endsWith('.json'))
+        .map(file => file.replace('.json', ''))
+        .sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
+      
+      if (dates.length > 0) {
+        const latestDate = dates[0];
+        return {
+          redirect: {
+            destination: `/${latestDate}`,
+            permanent: false
+          }
+        };
+      }
     }
   } catch (error) {
-    console.error('Error loading transcription data:', error);
+    console.error('Error finding latest transcription:', error);
   }
   
+  // If no transcriptions found, redirect to a 404-like page
   return {
-    props: {
-      data: null
+    redirect: {
+      destination: '/404',
+      permanent: false
     }
   };
 };

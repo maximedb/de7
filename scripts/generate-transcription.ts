@@ -50,6 +50,13 @@ async function main() {
   if (fs.existsSync(transcriptionPath)) {
     console.log("Transcription already exists, loading from file...");
     transcriptionResult = JSON.parse(fs.readFileSync(transcriptionPath, 'utf-8'));
+    
+    // Ensure existing transcription has audioUrl field
+    if (!transcriptionResult.audioUrl) {
+      transcriptionResult.audioUrl = podcastInfo.originalUrl;
+      fs.writeFileSync(transcriptionPath, JSON.stringify(transcriptionResult, null, 2));
+      console.log("Added missing audioUrl to existing transcription");
+    }
   } else {
     // Transcribe the audio
     console.log("Transcribing audio...");
@@ -60,9 +67,13 @@ async function main() {
       process.exit(1);
     }
     
-    // Save raw transcription result
+    // Save raw transcription result with audioUrl
+    const transcriptionWithAudioUrl = {
+      ...transcriptionResult,
+      audioUrl: podcastInfo.originalUrl
+    };
     fs.mkdirSync(transcriptionsDir, { recursive: true });
-    fs.writeFileSync(transcriptionPath, JSON.stringify(transcriptionResult, null, 2));
+    fs.writeFileSync(transcriptionPath, JSON.stringify(transcriptionWithAudioUrl, null, 2));
     console.log("Raw transcription saved to", transcriptionPath);
   }
   
@@ -83,9 +94,10 @@ async function main() {
     console.log("Translating utterances to English...");
     utterances = await translateUtterances(utterances, openaiApiKey);
     
-    // Update the transcription file with translations
+    // Update the transcription file with translations, preserving audioUrl
     const updatedResult = {
       ...transcriptionResult,
+      audioUrl: podcastInfo.originalUrl,
       result: {
         ...result,
         transcription: {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Play, Pause, ChevronDown } from 'lucide-react';
+import { useRouter } from 'next/router';
 import { getUserId } from '../lib/userId';
 import { insertWordClick } from '../lib/supabase';
 import { Word, Utterance, TranscriptionData } from '../lib/types';
@@ -120,7 +121,15 @@ const UtteranceBlock = React.memo(({
   );
 });
 
-export default function TranscriptionPlayer({ data }: { data: TranscriptionData }) {
+export default function TranscriptionPlayer({ 
+  data, 
+  currentDate, 
+  availableDates 
+}: { 
+  data: TranscriptionData;
+  currentDate?: string;
+  availableDates?: string[];
+}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [showingTranslation, setShowingTranslation] = useState<{utteranceIdx: number} | null>(null);
@@ -135,6 +144,24 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
   const lastTimeRef = useRef(0);
+  const router = useRouter();
+  
+  // Reset state when switching between dates/URLs
+  useEffect(() => {
+    // Reset audio state when date changes
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setShowingTranslation(null);
+    setCurrentWordGlobal({ utteranceIdx: 0, wordIdx: 0 });
+    setClickedWord(null);
+    setHasRestoredPosition(false);
+    
+    // Reset audio element
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [currentDate]);
   
   // Initialize user ID and language preference on component mount
   useEffect(() => {
@@ -176,40 +203,28 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     const audio = audioRef.current;
     if (!audio || hasRestoredPosition) return;
 
-    const positionKey = `audio_position_${data.date}`;
-    const lastTranscriptionKey = 'last_transcription_date';
+    // Use current URL path as the key for position tracking
+    const currentPath = window.location.pathname; // e.g., "/2025-10-05"
+    const positionKey = `audio_position${currentPath}`;
     
-    // Check if this is a new transcription
-    const lastTranscriptionDate = localStorage.getItem(lastTranscriptionKey);
-    const isNewTranscription = lastTranscriptionDate !== data.date;
-    
-    if (isNewTranscription) {
-      // New transcription - start from beginning and clear old positions
-      localStorage.setItem(lastTranscriptionKey, data.date);
-      // Clear all old position keys
-      Object.keys(localStorage).forEach(key => {
-        if (key.startsWith('audio_position_') && key !== positionKey) {
-          localStorage.removeItem(key);
-        }
-      });
-      setHasRestoredPosition(true);
-    } else {
-      // Same transcription - restore position
-      const savedPosition = localStorage.getItem(positionKey);
-      if (savedPosition) {
-        const position = parseFloat(savedPosition);
-        audio.currentTime = position;
-        setCurrentTime(position);
-      }
-      setHasRestoredPosition(true);
+    // Try to restore saved position for this specific URL
+    const savedPosition = localStorage.getItem(positionKey);
+    if (savedPosition) {
+      const position = parseFloat(savedPosition);
+      audio.currentTime = position;
+      setCurrentTime(position);
     }
-  }, [data.date, hasRestoredPosition]);
+    // If no saved position, start from beginning (default behavior)
+    
+    setHasRestoredPosition(true);
+  }, [hasRestoredPosition]);
 
   // Save position periodically while playing
   useEffect(() => {
     if (!hasRestoredPosition) return;
     
-    const positionKey = `audio_position_${data.date}`;
+    const currentPath = window.location.pathname; // e.g., "/2025-10-05"
+    const positionKey = `audio_position${currentPath}`;
     const savePosition = () => {
       if (audioRef.current) {
         localStorage.setItem(positionKey, audioRef.current.currentTime.toString());
@@ -228,7 +243,7 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
     }
 
     return () => clearInterval(interval);
-  }, [isPlaying, data.date, hasRestoredPosition]);
+  }, [isPlaying, hasRestoredPosition]);
   
   // Optimized current word tracking
   useEffect(() => {
@@ -418,11 +433,37 @@ export default function TranscriptionPlayer({ data }: { data: TranscriptionData 
   
   return (
     <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col overflow-hidden">
-      {/* Header with Title and Language Selector */}
+      {/* Header with Date Dropdown, Title and Language Selector */}
       <div className="flex-shrink-0 px-4 py-2 flex items-center justify-between">
-        <div className="flex-1 min-w-0 pr-4">
+        {/* Date Dropdown */}
+        {availableDates && availableDates.length > 0 && (
+          <div className="relative">
+            <select
+              value={currentDate || ''}
+              onChange={(e) => {
+                if (e.target.value) {
+                  router.push(`/${e.target.value}`);
+                }
+              }}
+              className="bg-teal-800 hover:bg-teal-700 text-white px-3 py-1 rounded-md text-sm font-medium border-none outline-none cursor-pointer"
+            >
+              {availableDates.map(date => (
+                <option key={date} value={date} className="bg-teal-800">
+                  {new Date(date).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: '2-digit',
+                    year: 'numeric'
+                  })}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+        
+        <div className="flex-1 min-w-0 px-4">
           <h1 className="font-semibold truncate text-center">{data.title}</h1>
         </div>
+        
         <div className="relative flex-shrink-0 language-selector">
           <button
             onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
