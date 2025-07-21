@@ -16,6 +16,7 @@ export interface WordClick {
   utterance_id: number;
   utterance: string;
   word: string;
+  translation?: string;
   timestamp?: Date;
 }
 
@@ -94,7 +95,8 @@ export async function insertWordClick(data: Omit<WordClick, 'id' | 'timestamp' |
       transcript_id: data.transcript_id,
       utterance_id: data.utterance_id,
       utterance: data.utterance,
-      word: data.word
+      word: data.word,
+      translation: data.translation
     })
     .select()
     .single();
@@ -104,4 +106,22 @@ export async function insertWordClick(data: Omit<WordClick, 'id' | 'timestamp' |
   }
 
   return result;
+}
+
+export async function getWordClicksByDate(transcriptId: string): Promise<WordClick[]> {
+  // Ensure user is authenticated
+  const userId = await ensureUserAuthenticated();
+  
+  const { data: clicks, error } = await supabase
+    .from('word_clicks')
+    .select('*')
+    .eq('transcript_id', transcriptId)
+    .eq('user_id', userId)
+    .order('timestamp', { ascending: false });
+
+  if (error) {
+    throw error;
+  }
+
+  return clicks || [];
 }

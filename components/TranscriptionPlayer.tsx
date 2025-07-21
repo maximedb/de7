@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, Pause, ChevronDown } from 'lucide-react';
+import { Play, Pause, ChevronDown, List, FileText } from 'lucide-react';
 import { useRouter } from 'next/router';
 import { getUserId } from '../lib/userId';
-import { insertWordClick } from '../lib/supabase';
+import { insertWordClick, getWordClicksByDate, WordClick } from '../lib/supabase';
 import { Word, Utterance, TranscriptionData } from '../lib/types';
 
 type Language = 'en' | 'fr';
+type Tab = 'transcription' | 'clicks';
 
 // Memoized Word Component
 const WordSpan = React.memo(({ 
@@ -121,6 +122,85 @@ const UtteranceBlock = React.memo(({
   );
 });
 
+// Clicks List Component
+const ClicksList = React.memo(({ 
+  clicks, 
+  onClickClick 
+}: { 
+  clicks: WordClick[];
+  onClickClick: (click: WordClick) => void;
+}) => {
+  const [showingTranslation, setShowingTranslation] = useState<number | null>(null);
+
+  const formatTimestamp = (timestamp: string | Date) => {
+    const date = new Date(timestamp);
+    return date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  };
+
+  if (clicks.length === 0) {
+    return (
+      <div className="flex-1 flex items-center justify-center">
+        <div className="text-center text-gray-400">
+          <List className="w-12 h-12 mx-auto mb-4 opacity-50" />
+          <p className="text-lg font-medium">No clicks yet</p>
+          <p className="text-sm">Click on words in the transcription to see them here</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex-1 overflow-y-auto px-4 py-4">
+      <div className="space-y-3">
+        {clicks.map((click, index) => {
+          const isShowingTranslation = showingTranslation === index;
+          return (
+            <div key={click.id || index}>
+              <div
+                onClick={() => {
+                  if (click.translation) {
+                    setShowingTranslation(isShowingTranslation ? null : index);
+                  }
+                }}
+                className="bg-teal-800 bg-opacity-30 rounded-lg p-4 cursor-pointer hover:bg-opacity-50 transition-all duration-200"
+              >
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-yellow-300 font-semibold text-lg">
+                    "{click.word}"
+                  </span>
+                  <span className="text-gray-300 text-sm">
+                    {formatTimestamp(click.timestamp || new Date())}
+                  </span>
+                </div>
+                <p className="text-gray-100 text-base leading-relaxed">
+                  {click.utterance}
+                </p>
+              </div>
+              
+              {/* Translation Panel */}
+              {isShowingTranslation && click.translation && (
+                <div className="mx-2 mb-2 bg-black bg-opacity-60 p-4 rounded-lg transition-all duration-300 ease-out"
+                     style={{
+                       boxShadow: 'inset rgba(0, 0, 0, 0.3) 0px 8px 32px, inset rgba(0, 0, 0, 0.2) 0px 2px 16px',
+                       backdropFilter: 'blur(8px)',
+                     }}>
+                  <div className="text-lg text-white leading-relaxed">
+                    {click.translation}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+});
+
 export default function TranscriptionPlayer({ 
   data, 
   currentDate, 
@@ -139,6 +219,8 @@ export default function TranscriptionPlayer({
   const [hasRestoredPosition, setHasRestoredPosition] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<Language>('en');
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+  const [activeTab, setActiveTab] = useState<Tab>('transcription');
+  const [wordClicks, setWordClicks] = useState<WordClick[]>([]);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -334,6 +416,9 @@ export default function TranscriptionPlayer({
     if (!utterance) return;
     
     const fullUtterance = utterance.words.map(w => w.word).join(' ');
+    // Get the translation that was shown to the user
+    const translation = utterance?.translations?.[selectedLanguage] || 
+                       (selectedLanguage === 'en' && utterance?.translation);
     
     // Fire and forget - don't await or block UI
     (async () => {
@@ -344,12 +429,13 @@ export default function TranscriptionPlayer({
           utterance_id: utteranceIdx,
           utterance: fullUtterance,
           word: word,
+          translation: translation || undefined,
         });
       } catch (error) {
         console.error('Failed to track word click:', error);
       }
     })();
-  }, [data.utterances]);
+  }, [data.utterances, selectedLanguage]);
 
   const handleTranscriptClick = useCallback((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
@@ -427,6 +513,27 @@ export default function TranscriptionPlayer({
     localStorage.setItem('preferred_language', language);
     setShowLanguageDropdown(false);
     setShowingTranslation(null);
+  }, []);
+  
+  const loadWordClicks = useCallback(async () => {
+    if (!data.date) return;
+    try {
+      const clicks = await getWordClicksByDate(data.date);
+      setWordClicks(clicks);
+    } catch (error) {
+      console.error('Failed to load word clicks:', error);
+      setWordClicks([]);
+    }
+  }, [data.date]);
+  
+  const switchToClicksTab = useCallback(() => {
+    setActiveTab('clicks');
+    loadWordClicks();
+  }, [loadWordClicks]);
+  
+  const handleClickClick = useCallback((click: WordClick) => {
+    // This function is no longer used since translations show in place
+    // Kept for interface compatibility
   }, []);
   
   const formatTime = (seconds: number) => {
@@ -520,28 +627,72 @@ export default function TranscriptionPlayer({
         </div>
       </div>
       
-      {/* Transcription */}
-      <div 
-        ref={scrollContainerRef}
-        className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 py-4 min-h-0"
-        onClick={handleTranscriptClick}
-      >
-        <div className="pb-8 w-full">
-          {data.utterances.map((utterance, idx) => (
-            <UtteranceBlock
-              key={idx}
-              utterance={utterance}
-              utteranceIdx={idx}
-              currentWordGlobal={currentWordGlobal}
-              clickedWord={clickedWord}
-              previousUtterance={idx > 0 ? data.utterances[idx - 1] : undefined}
-              showingTranslation={showingTranslation}
-              selectedLanguage={selectedLanguage}
-              setShowingTranslation={setShowingTranslation}
+      {/* iOS-style Toggle Button */}
+      <div className="flex-shrink-0 px-4 py-2 flex justify-center">
+        <div className="relative bg-teal-800 rounded-full p-1 w-full">
+          <button
+            onClick={() => {
+              const newTab = activeTab === 'transcription' ? 'clicks' : 'transcription';
+              setActiveTab(newTab);
+              if (newTab === 'clicks') {
+                loadWordClicks();
+              }
+            }}
+            className="relative w-full h-6 rounded-full"
+          >
+            {/* Sliding pill */}
+            <div 
+              className={`absolute top-0 left-0 w-1/2 h-full bg-white rounded-full shadow-md transition-transform duration-300 ease-in-out ${
+                activeTab === 'clicks' ? 'translate-x-full' : 'translate-x-0'
+              }`}
             />
-          ))}
+            
+            {/* Labels */}
+            <div className="relative z-10 flex h-full">
+              <div className={`flex-1 flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+                activeTab === 'transcription' ? 'text-teal-800' : 'text-white'
+              }`}>
+                Text
+              </div>
+              <div className={`flex-1 flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+                activeTab === 'clicks' ? 'text-teal-800' : 'text-white'
+              }`}>
+                Clicks
+              </div>
+            </div>
+          </button>
         </div>
       </div>
+      
+      {/* Main Content Area */}
+      {activeTab === 'transcription' ? (
+        <div 
+          ref={scrollContainerRef}
+          className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 py-4 min-h-0"
+          onClick={handleTranscriptClick}
+        >
+          <div className="pb-8 w-full">
+            {data.utterances.map((utterance, idx) => (
+              <UtteranceBlock
+                key={idx}
+                utterance={utterance}
+                utteranceIdx={idx}
+                currentWordGlobal={currentWordGlobal}
+                clickedWord={clickedWord}
+                previousUtterance={idx > 0 ? data.utterances[idx - 1] : undefined}
+                showingTranslation={showingTranslation}
+                selectedLanguage={selectedLanguage}
+                setShowingTranslation={setShowingTranslation}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <ClicksList
+          clicks={wordClicks}
+          onClickClick={handleClickClick}
+        />
+      )}
       
       
       {/* Player Controls - Fixed positioning */}
