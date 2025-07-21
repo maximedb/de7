@@ -213,11 +213,31 @@ export default function TranscriptionPlayer({
       const position = parseFloat(savedPosition);
       audio.currentTime = position;
       setCurrentTime(position);
+      
+      // Immediately sync word highlighting with restored position
+      const syncWordHighlighting = () => {
+        const time = position;
+        let found = false;
+        
+        for (let uIdx = 0; uIdx < data.utterances.length && !found; uIdx++) {
+          const utterance = data.utterances[uIdx];
+          for (let wIdx = 0; wIdx < utterance.words.length; wIdx++) {
+            const word = utterance.words[wIdx];
+            if (time >= word.start && time < word.end) {
+              setCurrentWordGlobal({ utteranceIdx: uIdx, wordIdx: wIdx });
+              found = true;
+              break;
+            }
+          }
+        }
+      };
+      
+      syncWordHighlighting();
     }
     // If no saved position, start from beginning (default behavior)
     
     setHasRestoredPosition(true);
-  }, [hasRestoredPosition]);
+  }, [hasRestoredPosition, data.utterances]);
 
   // Save position periodically while playing
   useEffect(() => {
