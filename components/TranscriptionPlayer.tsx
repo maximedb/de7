@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, Pause, ChevronDown, List, FileText } from 'lucide-react';
+import { Play, Pause, ChevronDown, List, FileText, SkipBack, SkipForward } from 'lucide-react';
 import { useRouter } from 'next/router';
 import { getUserId } from '../lib/userId';
 import { insertWordClick, getWordClicksByDate, WordClick } from '../lib/supabase';
@@ -154,7 +154,7 @@ const ClicksList = React.memo(({
   }
 
   return (
-    <div className="flex-1 overflow-y-auto px-4 py-4">
+    <div className="flex-1 overflow-y-auto px-4 py-4 pt-16">
       <div className="space-y-3">
         {clicks.map((click, index) => {
           const isShowingTranslation = showingTranslation === index;
@@ -443,37 +443,24 @@ export default function TranscriptionPlayer({
     
     const utteranceIdx = parseInt(target.dataset.utterance);
     const wordIdx = parseInt(target.dataset.word || '0');
-    const startTime = parseFloat(target.dataset.start || '0');
     const word = target.textContent || '';
     
     // Show click highlight immediately
     setClickedWord({ utteranceIdx, wordIdx });
     setTimeout(() => setClickedWord(null), 400);
     
-    if (clickTimerRef.current) {
-      // Double click detected - seek to word position
-      clearTimeout(clickTimerRef.current);
-      clickTimerRef.current = null;
-      seekToTime(startTime);
-      // No tracking for double clicks
-    } else {
-      // Single click - pause audio and show translation immediately
-      pauseAudio();
-      const utterance = data.utterances[utteranceIdx];
-      // Support both new translations object and legacy translation field
-      const hasTranslation = utterance?.translations?.[selectedLanguage] || 
-                            (selectedLanguage === 'en' && utterance?.translation);
-      if (hasTranslation) {
-        setShowingTranslation({ utteranceIdx });
-      }
-      
-      // Set timer to confirm single click and track it
-      clickTimerRef.current = setTimeout(() => {
-        // Track word click only after confirming it's a single click
-        trackWordClick(utteranceIdx, wordIdx, word);
-        clickTimerRef.current = null;
-      }, 250);
+    // Single click - pause audio and show translation immediately
+    pauseAudio();
+    const utterance = data.utterances[utteranceIdx];
+    // Support both new translations object and legacy translation field
+    const hasTranslation = utterance?.translations?.[selectedLanguage] || 
+                          (selectedLanguage === 'en' && utterance?.translation);
+    if (hasTranslation) {
+      setShowingTranslation({ utteranceIdx });
     }
+    
+    // Track word click immediately
+    trackWordClick(utteranceIdx, wordIdx, word);
   }, [data.utterances, trackWordClick]);
   
   const togglePlayPause = useCallback(() => {
@@ -507,6 +494,20 @@ export default function TranscriptionPlayer({
     audio.play();
     setIsPlaying(true);
   }, []);
+  
+  const seekBackward = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    audio.currentTime = Math.max(0, audio.currentTime - 15);
+  }, []);
+  
+  const seekForward = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    audio.currentTime = Math.min(data.duration, audio.currentTime + 15);
+  }, [data.duration]);
   
   const changeLanguage = useCallback((language: Language) => {
     setSelectedLanguage(language);
@@ -562,7 +563,7 @@ export default function TranscriptionPlayer({
     <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col overflow-hidden">
       
       {/* iOS-style Toggle Button */}
-      <div className="flex-shrink-0 px-4 py-4 flex justify-center">
+      <div className="backdrop-blur-md absolute w-full flex-shrink-0 px-4 py-4 flex justify-center">
         <div className="relative bg-teal-800 rounded-full p-1 w-full">
           <button
             onClick={() => {
@@ -602,7 +603,7 @@ export default function TranscriptionPlayer({
       {activeTab === 'transcription' ? (
         <div 
           ref={scrollContainerRef}
-          className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 min-h-0"
+          className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 min-h-0 pt-16"
           onClick={handleTranscriptClick}
         >
           <div className="pb-8 w-full">
@@ -686,17 +687,36 @@ export default function TranscriptionPlayer({
               )}
             </div>
             
-            {/* Play Button - Centered */}
-            <button
-              onClick={togglePlayPause}
-              className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform shadow-lg"
-            >
-              {isPlaying ? (
-                <Pause className="w-6 h-6" />
-              ) : (
-                <Play className="w-6 h-6 ml-0.5" />
-              )}
-            </button>
+            {/* Play Controls - Centered */}
+            <div className="flex items-center space-x-3">
+              {/* -15s Button */}
+              <button
+                onClick={seekBackward}
+                className="w-10 h-10 bg-teal-700 hover:bg-teal-600 rounded-full flex items-center justify-center text-white transition-colors shadow-md"
+              >
+                <SkipBack className="w-4 h-4" />
+              </button>
+              
+              {/* Play Button */}
+              <button
+                onClick={togglePlayPause}
+                className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform shadow-lg"
+              >
+                {isPlaying ? (
+                  <Pause className="w-6 h-6" />
+                ) : (
+                  <Play className="w-6 h-6 ml-0.5" />
+                )}
+              </button>
+              
+              {/* +15s Button */}
+              <button
+                onClick={seekForward}
+                className="w-10 h-10 bg-teal-700 hover:bg-teal-600 rounded-full flex items-center justify-center text-white transition-colors shadow-md"
+              >
+                <SkipForward className="w-4 h-4" />
+              </button>
+            </div>
             
             {/* Language Selector - Absolute positioned to right */}
             <div className="absolute right-0 language-selector">
