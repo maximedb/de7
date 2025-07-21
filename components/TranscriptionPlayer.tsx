@@ -563,7 +563,7 @@ export default function TranscriptionPlayer({
     <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col overflow-hidden">
       
       {/* iOS-style Toggle Button */}
-      <div className="backdrop-blur-md absolute w-full flex-shrink-0 px-4 py-4 flex justify-center">
+      <div className="bg-teal-900 absolute w-full flex-shrink-0 px-4 py-4 flex justify-center">
         <div className="relative bg-teal-800 rounded-full p-1 w-full">
           <button
             onClick={() => {
