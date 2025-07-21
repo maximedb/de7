@@ -560,75 +560,9 @@ export default function TranscriptionPlayer({
   
   return (
     <div className="fixed inset-0 bg-gradient-to-b from-teal-900 to-teal-700 text-white flex flex-col overflow-hidden">
-      {/* Header with Date Dropdown, Title and Language Selector */}
-      <div className="flex-shrink-0 px-4 py-2 flex items-center justify-between">
-        {/* Date Dropdown */}
-        {availableDates && availableDates.length > 0 && (
-          <div className="relative">
-            <select
-              value={currentDate || ''}
-              onChange={(e) => {
-                if (e.target.value) {
-                  router.push(`/${e.target.value}`);
-                }
-              }}
-              onBlur={(e) => {
-                if (e.target.value) {
-                  router.push(`/${e.target.value}`);
-                }
-              }}
-              className="bg-teal-800 hover:bg-teal-700 text-white px-3 py-1 rounded-md text-sm font-medium border-none outline-none cursor-pointer"
-            >
-              {availableDates.map(date => (
-                <option key={date} value={date} className="bg-teal-800">
-                  {new Date(date).toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: '2-digit',
-                    year: 'numeric'
-                  })}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-        
-        <div className="flex-1 min-w-0 px-4">
-          <h1 className="font-semibold truncate text-center">{data.title}</h1>
-        </div>
-        
-        <div className="relative flex-shrink-0 language-selector">
-          <button
-            onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
-            className="flex items-center space-x-1 bg-teal-800 hover:bg-teal-700 px-3 py-1 rounded-md transition-colors"
-          >
-            <span className="text-sm font-medium">{selectedLanguage.toUpperCase()}</span>
-            <ChevronDown className="w-4 h-4" />
-          </button>
-          {showLanguageDropdown && (
-            <div className="absolute right-0 top-full mt-1 bg-teal-800 rounded-md shadow-lg z-20 min-w-[80px]">
-              <button
-                onClick={() => changeLanguage('en')}
-                className={`block w-full text-left px-3 py-2 text-sm hover:bg-teal-700 rounded-t-md ${
-                  selectedLanguage === 'en' ? 'bg-teal-700' : ''
-                }`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => changeLanguage('fr')}
-                className={`block w-full text-left px-3 py-2 text-sm hover:bg-teal-700 rounded-b-md ${
-                  selectedLanguage === 'fr' ? 'bg-teal-700' : ''
-                }`}
-              >
-                FR
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
       
       {/* iOS-style Toggle Button */}
-      <div className="flex-shrink-0 px-4 py-2 flex justify-center">
+      <div className="flex-shrink-0 px-4 py-4 flex justify-center">
         <div className="relative bg-teal-800 rounded-full p-1 w-full">
           <button
             onClick={() => {
@@ -668,7 +602,7 @@ export default function TranscriptionPlayer({
       {activeTab === 'transcription' ? (
         <div 
           ref={scrollContainerRef}
-          className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 py-4 min-h-0"
+          className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 min-h-0"
           onClick={handleTranscriptClick}
         >
           <div className="pb-8 w-full">
@@ -719,8 +653,40 @@ export default function TranscriptionPlayer({
             </div>
           </div>
           
-          {/* Play Button */}
-          <div className="flex items-center justify-center">
+          {/* Bottom Controls: Date Dropdown, Play Button, Language Selector */}
+          <div className="relative flex items-center justify-center">
+            {/* Date Dropdown - Absolute positioned to left */}
+            <div className="absolute left-0">
+              {availableDates && availableDates.length > 0 && (
+                <div className="relative">
+                  <select
+                    value={currentDate || ''}
+                    onChange={(e) => {
+                      if (e.target.value) {
+                        router.push(`/${e.target.value}`);
+                      }
+                    }}
+                    onBlur={(e) => {
+                      if (e.target.value) {
+                        router.push(`/${e.target.value}`);
+                      }
+                    }}
+                    className="bg-teal-800 hover:bg-teal-700 text-white px-2 py-1 rounded-md text-xs font-medium border-none outline-none cursor-pointer"
+                  >
+                    {availableDates.map(date => (
+                      <option key={date} value={date} className="bg-teal-800">
+                        {new Date(date).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: '2-digit'
+                        })}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+            </div>
+            
+            {/* Play Button - Centered */}
             <button
               onClick={togglePlayPause}
               className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform shadow-lg"
@@ -731,6 +697,37 @@ export default function TranscriptionPlayer({
                 <Play className="w-6 h-6 ml-0.5" />
               )}
             </button>
+            
+            {/* Language Selector - Absolute positioned to right */}
+            <div className="absolute right-0 language-selector">
+              <button
+                onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+                className="flex items-center space-x-1 bg-teal-800 hover:bg-teal-700 px-2 py-1 rounded-md transition-colors"
+              >
+                <span className="text-xs font-medium">{selectedLanguage.toUpperCase()}</span>
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              {showLanguageDropdown && (
+                <div className="absolute right-0 bottom-full mb-1 bg-teal-800 rounded-md shadow-lg z-20 min-w-[60px]">
+                  <button
+                    onClick={() => changeLanguage('en')}
+                    className={`block w-full text-left px-3 py-2 text-xs hover:bg-teal-700 rounded-t-md ${
+                      selectedLanguage === 'en' ? 'bg-teal-700' : ''
+                    }`}
+                  >
+                    EN
+                  </button>
+                  <button
+                    onClick={() => changeLanguage('fr')}
+                    className={`block w-full text-left px-3 py-2 text-xs hover:bg-teal-700 rounded-b-md ${
+                      selectedLanguage === 'fr' ? 'bg-teal-700' : ''
+                    }`}
+                  >
+                    FR
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
