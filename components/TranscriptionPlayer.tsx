@@ -445,6 +445,11 @@ export default function TranscriptionPlayer({
                   router.push(`/${e.target.value}`);
                 }
               }}
+              onBlur={(e) => {
+                if (e.target.value) {
+                  router.push(`/${e.target.value}`);
+                }
+              }}
               className="bg-teal-800 hover:bg-teal-700 text-white px-3 py-1 rounded-md text-sm font-medium border-none outline-none cursor-pointer"
             >
               {availableDates.map(date => (
