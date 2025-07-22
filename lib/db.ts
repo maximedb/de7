@@ -56,3 +56,18 @@ export async function insertWordClick(data: Omit<WordClick, 'id' | 'timestamp'>)
 
   return result;
 }
+
+export async function getWordClicksByDate(userId: string, date: string): Promise<WordClick[]> {
+  const { data, error } = await supabase
+    .from('word_clicks')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('transcript_id', date)
+    .order('timestamp', { ascending: true });
+
+  if (error) {
+    throw error;
+  }
+
+  return data || [];
+}

@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Play, Pause, ChevronDown, List, FileText, SkipBack, SkipForward } from 'lucide-react';
-import { Word, Utterance, TranscriptionData, WordClick } from '../lib/types';
-
+import { Word, Utterance, TranscriptionData } from '../lib/types';
+import { insertWordClick, getWordClicksByDate, WordClick } from '../lib/supabase';
 
 type Language = 'en' | 'fr';
 type Tab = 'transcription' | 'clicks';
-
-// Mock imports - replace with your actual imports
-const mockGetUserId = async (): Promise<string> => 'user-123';
-const mockInsertWordClick = async (data: Omit<WordClick, 'id' | 'timestamp'>): Promise<void> => {
-  console.log('Word click:', data);
-};
-const mockGetWordClicksByDate = async (date: string): Promise<WordClick[]> => [];
 
 // Simple Word Component
 interface WordSpanProps {
@@ -140,14 +133,6 @@ const ClicksList: React.FC<ClicksListProps> = ({ clicks }) => {
                 }}
                 className="bg-teal-800 bg-opacity-30 rounded-lg p-4 cursor-pointer hover:bg-opacity-50 transition-all duration-200"
               >
-                <div className="flex justify-between items-start mb-2">
-                  <span className="text-yellow-300 font-semibold text-lg">
-                    "{click.word}"
-                  </span>
-                  <span className="text-gray-300 text-sm">
-                    {formatTimestamp(click.timestamp || new Date())}
-                  </span>
-                </div>
                 <p className="text-gray-100 text-base leading-relaxed">
                   {click.utterance}
                 </p>
@@ -317,7 +302,7 @@ export default function TranscriptionPlayer({
                        (selectedLanguage === 'en' && utterance?.translation);
     
     try {
-      await mockInsertWordClick({
+      await insertWordClick({
         transcript_id: data.date,
         utterance_id: utteranceIdx,
         utterance: fullUtterance,
@@ -373,7 +358,7 @@ export default function TranscriptionPlayer({
   const loadWordClicks = useCallback(async () => {
     if (!data.date) return;
     try {
-      const clicks = await mockGetWordClicksByDate(data.date);
+      const clicks = await getWordClicksByDate(data.date);
       setWordClicks(clicks);
     } catch (error) {
       console.error('Failed to load word clicks:', error);
