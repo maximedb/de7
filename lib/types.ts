@@ -1,3 +1,4 @@
+// Types
 export interface Word {
   word: string;
   start: number;
@@ -28,10 +29,12 @@ export interface TranscriptionData {
   audioUrl: string;
 }
 
-export interface OptimizedTranscriptionData {
-  title: string;
-  date: string;
-  duration: number;
-  wordCount: number;
-  audioUrl: string;
+export interface WordClick {
+  id?: string;
+  transcript_id: string;
+  utterance_id: number;
+  utterance: string;
+  word: string;
+  translation?: string;
+  timestamp?: string | Date;
 }
