@@ -63,7 +63,7 @@ const UtteranceBlock: React.FC<UtteranceBlockProps> = ({
           <WordSpan
             key={`${utteranceIdx}-${wordIdx}`}
             word={word}
-            isPast={currentTime >= word.end}
+            isPast={currentTime >= word.start}
           />
         ))}
       </div>
@@ -178,6 +178,7 @@ export default function TranscriptionPlayer({
   const [showLanguageDropdown, setShowLanguageDropdown] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<Tab>('transcription');
   const [wordClicks, setWordClicks] = useState<WordClick[]>([]);
+  const [isAudioReady, setIsAudioReady] = useState<boolean>(false);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -205,11 +206,34 @@ export default function TranscriptionPlayer({
     }
   }, [showLanguageDropdown]);
 
+  // Track audio ready state
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleCanPlay = () => setIsAudioReady(true);
+    const handleLoadStart = () => setIsAudioReady(false);
+    
+    audio.addEventListener('canplay', handleCanPlay);
+    audio.addEventListener('loadstart', handleLoadStart);
+    
+    // Check if already ready
+    if (audio.readyState >= 3) {
+      setIsAudioReady(true);
+    }
+    
+    return () => {
+      audio.removeEventListener('canplay', handleCanPlay);
+      audio.removeEventListener('loadstart', handleLoadStart);
+    };
+  }, [data.audioUrl]);
+
   // Reset when switching dates
   useEffect(() => {
     setIsPlaying(false);
     setCurrentTime(0);
     setShowingTranslation(null);
+    setIsAudioReady(false);
     
     if (audioRef.current) {
       audioRef.current.pause();
@@ -228,9 +252,32 @@ export default function TranscriptionPlayer({
     const savedPosition = localStorage.getItem(positionKey);
     if (savedPosition) {
       const position = parseFloat(savedPosition);
-      audio.currentTime = position;
+      
+      // Set the React state immediately
       setCurrentTime(position);
+      
+      // Wait for audio to be ready before setting its currentTime
+      const setAudioPosition = () => {
+        audio.currentTime = position;
+        // Remove the event listener after setting position
+        audio.removeEventListener('loadedmetadata', setAudioPosition);
+      };
+      
+      // Check if audio is already ready
+      if (audio.readyState >= 1) {
+        audio.currentTime = position;
+      } else {
+        // Wait for audio to load
+        audio.addEventListener('loadedmetadata', setAudioPosition);
+      }
     }
+    
+    // Cleanup
+    return () => {
+      if (audio) {
+        audio.removeEventListener('loadedmetadata', setAudioPosition);
+      }
+    };
   }, []);
 
   // Save position periodically
@@ -316,7 +363,7 @@ export default function TranscriptionPlayer({
 
   const togglePlayPause = useCallback(() => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio || !isAudioReady) return;
     
     setShowingTranslation(null);
     
@@ -326,7 +373,7 @@ export default function TranscriptionPlayer({
       audio.play();
     }
     setIsPlaying(!isPlaying);
-  }, [isPlaying]);
+  }, [isPlaying, isAudioReady]);
 
   const pauseAudio = useCallback(() => {
     const audio = audioRef.current;
@@ -496,8 +543,16 @@ export default function TranscriptionPlayer({
               
               <button
                 onClick={togglePlayPause}
-                className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform shadow-lg"
+                disabled={!isAudioReady}
+                className={`relative w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all ${
+                  isAudioReady 
+                    ? 'bg-white text-black hover:scale-105 cursor-pointer' 
+                    : 'bg-gray-400 text-gray-600 cursor-not-allowed opacity-50'
+                }`}
               >
+                {!isAudioReady && (
+                  <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-white animate-spin"></div>
+                )}
                 {isPlaying ? (
                   <Pause className="w-6 h-6" />
                 ) : (
