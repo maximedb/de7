@@ -270,14 +270,12 @@ export default function TranscriptionPlayer({
         // Wait for audio to load
         audio.addEventListener('loadedmetadata', setAudioPosition);
       }
-    }
-    
-    // Cleanup
-    return () => {
-      if (audio) {
+      
+      // Cleanup function needs access to setAudioPosition
+      return () => {
         audio.removeEventListener('loadedmetadata', setAudioPosition);
-      }
-    };
+      };
+    }
   }, []);
 
   // Save position periodically
