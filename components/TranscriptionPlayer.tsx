@@ -178,7 +178,8 @@ export default function TranscriptionPlayer({
   const [showLanguageDropdown, setShowLanguageDropdown] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<Tab>('transcription');
   const [wordClicks, setWordClicks] = useState<WordClick[]>([]);
-  const [isAudioReady, setIsAudioReady] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [hasStartedPlayback, setHasStartedPlayback] = useState<boolean>(false);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -206,38 +207,50 @@ export default function TranscriptionPlayer({
     }
   }, [showLanguageDropdown]);
 
-  // Track audio ready state
+  // Track audio loading state
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handleCanPlay = () => setIsAudioReady(true);
-    const handleLoadStart = () => setIsAudioReady(false);
+    const handleLoadStart = () => setIsLoading(true);
+    const handleCanPlay = () => setIsLoading(false);
+    const handleWaiting = () => setIsLoading(true);
+    const handlePlaying = () => {
+      setIsLoading(false);
+      setHasStartedPlayback(true);
+    };
+    const handlePause = () => setIsLoading(false);
+    const handleError = () => setIsLoading(false);
     
-    audio.addEventListener('canplay', handleCanPlay);
     audio.addEventListener('loadstart', handleLoadStart);
-    
-    // Check if already ready
-    if (audio.readyState >= 3) {
-      setIsAudioReady(true);
-    }
+    audio.addEventListener('canplay', handleCanPlay);
+    audio.addEventListener('waiting', handleWaiting);
+    audio.addEventListener('playing', handlePlaying);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('error', handleError);
     
     return () => {
-      audio.removeEventListener('canplay', handleCanPlay);
       audio.removeEventListener('loadstart', handleLoadStart);
+      audio.removeEventListener('canplay', handleCanPlay);
+      audio.removeEventListener('waiting', handleWaiting);
+      audio.removeEventListener('playing', handlePlaying);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('error', handleError);
     };
   }, [data.audioUrl]);
 
   // Reset when switching dates
   useEffect(() => {
     setIsPlaying(false);
+    setIsLoading(false);
+    setHasStartedPlayback(false);
     setCurrentTime(0);
     setShowingTranslation(null);
-    setIsAudioReady(false);
     
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+      delete audioRef.current.dataset.pendingPosition;
     }
   }, [currentDate]);
 
@@ -253,29 +266,67 @@ export default function TranscriptionPlayer({
     if (savedPosition) {
       const position = parseFloat(savedPosition);
       
-      // Set the React state immediately
+      // Always update React state immediately
       setCurrentTime(position);
       
-      // Wait for audio to be ready before setting its currentTime
-      const setAudioPosition = () => {
-        audio.currentTime = position;
-        // Remove the event listener after setting position
-        audio.removeEventListener('loadedmetadata', setAudioPosition);
-      };
-      
-      // Check if audio is already ready
-      if (audio.readyState >= 1) {
-        audio.currentTime = position;
-      } else {
-        // Wait for audio to load
-        audio.addEventListener('loadedmetadata', setAudioPosition);
+      // Try to set audio position, with fallback for iOS/restrictions
+      try {
+        if (audio.readyState >= 1) {
+          audio.currentTime = position;
+        } else {
+          // Store for later setting
+          audio.dataset.pendingPosition = position.toString();
+        }
+      } catch (e) {
+        // Store for later setting if immediate setting fails
+        audio.dataset.pendingPosition = position.toString();
       }
-      
-      // Cleanup function needs access to setAudioPosition
-      return () => {
-        audio.removeEventListener('loadedmetadata', setAudioPosition);
-      };
     }
+  }, []);
+
+  // Handle pending position setting for cases where immediate setting failed
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    const handleLoadedMetadata = () => {
+      const pendingPosition = audio.dataset.pendingPosition;
+      if (pendingPosition) {
+        const position = parseFloat(pendingPosition);
+        try {
+          audio.currentTime = Math.min(position, audio.duration || 0);
+          setCurrentTime(audio.currentTime);
+          delete audio.dataset.pendingPosition;
+        } catch (e) {
+          console.warn('Could not set audio position:', e);
+        }
+      }
+    };
+    
+    const handlePlaying = () => {
+      // Fallback: try to set position once playing starts
+      const pendingPosition = audio.dataset.pendingPosition;
+      if (pendingPosition) {
+        setTimeout(() => {
+          try {
+            const position = parseFloat(pendingPosition);
+            audio.currentTime = Math.min(position, audio.duration || 0);
+            setCurrentTime(audio.currentTime);
+            delete audio.dataset.pendingPosition;
+          } catch (e) {
+            console.warn('Could not set audio position during playback:', e);
+          }
+        }, 100);
+      }
+    };
+    
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('playing', handlePlaying);
+    
+    return () => {
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('playing', handlePlaying);
+    };
   }, []);
 
   // Save position periodically
@@ -359,19 +410,54 @@ export default function TranscriptionPlayer({
     }
   }, [data.utterances, data.date, selectedLanguage]);
 
-  const togglePlayPause = useCallback(() => {
+  const togglePlayPause = useCallback(async () => {
     const audio = audioRef.current;
-    if (!audio || !isAudioReady) return;
+    if (!audio) return;
     
     setShowingTranslation(null);
     
     if (isPlaying) {
       audio.pause();
+      setIsPlaying(false);
     } else {
-      audio.play();
+      try {
+        setIsLoading(true);
+        
+        // Get saved position before starting playback
+        const currentPath = window.location.pathname;
+        const positionKey = `audio_position${currentPath}`;
+        const savedPosition = localStorage.getItem(positionKey);
+        
+        // If we have a saved position and haven't started playback yet, set it
+        if (savedPosition && !hasStartedPlayback) {
+          const position = parseFloat(savedPosition);
+          
+          // Try to set position immediately
+          try {
+            audio.currentTime = position;
+            setCurrentTime(position);
+          } catch (e) {
+            // If immediate setting fails, we'll try again after metadata loads
+            audio.dataset.pendingPosition = position.toString();
+          }
+        }
+        
+        const playPromise = audio.play();
+        
+        if (playPromise !== undefined) {
+          await playPromise;
+        }
+        
+        setIsPlaying(true);
+        
+      } catch (error) {
+        console.error('Playback failed:', error);
+        setIsPlaying(false);
+        setIsLoading(false);
+        // Optionally show user-friendly error message
+      }
     }
-    setIsPlaying(!isPlaying);
-  }, [isPlaying, isAudioReady]);
+  }, [isPlaying, hasStartedPlayback]);
 
   const pauseAudio = useCallback(() => {
     const audio = audioRef.current;
@@ -541,15 +627,10 @@ export default function TranscriptionPlayer({
               
               <button
                 onClick={togglePlayPause}
-                disabled={!isAudioReady}
-                className={`relative w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all ${
-                  isAudioReady 
-                    ? 'bg-white text-black hover:scale-105 cursor-pointer' 
-                    : 'bg-gray-400 text-gray-600 cursor-not-allowed opacity-50'
-                }`}
+                className="relative w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all bg-white text-black hover:scale-105 cursor-pointer"
               >
-                {!isAudioReady && (
-                  <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-white animate-spin"></div>
+                {isLoading && (
+                  <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-gray-400 animate-spin"></div>
                 )}
                 {isPlaying ? (
                   <Pause className="w-6 h-6" />
